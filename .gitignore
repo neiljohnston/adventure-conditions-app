@@ -456,3 +456,4 @@ captures/
 
 !/template_src/webpack/configs/
 
+.vscode
