@@ -38,7 +38,7 @@ export default {
             fixed: false,
             items: [
                 { icon: 'map', title: 'Map', linkpath: '/' },
-                { icon: 'star', title: 'Hello Vue', linkpath: '/helloworld' },
+                { icon: 'star', title: 'About', linkpath: '/about' },
             ],
             miniVariant: true,
             right: true,
