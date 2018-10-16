@@ -38,7 +38,7 @@ export default {
             fixed: false,
             items: [
                 { icon: 'map', title: 'Map', linkpath: '/' },
-                { icon: 'star', title: 'About', linkpath: '/about' },
+                { icon: 'info', title: 'About', linkpath: '/about' },
             ],
             miniVariant: true,
             right: true,
@@ -47,10 +47,6 @@ export default {
             status: false,
             stateless: true,
         }
-    },
-
-    created() {
-      console.log(this.$bus);
     },
 
     mounted () {
