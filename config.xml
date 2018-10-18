@@ -39,6 +39,7 @@
     <access origin="*://tripcheck.com" />
     <access origin="*://*.dot.ca.gov" />
     <access origin="*://*.lbl.gov" />
+    <access origin="*://*.strava.com" />
     <access origin="*://cwfis.cfs.nrcan.gc.ca" />
     <access origin="*://gis.fema.gov" />
     <access origin="*://idpgis.ncep.noaa.gov" />
