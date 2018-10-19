@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-    name: 'About',
+    name: 'AboutView',
     data() {
         return {
             msg: 'Welcome to Your Vue.js App 2'

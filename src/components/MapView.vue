@@ -1,5 +1,7 @@
 <template>
-  <div id="map" class="map"></div>
+  <div
+    id="map"
+    class="map"></div>
 </template>
 <script>
 import 'ol/ol.css';
@@ -9,51 +11,54 @@ import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import XYZ from 'ol/source/XYZ';
 
-import {defaults as defaultControls, ScaleLine} from 'ol/control.js';
+import {
+  defaults as defaultControls,
+  ScaleLine,
+} from 'ol/control';
+
 const scaleLineControl = new ScaleLine();
 
 export default {
-  name: 'Map',
+  name: 'MapView',
 
   data() {
     return {
       map: null,
-      mapView: null
-    }
+      mapView: null,
+    };
   },
 
   created() {
     this.$bus.$on('map-resize', this.mapResizeHandler);
   },
 
-  beforeDestroy(){
+  beforeDestroy() {
     this.$bus.$off('map-resize');
   },
 
   mounted() {
-
     this.map = new Map({
       target: 'map',
       controls: defaultControls({
         attributionOptions: {
-          collapsible: false
-        }
+          collapsible: false,
+        },
       }).extend([
-        scaleLineControl
+        scaleLineControl,
       ]),
       loadTilesWhileAnimating: true,
       layers: [
         new TileLayer({
           source: new XYZ({
-            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          })
-        })
+            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          }),
+        }),
       ],
     });
 
     this.mapView = new View({
-        center: [0, 0],
-        zoom: 2
+      center: [0, 0],
+      zoom: 2,
     });
 
     this.map.setView(this.mapView);
@@ -63,13 +68,12 @@ export default {
   methods: {
     mapResizeHandler() {
       console.log('mapResizeHandler');
-      this.$nextTick(function () {
+      this.$nextTick(() => {
         this.map.updateSize();
       });
-    }
-  }
-
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
