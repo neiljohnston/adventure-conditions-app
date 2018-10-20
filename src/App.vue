@@ -39,21 +39,27 @@
       </v-list>
     </v-navigation-drawer>
     <v-content>
-      <router-view></router-view>
+      <map-view></map-view>
     </v-content>
   </v-app>
 </template>
 <script>
+import MapView from './components/MapView';
+import AboutView from './components/AboutView';
 
 export default {
+  components: {
+    MapView, AboutView,
+  },
+
   data() {
     return {
       clipped: false,
       drawer: true,
       fixed: false,
       items: [
-        { icon: 'map', title: 'Map', linkpath: '/' },
-        { icon: 'info', title: 'About', linkpath: '/about' },
+        // { icon: 'map', title: 'Map', linkpath: '/' },
+        // { icon: 'info', title: 'About', linkpath: '/about' },
       ],
       miniVariant: true,
       right: true,
