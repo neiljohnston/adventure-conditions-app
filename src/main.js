@@ -1,8 +1,9 @@
 // Import Vue
 import Vue from 'vue';
-
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.css';
+import store from './store/store';
+
 
 // Import App Custom Styles
 import AppStyles from './assets/sass/app.scss';
@@ -18,6 +19,7 @@ Vue.prototype.$bus = new Vue();
 
 /* eslint-disable no-new */
 new Vue({
+  store,
   // el: '#app',
   template: '<App/>',
   // components: { App },
