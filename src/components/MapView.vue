@@ -28,6 +28,15 @@ import {
 } from 'ol/source';
 
 import {
+  Circle as CircleStyle,
+  Icon,
+  Fill,
+  Stroke,
+  Style,
+  Text
+} from 'ol/style';
+
+import {
   defaults as defaultControls,
   ScaleLine,
 } from 'ol/control';
@@ -36,6 +45,8 @@ import {
   layerDefinitions,
   navigationDefinitions,
 } from '../assets/js/layers';
+
+const style = [];
 
 
 const scaleLineControl = new ScaleLine();
@@ -143,19 +154,99 @@ export default {
             source: layer.source,
             visible: layer.visible,
             opacity: layer.opacity,
-            // style: styleFunction,
+            style: this.styleFunction,
             zIndex: zindex,
           });
 
           this.$set(layer, 'layer', newLayer);
 
           layer.source.on('addfeature', (event) => {
-            event.feature.set('layerMapId', layer.id);
+            event.feature.set('layerId', layer.id);
           });
 
           map.addLayer(layer.layer);
         }
       });
+    },
+
+    // eslint-disable-next-line no-unused-vars
+    styleFunction(feature, resolution) {
+      const layer = this.getLayerById(this.layers, feature.getProperties().layerId);
+      const geomName = feature.getGeometry().getType();
+
+      let returnStyle = null;
+
+      if (layer.style && style[layer.style] && style[layer.style][geomName]) {
+        returnStyle = style[layer.style][geomName](feature, resolution);
+      } else {
+        returnStyle = this.defaultStyles(layer, feature, resolution);
+      }
+
+      if (layer.label) {
+        // let labelText = '';
+
+        // if (resolution < 612) {
+        //   labelText += layerMap.labelPrefix || '';
+        //   labelText += feature.getProperties()[layerLabel] || '';
+        // }
+
+        // const textStyle = new Text({
+        //   text: labelText,
+        //   font: '12px Arial',
+        //   align: 'center',
+        //   baseline: 'middle',
+        //   fill: new Fill({
+        //     color: '#003D6B'
+        //   }),
+        // });
+
+        // if (returnStyle) {
+        //   returnStyle.setText(textStyle);
+        // }
+      }
+      return returnStyle;
+    },
+
+    // eslint-disable-next-line no-unused-vars
+    defaultStyles(layer, feature, resolution) {
+      const geometryStyles = [];
+
+      const stroke =  layer.oStroke ? layer.oStroke : false ||
+                    (typeof feature.getProperties().stroke !== 'undefined') ? { color: `${feature.getProperties().stroke}`, width: 3 } : false ||
+                    (typeof feature.getProperties()['marker-color'] !== 'undefined') ? { color: `${feature.getProperties()['marker-color']}`, width: 3 } : false ||
+                    { color: [0, 0, 0, 1], width: 3};
+
+      const fill =  layer.oFill ? layer.oFill : false ||
+                  (typeof feature.getProperties()['marker-color'] !== 'undefined') ? { color: `${feature.getProperties()['marker-color']}` } : { color: [255, 255, 255, 1] };
+
+
+      if (layer.oImageOptions) {
+        geometryStyles.Point = new Style({
+          image: new Icon(/** @type {module:ol/style/Icon~Options} */ (layer.oImageOptions)),
+        });
+      } else {
+        geometryStyles.Point = new Style({
+          stroke: new Stroke(stroke),
+          image: new CircleStyle({
+            fill: new Fill(fill),
+            radius: 5,
+          }),
+        });
+      }
+
+      geometryStyles.LineString = new Style({
+        stroke: new Stroke(stroke),
+        fill: new Fill(fill),
+      });
+      geometryStyles.Polygon = new Style({
+        stroke: new Stroke(stroke),
+        fill: new Fill(fill),
+      });
+      geometryStyles.MultiPolygon = new Style({
+        stroke: new Stroke(stroke),
+        fill: new Fill(fill),
+      });
+      return geometryStyles[feature.getGeometry().getType()];
     },
 
     geoJsonLoader(layer) {
