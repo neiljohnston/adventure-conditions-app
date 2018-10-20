@@ -11,7 +11,6 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import {
   GeoJSON,
-  
 } from 'ol/format';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
@@ -124,7 +123,10 @@ export default {
     initializeLayers(layers) {
       layers.forEach((layer, index) => {
         const zindex = layers.length - index;
-        console.log(layer.id, zindex);
+
+        // Set initial visibility here to match navigation
+        const control = this.getNavigationControlById(this.navigation, layer.id);
+        if (control) this.$set(layer, 'visible', control.active);
 
         if (layer.type === 'geojson') {
           if (layer.visible) {
@@ -147,10 +149,9 @@ export default {
 
           this.$set(layer, 'layer', newLayer);
 
-          // layer.source.on('addfeature', (event) => {
-          //   const feature = event.feature;
-          //   feature.set('layerMapId', layer.id);
-          // });
+          layer.source.on('addfeature', (event) => {
+            event.feature.set('layerMapId', layer.id);
+          });
 
           map.addLayer(layer.layer);
         }
@@ -161,18 +162,35 @@ export default {
       axios.get(layer.endpoint, { timeout: 45000 })
         .then((response) => {
           this.$set(layer, 'loadState', '');
-          const projectionsConversion = (layer.dataProjection) ? { dataProjection: layer.dataProjection, featureProjection: 'EPSG:3857'} : {};
+          const projectionsConversion = (layer.dataProjection) ? { dataProjection: layer.dataProjection, featureProjection: 'EPSG:3857' } : {};
           layer.source.addFeatures(
-            layer.source.getFormat().readFeatures(response.data, projectionsConversion)
+            layer.source.getFormat().readFeatures(response.data, projectionsConversion),
           );
         })
         .catch((e) => {
-          this.$set(layer, 'loadState', 'error');          
-          // this.setVisibility(layer.id, false);
+          this.$set(layer, 'loadState', 'error');
+          this.setVisibility(layer, false);
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
         });
-    }
+    },
+
+    getNavigationControlById(navigation, id) {
+      return navigation.filter((control) => { return control.id === id; })[0];
+    },
+
+    getLayerById(layers, id) {
+      return layers.filter((layer) => { return layer.id === id; })[0];
+    },
+
+    setVisibility(layer, visibility) {
+      layer.layer.setVisible(visibility);
+
+      if (layer.type === 'geojson' && layer.loadState === 'error' && layer.visible) {
+        this.$set(layer, 'loadState', 'loading');
+        layer.source.setLoader(this.geoJsonLoader(layer));
+      }
+    },
 
   },
 };

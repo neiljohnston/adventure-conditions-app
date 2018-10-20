@@ -328,7 +328,6 @@ export const layerDefinitions = [
     siteTags: ['adventureconditions', 'crisisconditions'],
     id: 'us-active-fire-perimeters',
     type: 'geojson',
-    //endpoint: 'https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/query?where=active+%3D+%27Y%27&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson',
     endpoint: 'https://plume-api.now.sh/simplifygeojson/https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/query?where=active+%3D+%27Y%27&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson&tolerance=50',
     oStroke: {
       color: [255, 0, 0, 1],
@@ -477,7 +476,7 @@ export const layerDefinitions = [
       'dpi': 96,
       'transparent': true,
       'format': 'png32',
-      'time': `${(Math.floor(moment()/3600000))*3600000},${(Math.floor(moment().add('4','h')/3600000))*3600000}`,
+      'time': `${(Math.floor(moment() / 3600000)) * 3600000},${(Math.floor(moment().add('4','h') / 3600000)) * 3600000}`,
       'imageSR': '102100',
     },
     ratio: 1.5,
@@ -585,9 +584,7 @@ export const layerDefinitions = [
     siteTags: ['bcfiremap', 'adventureconditions'],
     id: 'berkley-earth-air-quality',
     type: 'xyz',
-    // endpoint: `http://berkeleyearth.lbl.gov/air-quality/maps/hour/${moment().format('YYYYMM')}/${moment().subtract('3','h').format('YYYYMMDDHH')}/tiles/health/{z}/{x}/{y}.png`,
-    endpoint: `http://berkeleyearth.lbl.gov/air-quality/maps/hour/${moment().format('YYYYMM')}/${moment().startOf('h').subtract('4','h').format('YYYYMMDDHH')}/tiles/health/{z}/{x}/{y}.png`,
-    // Math.floor(moment().add('4','h')/3600000))*3600000
+    endpoint: `http://berkeleyearth.lbl.gov/air-quality/maps/hour/${moment().format('YYYYMM')}/${moment().startOf('h').subtract('4', 'h').format('YYYYMMDDHH')}/tiles/health/{z}/{x}/{y}.png`,
     visible: true,
     opacity: 0.25,
   },
@@ -607,7 +604,6 @@ export const layerDefinitions = [
     opacity: 0.25,
     navigation: true,
   },
-  // https://firedanger.cr.usgs.gov/arcgis/rest/services/Greenness/USGS_Greenness/MapServer/export?dpi=96&transparent=true&format=png8&layers=show%3A29&bbox=-14518309.731345562%2C2055894.4077978902%2C-7292870.321606344%2C7945826.059338866&bboxSR=102100&imageSR=102100&size=1477%2C1204&f=image
   {
     siteTags: ['adventureconditions'],
     id: 'us-fire-danger',
