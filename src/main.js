@@ -8,7 +8,6 @@ import 'vuetify/dist/vuetify.css';
 import AppStyles from './assets/sass/app.scss';
 
 import App from './App';
-// import router from './router';
 
 Vue.use(Vuetify);
 
@@ -20,7 +19,6 @@ Vue.prototype.$bus = new Vue();
 /* eslint-disable no-new */
 new Vue({
   // el: '#app',
-  // router,
   template: '<App/>',
   // components: { App },
   render: h => h(App),
