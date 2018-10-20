@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import {
+  navigationDefinitions,
+} from '../assets/js/layers';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -15,8 +19,15 @@ export default new Vuex.Store({
     keywords: 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health', // process.env.keywords,
     center: [-14173186.261234362, 7196206.431941464],
     zoom: 5,
+
+    items: [
+      { icon: 'map', title: 'Map', linkpath: '/' },
+      { icon: 'info', title: 'About', linkpath: '/about' },
+    ],
+
+    navigation: navigationDefinitions,
   },
-  
+
   mutations: {
 
   },

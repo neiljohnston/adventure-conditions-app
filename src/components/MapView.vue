@@ -2,7 +2,7 @@
   <div
     id="map"
     class="map">
-    </div>
+  </div>
 </template>
 <script>
 import 'ol/ol.css';
@@ -42,6 +42,8 @@ import {
   ScaleLine,
 } from 'ol/control';
 
+import { mapState } from 'vuex';
+
 import {
   layerDefinitions,
   navigationDefinitions,
@@ -54,8 +56,6 @@ const scaleLineControl = new ScaleLine();
 
 let map;
 let mapView;
-
-import { mapState } from 'vuex';
 
 export default {
   name: 'MapView',
@@ -75,6 +75,13 @@ export default {
       layers: [],
       navigation: [],
     };
+  },
+
+  computed: {
+    ...mapState([
+      'title',
+    ]),
+    // Other properties
   },
 
   created() {
@@ -97,13 +104,6 @@ export default {
     this.navigation = navigationDefinitions;
 
     this.initializeLayers(this.layers);
-  },
-
-  computed: {
-    ...mapState([
-      'title',
-    ]),
-    // Other properties
   },
 
   methods: {
