@@ -23,7 +23,7 @@
         </v-list-tile-content>
       </v-list-tile>
 
-      <v-list-tile
+      <!-- <v-list-tile
         v-for="(item, i) in items"
         :key="i"
         value="true"
@@ -34,13 +34,25 @@
         <v-list-tile-content>
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
         </v-list-tile-content>
+      </v-list-tile> -->
+
+      <v-list-tile
+        v-for="(control, i) in navigation"
+        :key="i"
+        value="true">
+        <v-list-tile-action>
+          <v-icon v-html="control.icon"></v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>{{ control.label }}</v-list-tile-title>
+        </v-list-tile-content>
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'MapView',
@@ -60,7 +72,11 @@ export default {
 
   computed: {
     ...mapState([
-      'items', 'navigation',
+      'items',
+      'navigation',
+    ]),
+    ...mapGetters([
+      'getNavigationControlById',
     ]),
   },
 

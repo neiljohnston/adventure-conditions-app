@@ -28,10 +28,19 @@ export default new Vuex.Store({
     navigation: navigationDefinitions,
   },
 
-  mutations: {
-
+  getters: {
+    getNavigationControlById: (state) => (id) => {
+      return state.navigation.find(control => control.id === id);
+    },
   },
-  actions: {
 
+  mutations: {
+    setNavigationActive(state, id, active) {
+      const control = this.getNavigationControlById(id);
+      control.visibility = active;
+    }
+  },
+
+  actions: {
   },
 });

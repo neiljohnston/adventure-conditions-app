@@ -42,11 +42,11 @@ import {
   ScaleLine,
 } from 'ol/control';
 
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
+
 
 import {
   layerDefinitions,
-  navigationDefinitions,
 } from '../assets/js/layers';
 
 const style = [];
@@ -81,6 +81,9 @@ export default {
     ...mapState([
       'title',
     ]),
+    ...mapGetters([
+      'getNavigationControlById',
+    ]),
     // Other properties
   },
 
@@ -101,7 +104,6 @@ export default {
 
     // initialize layers and navigation as reactive
     this.layers = layerDefinitions;
-    this.navigation = navigationDefinitions;
 
     this.initializeLayers(this.layers);
   },
@@ -146,7 +148,7 @@ export default {
         const zindex = layers.length - index;
 
         // Set initial visibility here to match navigation
-        const control = this.getNavigationControlById(this.navigation, layer.id);
+        const control = this.getNavigationControlById(layer.id);
         if (control) this.$set(layer, 'visible', control.active);
 
         if (layer.type === 'geojson') {
@@ -274,10 +276,6 @@ export default {
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
         });
-    },
-
-    getNavigationControlById(navigation, id) {
-      return navigation.filter((control) => { return control.id === id; })[0];
     },
 
     getLayerById(layers, id) {
