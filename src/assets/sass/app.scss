@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 .content{
   -webkit-transition: none;
   transition: none;
@@ -6,4 +10,53 @@
 .navigation-drawer {
   -webkit-transition: none;
   transition: none;
+
+  .list__tile {
+    height: 80px;
+  }
+
+  &.navigation-drawer--mini-variant {
+    .list__tile {
+      height: 80px;
+      flex-direction: column;
+    }
+
+    .list__tile__title {
+      font-size: 0.85em;
+      line-height: 1em;
+      text-align: center;
+    }
+
+    .list__tile__content {
+      opacity: 1;
+      height: 40px;
+    }
+
+    .list__tile__sub-title {
+      display: none;
+    }
+
+    .list__tile__action {
+      height: 40px;
+      span {
+        height: 40px;
+      }
+    }
+
+    .list__tile__title, .list__tile__sub-title {
+      white-space: normal;
+    }
+  }
+}
+
+.list__tile {
+  svg {
+    opacity: 0.5;
+  }
+
+  &.list__tile--active{
+    svg {
+      opacity: 1;
+    }
+  }
 }
