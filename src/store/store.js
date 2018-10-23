@@ -20,11 +20,6 @@ export default new Vuex.Store({
     center: [-14173186.261234362, 7196206.431941464],
     zoom: 5,
 
-    items: [
-      { icon: 'map', title: 'Map', linkpath: '/' },
-      { icon: 'info', title: 'About', linkpath: '/about' },
-    ],
-
     navigation: navigationDefinitions,
   },
 
@@ -35,12 +30,17 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    setNavigationActive(state, id, active) {
-      const control = this.getNavigationControlById(id);
-      control.visibility = active;
-    }
+    SET_NAVIGATION_ACTIVE: ({ state }, { control, active }) => {
+      control.active = active;
+    },
   },
 
   actions: {
+    setNavigationActive: ({ getters, commit }, { id, active }) => {
+      const control = getters.getNavigationControlById(id);
+      // console.log('setNavigationActive', control.id, control.active);
+      commit('SET_NAVIGATION_ACTIVE', { control: control, active: active });
+      // console.log('setNavigationActive', control.id, control.active);
+    },
   },
 });

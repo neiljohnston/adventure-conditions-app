@@ -38,8 +38,12 @@
 
       <v-list-tile
         v-for="(control, i) in navigation"
+        v-if="control.navigation"
+        v-model="control.active"
         :key="i"
-        value="true">
+        value="true"
+        ripple
+        @click="toggleControl(control)">
         <v-list-tile-action>
           <v-icon v-html="control.icon"></v-icon>
         </v-list-tile-action>
@@ -52,7 +56,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 
 export default {
   name: 'MapView',
@@ -72,7 +76,6 @@ export default {
 
   computed: {
     ...mapState([
-      'items',
       'navigation',
     ]),
     ...mapGetters([
@@ -86,8 +89,29 @@ export default {
   },
 
   methods: {
+    ...mapActions([
+      'setNavigationActive',
+    ]),
+
     linkto(pathname) {
       this.$router.push({ path: pathname });
+    },
+
+    toggleControl(control) {
+      const active = !control.active;
+      this.setNavigationActive({ id: control.id, active: active });
+      // this.setMapLayerVisibility(id, active);
+      this.$bus.$emit('layer-visibility', control.id, active);
+
+      if (control.isGroupControl) {
+        this.navigation.forEach((navControl) => {
+          if (navControl.groupControlId === control.id) {
+            // this.setLayerVisibility(navControl.id, control.active);
+            this.setNavigationActive({ id: navControl.id, active: active });
+            this.$bus.$emit('layer-visibility', navControl.id, active);
+          }
+        });
+      }
     },
 
     toggleVariant() {

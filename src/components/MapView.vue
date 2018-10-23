@@ -89,10 +89,12 @@ export default {
 
   created() {
     this.$bus.$on('map-resize', this.mapResizeHandler);
+    this.$bus.$on('layer-visibility', this.layerVisibilityHandler);
   },
 
   beforeDestroy() {
     this.$bus.$off('map-resize');
+    this.$bus.$off('layer-visibility');
   },
 
   mounted() {
@@ -141,6 +143,12 @@ export default {
       this.$nextTick(() => {
         map.updateSize();
       });
+    },
+
+    layerVisibilityHandler(id, active) {
+      const layer = this.getLayerById(this.layers, id);
+      console.log(layer.id);
+      if (layer) this.setLayerVisibility(layer, active);
     },
 
     initializeLayers(layers) {
@@ -272,7 +280,7 @@ export default {
         })
         .catch((e) => {
           this.$set(layer, 'loadState', 'error');
-          this.setVisibility(layer, false);
+          this.setLayerVisibility(layer, false);
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
         });
@@ -282,7 +290,7 @@ export default {
       return layers.filter((layer) => { return layer.id === id; })[0];
     },
 
-    setVisibility(layer, visibility) {
+    setLayerVisibility(layer, visibility) {
       layer.layer.setVisible(visibility);
 
       if (layer.type === 'geojson' && layer.loadState === 'error' && layer.visible) {

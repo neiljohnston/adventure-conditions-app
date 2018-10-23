@@ -65,7 +65,6 @@ export const navigationDefinitions = [
     groupControlId: 'fire-points',
     active: true,
     opacity: 1,
-
     icon: '<i class="fire-point fas fa-fire fa-fw fa-2x"></i>',
     label: 'AB Fire Points',
     loadState: '',
