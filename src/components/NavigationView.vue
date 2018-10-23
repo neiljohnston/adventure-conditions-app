@@ -20,7 +20,7 @@
           </v-btn>
         </v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title>{{ legend }}</v-list-tile-title>
+          <v-list-tile-title>{{ appTitle }}</v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
 
@@ -72,7 +72,7 @@ export default {
       right: true,
       status: false,
       stateless: true,
-      legend: 'Legend',
+      appTitle: 'Adventure Conditions',
     };
   },
 
