@@ -7,6 +7,7 @@
     v-model="drawer"
     app
     fixed
+    scrollable
     touchless
     stateless>
     <v-list>
@@ -45,7 +46,7 @@
         ripple
         @click="toggleControl(control)">
         <v-list-tile-action>
-          <v-icon v-html="control.icon"></v-icon>
+          <span v-html="control.icon"></span>
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>{{ control.label }}</v-list-tile-title>
