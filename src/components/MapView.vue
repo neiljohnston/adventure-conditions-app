@@ -12,6 +12,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import {
   GeoJSON,
+  EsriJSON,
 } from 'ol/format';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
@@ -146,13 +147,14 @@ export default {
     },
 
     layerVisibilityHandler(id, active) {
+      console.log('layerVisibilityHandler', id, active);
       const layer = this.getLayerById(this.layers, id);
-      console.log(layer.id);
       if (layer) this.setLayerVisibility(layer, active);
     },
 
     initializeLayers(layers) {
       layers.forEach((layer, index) => {
+        console.log('initializeLayers', layer.id);
         const zindex = layers.length - index;
 
         // Set initial visibility here to match navigation
@@ -186,6 +188,111 @@ export default {
 
           map.addLayer(layer.layer);
         }
+
+        if (layer.type === 'esrijson') {
+          if (layer.visible) {
+            this.$set(layer, 'loadState', 'loading');
+          }
+          const newSource = new VectorSource({
+            format: new EsriJSON(),
+            loader: this.geoJsonLoader(layer),
+          });
+
+          this.$set(layer, 'source', newSource);
+
+          const newLayer = new VectorLayer({
+            source: layer.source,
+            visible: layer.visible,
+            opacity: layer.opacity,
+            style: this.styleFunction,
+            zIndex: zindex,
+          });
+
+          this.$set(layer, 'layer', newLayer);
+
+          layer.source.on('addfeature', (event) => {
+            event.feature.set('layerId', layer.id);
+          });
+
+          map.addLayer(layer.layer);
+        }
+
+
+        if (layer.type == 'arcgisrestmapeserver') {
+          layer.source = new ImageArcGISRest({
+            ratio: layer.ratio,
+            params: layer.params,
+            url: layer.endpoint,
+            crossOrigin: 'Anonymous',
+          });
+
+          this.imageLoadEventing(layer);
+
+          layer.layer = new ImageLayer({
+            source: layer.source,
+            visible: layer.visible,
+            opacity: layer.opacity,
+            zIndex: zindex,
+          });
+
+          map.addLayer(layer.layer);
+        }
+
+        
+      if (layer.type == 'imagewms') {
+        layer.source = new ImageWMS({
+          ratio: layer.ratio,
+          params: layer.params,
+          url: layer.endpoint
+          // crossOrigin: 'anonymous'
+        });
+
+        this.imageLoadEventing(layer);
+
+        layer.layer = new ImageLayer({
+          source: layer.source,
+          visible: layer.visible,
+          opacity: layer.opacity,
+          zIndex: zindex
+        });
+
+        map.addLayer(layer.layer);
+      }
+
+      if (layer.type == 'xyz') {
+        layer.source = new XYZ({
+          url: layer.endpoint,
+          // attributions: 'Traffic Tiles &copy; ' + new Date().getFullYear() + ' ' +
+          //   '<a href="http://developer.here.com">HERE</a>'
+        });
+
+        this.imageLoadEventing(layer);
+
+        layer.layer = new TileLayer({
+          source: layer.source,
+          visible: layer.visible,
+          opacity: layer.opacity,
+          zIndex: zindex,
+          preload: Infinity
+        });
+
+        map.addLayer(layer.layer);
+      }
+
+      });
+    },
+
+    imageLoadEventing(layer) {
+      layer.source.on('imageloadstart', () => {
+        layer.loadState = 'loading';
+      });
+
+      layer.source.on('imageloaderror', () => {
+        layer.loadState = 'error';
+      });
+
+      layer.source.on('imageloadend', () => {
+        layer.loadState = '';
       });
     },
 
