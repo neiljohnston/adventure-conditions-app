@@ -16,14 +16,17 @@ html {
   }
 
   &.navigation-drawer--mini-variant {
+    overflow-y: auto;
+
     .list__tile {
       height: 80px;
+      padding: 0 2px;
       flex-direction: column;
     }
 
     .list__tile__title {
-      font-size: 0.85em;
-      line-height: 1em;
+      font-size: 0.8em;
+      line-height: 0.95em;
       text-align: center;
     }
 
@@ -49,14 +52,23 @@ html {
   }
 }
 
-.list__tile {
+.list__tile svg {
+  height: 40px;
+  width: 40px;
+}
+
+.list__tile:not(.list__tile--active) {
+  .list__tile__title, .list__tile__sub-title {
+    color: #a5a5a5;
+  }
+
   svg {
     opacity: 0.5;
   }
+}
 
-  &.list__tile--active{
+.list__tile.list__tile--active{
     svg {
       opacity: 1;
     }
-  }
 }

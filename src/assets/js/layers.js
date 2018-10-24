@@ -10,28 +10,22 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'fire-perimeters',
     active: true,
-    // icon: 'fas fa-search',
     icon: `
-    
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges>
-<!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-<desc>Created with Sketch.</desc>
-<defs></defs>
-<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="all-fire-perimeters">
-        <g>
-            <rect id="Rectangle" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="40" height="40"></rect>
-            <path d="M11.703125,3.07174609 C11.703125,2.00251563 10.3261348,1.59988086 9.71986914,2.48605469 C4.15625,10.6183066 12.0625,10.984375 12.0625,14.9375 C12.0625,16.5380215 10.7546445,17.8330742 9.14931641,17.8122305 C7.56941406,17.7917461 6.3125,16.4747266 6.3125,14.8946445 L6.3125,11.053375 C6.3125,10.0784355 5.12337305,9.60576758 4.45129688,10.3119844 C3.24887305,11.575457 2,13.7395234 2,16.375 C2,21.130834 5.86916602,25 10.625,25 C15.380834,25 19.25,21.130834 19.25,16.375 C19.25,8.72525391 11.703125,7.70494336 11.703125,3.07174609 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
-            <path d="M11.703125,3.07848437 C11.703125,2.00925391 10.3638491,1.66796106 9.71986914,2.49279297 C4.63610329,9.00425722 10.984375,12.7241543 10.984375,14.9375 C10.984375,15.9282969 10.1782969,16.734375 9.1875,16.734375 C8.19670312,16.734375 7.390625,15.9282969 7.390625,14.9375 L7.390625,10.1814414 C7.390625,9.31031641 6.4088125,8.79986914 5.69567773,9.29719922 C3.38152734,10.9115566 2,13.5574551 2,16.375 C2,21.130834 5.86916602,25 10.625,25 C15.380834,25 19.25,21.130834 19.25,16.375 C19.25,8.72525391 11.703125,7.71168164 11.703125,3.07848437 Z M10.625,22.84375 C7.05811328,22.84375 4.15625,19.9418867 4.15625,16.375 C4.15625,15.0875391 4.54096094,13.4681504 5.234375,12.421875 L5.234375,14.9375 C5.234375,17.1172441 7.00775586,18.890625 9.1875,18.890625 C11.3672441,18.890625 13.140625,17.1172441 13.140625,14.9375 C13.140625,12.0505059 9.1875,9.546875 10.265625,5.59375 C12.0625,9.546875 17.09375,11.0639316 17.09375,16.375 C17.09375,19.9418867 14.1918867,22.84375 10.625,22.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
-            <path d="M30.703125,4.07174609 C30.703125,3.00251563 29.3261348,2.59988086 28.7198691,3.48605469 C23.15625,11.6183066 31.0625,11.984375 31.0625,15.9375 C31.0625,17.5380215 29.7546445,18.8330742 28.1493164,18.8122305 C26.5694141,18.7917461 25.3125,17.4747266 25.3125,15.8946445 L25.3125,12.053375 C25.3125,11.0784355 24.123373,10.6057676 23.4512969,11.3119844 C22.248873,12.575457 21,14.7395234 21,17.375 C21,22.130834 24.869166,26 29.625,26 C34.380834,26 38.25,22.130834 38.25,17.375 C38.25,9.72525391 30.703125,8.70494336 30.703125,4.07174609 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
-            <path d="M30.703125,4.07848437 C30.703125,3.00925391 29.3638491,2.66796106 28.7198691,3.49279297 C23.6361033,10.0042572 29.984375,13.7241543 29.984375,15.9375 C29.984375,16.9282969 29.1782969,17.734375 28.1875,17.734375 C27.1967031,17.734375 26.390625,16.9282969 26.390625,15.9375 L26.390625,11.1814414 C26.390625,10.3103164 25.4088125,9.79986914 24.6956777,10.2971992 C22.3815273,11.9115566 21,14.5574551 21,17.375 C21,22.130834 24.869166,26 29.625,26 C34.380834,26 38.25,22.130834 38.25,17.375 C38.25,9.72525391 30.703125,8.71168164 30.703125,4.07848437 Z M29.625,23.84375 C26.0581133,23.84375 23.15625,20.9418867 23.15625,17.375 C23.15625,16.0875391 23.5409609,14.4681504 24.234375,13.421875 L24.234375,15.9375 C24.234375,18.1172441 26.0077559,19.890625 28.1875,19.890625 C30.3672441,19.890625 32.140625,18.1172441 32.140625,15.9375 C32.140625,13.0505059 28.1875,10.546875 29.265625,6.59375 C31.0625,10.546875 36.09375,12.0639316 36.09375,17.375 C36.09375,20.9418867 33.1918867,23.84375 29.625,23.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
-            <path d="M22.703125,16.0717461 C22.703125,15.0025156 21.3261348,14.5998809 20.7198691,15.4860547 C15.15625,23.6183066 23.0625,23.984375 23.0625,27.9375 C23.0625,29.5380215 21.7546445,30.8330742 20.1493164,30.8122305 C18.5694141,30.7917461 17.3125,29.4747266 17.3125,27.8946445 L17.3125,24.053375 C17.3125,23.0784355 16.123373,22.6057676 15.4512969,23.3119844 C14.248873,24.575457 13,26.7395234 13,29.375 C13,34.130834 16.869166,38 21.625,38 C26.380834,38 30.25,34.130834 30.25,29.375 C30.25,21.7252539 22.703125,20.7049434 22.703125,16.0717461 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
-            <path d="M22.703125,16.0784844 C22.703125,15.0092539 21.3638491,14.6679611 20.7198691,15.492793 C15.6361033,22.0042572 21.984375,25.7241543 21.984375,27.9375 C21.984375,28.9282969 21.1782969,29.734375 20.1875,29.734375 C19.1967031,29.734375 18.390625,28.9282969 18.390625,27.9375 L18.390625,23.1814414 C18.390625,22.3103164 17.4088125,21.7998691 16.6956777,22.2971992 C14.3815273,23.9115566 13,26.5574551 13,29.375 C13,34.130834 16.869166,38 21.625,38 C26.380834,38 30.25,34.130834 30.25,29.375 C30.25,21.7252539 22.703125,20.7116816 22.703125,16.0784844 Z M21.625,35.84375 C18.0581133,35.84375 15.15625,32.9418867 15.15625,29.375 C15.15625,28.0875391 15.5409609,26.4681504 16.234375,25.421875 L16.234375,27.9375 C16.234375,30.1172441 18.0077559,31.890625 20.1875,31.890625 C22.3672441,31.890625 24.140625,30.1172441 24.140625,27.9375 C24.140625,25.0505059 20.1875,22.546875 21.265625,18.59375 C23.0625,22.546875 28.09375,24.0639316 28.09375,29.375 C28.09375,32.9418867 25.1918867,35.84375 21.625,35.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="crispEdges>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="all-fire-perimeters">
+            <g>
+                <rect id="Rectangle" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="40" height="40"></rect>
+                <path d="M11.703125,3.07174609 C11.703125,2.00251563 10.3261348,1.59988086 9.71986914,2.48605469 C4.15625,10.6183066 12.0625,10.984375 12.0625,14.9375 C12.0625,16.5380215 10.7546445,17.8330742 9.14931641,17.8122305 C7.56941406,17.7917461 6.3125,16.4747266 6.3125,14.8946445 L6.3125,11.053375 C6.3125,10.0784355 5.12337305,9.60576758 4.45129688,10.3119844 C3.24887305,11.575457 2,13.7395234 2,16.375 C2,21.130834 5.86916602,25 10.625,25 C15.380834,25 19.25,21.130834 19.25,16.375 C19.25,8.72525391 11.703125,7.70494336 11.703125,3.07174609 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
+                <path d="M11.703125,3.07848437 C11.703125,2.00925391 10.3638491,1.66796106 9.71986914,2.49279297 C4.63610329,9.00425722 10.984375,12.7241543 10.984375,14.9375 C10.984375,15.9282969 10.1782969,16.734375 9.1875,16.734375 C8.19670312,16.734375 7.390625,15.9282969 7.390625,14.9375 L7.390625,10.1814414 C7.390625,9.31031641 6.4088125,8.79986914 5.69567773,9.29719922 C3.38152734,10.9115566 2,13.5574551 2,16.375 C2,21.130834 5.86916602,25 10.625,25 C15.380834,25 19.25,21.130834 19.25,16.375 C19.25,8.72525391 11.703125,7.71168164 11.703125,3.07848437 Z M10.625,22.84375 C7.05811328,22.84375 4.15625,19.9418867 4.15625,16.375 C4.15625,15.0875391 4.54096094,13.4681504 5.234375,12.421875 L5.234375,14.9375 C5.234375,17.1172441 7.00775586,18.890625 9.1875,18.890625 C11.3672441,18.890625 13.140625,17.1172441 13.140625,14.9375 C13.140625,12.0505059 9.1875,9.546875 10.265625,5.59375 C12.0625,9.546875 17.09375,11.0639316 17.09375,16.375 C17.09375,19.9418867 14.1918867,22.84375 10.625,22.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
+                <path d="M30.703125,4.07174609 C30.703125,3.00251563 29.3261348,2.59988086 28.7198691,3.48605469 C23.15625,11.6183066 31.0625,11.984375 31.0625,15.9375 C31.0625,17.5380215 29.7546445,18.8330742 28.1493164,18.8122305 C26.5694141,18.7917461 25.3125,17.4747266 25.3125,15.8946445 L25.3125,12.053375 C25.3125,11.0784355 24.123373,10.6057676 23.4512969,11.3119844 C22.248873,12.575457 21,14.7395234 21,17.375 C21,22.130834 24.869166,26 29.625,26 C34.380834,26 38.25,22.130834 38.25,17.375 C38.25,9.72525391 30.703125,8.70494336 30.703125,4.07174609 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
+                <path d="M30.703125,4.07848437 C30.703125,3.00925391 29.3638491,2.66796106 28.7198691,3.49279297 C23.6361033,10.0042572 29.984375,13.7241543 29.984375,15.9375 C29.984375,16.9282969 29.1782969,17.734375 28.1875,17.734375 C27.1967031,17.734375 26.390625,16.9282969 26.390625,15.9375 L26.390625,11.1814414 C26.390625,10.3103164 25.4088125,9.79986914 24.6956777,10.2971992 C22.3815273,11.9115566 21,14.5574551 21,17.375 C21,22.130834 24.869166,26 29.625,26 C34.380834,26 38.25,22.130834 38.25,17.375 C38.25,9.72525391 30.703125,8.71168164 30.703125,4.07848437 Z M29.625,23.84375 C26.0581133,23.84375 23.15625,20.9418867 23.15625,17.375 C23.15625,16.0875391 23.5409609,14.4681504 24.234375,13.421875 L24.234375,15.9375 C24.234375,18.1172441 26.0077559,19.890625 28.1875,19.890625 C30.3672441,19.890625 32.140625,18.1172441 32.140625,15.9375 C32.140625,13.0505059 28.1875,10.546875 29.265625,6.59375 C31.0625,10.546875 36.09375,12.0639316 36.09375,17.375 C36.09375,20.9418867 33.1918867,23.84375 29.625,23.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
+                <path d="M22.703125,16.0717461 C22.703125,15.0025156 21.3261348,14.5998809 20.7198691,15.4860547 C15.15625,23.6183066 23.0625,23.984375 23.0625,27.9375 C23.0625,29.5380215 21.7546445,30.8330742 20.1493164,30.8122305 C18.5694141,30.7917461 17.3125,29.4747266 17.3125,27.8946445 L17.3125,24.053375 C17.3125,23.0784355 16.123373,22.6057676 15.4512969,23.3119844 C14.248873,24.575457 13,26.7395234 13,29.375 C13,34.130834 16.869166,38 21.625,38 C26.380834,38 30.25,34.130834 30.25,29.375 C30.25,21.7252539 22.703125,20.7049434 22.703125,16.0717461 Z" id="fire-perimeter-fill-1" fill="#F5A623" fill-rule="nonzero"></path>
+                <path d="M22.703125,16.0784844 C22.703125,15.0092539 21.3638491,14.6679611 20.7198691,15.492793 C15.6361033,22.0042572 21.984375,25.7241543 21.984375,27.9375 C21.984375,28.9282969 21.1782969,29.734375 20.1875,29.734375 C19.1967031,29.734375 18.390625,28.9282969 18.390625,27.9375 L18.390625,23.1814414 C18.390625,22.3103164 17.4088125,21.7998691 16.6956777,22.2971992 C14.3815273,23.9115566 13,26.5574551 13,29.375 C13,34.130834 16.869166,38 21.625,38 C26.380834,38 30.25,34.130834 30.25,29.375 C30.25,21.7252539 22.703125,20.7116816 22.703125,16.0784844 Z M21.625,35.84375 C18.0581133,35.84375 15.15625,32.9418867 15.15625,29.375 C15.15625,28.0875391 15.5409609,26.4681504 16.234375,25.421875 L16.234375,27.9375 C16.234375,30.1172441 18.0077559,31.890625 20.1875,31.890625 C22.3672441,31.890625 24.140625,30.1172441 24.140625,27.9375 C24.140625,25.0505059 20.1875,22.546875 21.265625,18.59375 C23.0625,22.546875 28.09375,24.0639316 28.09375,29.375 C28.09375,32.9418867 25.1918867,35.84375 21.625,35.84375 Z" id="fire-perimeter-outline-1" fill="#D0021B" fill-rule="nonzero"></path>
+            </g>
         </g>
     </g>
-</g>
-</svg>
-    `,
+    </svg>`,
     label: 'All Fire Perimiters',
     loadState: '',
     navigation: true,
@@ -42,12 +36,8 @@ export const navigationDefinitions = [
     groupControlId: 'fire-perimeters',
     active: true,
     opacity: 1,
-    // icon: '<span class="fa-stack"><i class="fire-perimeter-fill fas fa-fire fa-fw fa-stack-2x"></i><i class="fire-perimeter fal fa-fire fa-fw fa-stack-2x"></i></span>',
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Artboard-Copy">
                 <g id="fire-perimeter">
@@ -57,8 +47,7 @@ export const navigationDefinitions = [
                 </g>
             </g>
         </g>
-    </svg>
-    `,
+    </svg>`,
     label: 'BC Fire Perimeters',
     loadState: '',
     navigation: true,
@@ -70,10 +59,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Artboard-Copy">
                 <g id="fire-perimeter">
@@ -83,8 +69,7 @@ export const navigationDefinitions = [
                 </g>
             </g>
         </g>
-    </svg>
-    `,
+    </svg>`,
     label: 'US Fire Perimeters',
     loadState: '',
     navigation: true,
@@ -94,10 +79,7 @@ export const navigationDefinitions = [
     id: 'fire-points',
     active: true,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="all-fire-points">
                 <g>
@@ -120,10 +102,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="fire-point">
                 <g>
@@ -132,8 +111,7 @@ export const navigationDefinitions = [
                 </g>
             </g>
         </g>
-    </svg>
-    `,
+    </svg>`,
     label: 'BC Fire Points',
     loadState: '',
     navigation: true,
@@ -145,10 +123,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="fire-point">
                 <g>
@@ -157,8 +132,7 @@ export const navigationDefinitions = [
                 </g>
             </g>
         </g>
-    </svg>
-    `,
+    </svg>`,
     label: 'AB Fire Points',
     loadState: '',
     navigation: true,
@@ -170,10 +144,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="fire-point">
                 <g>
@@ -195,9 +166,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
             <path d="M13.4808171,2.078125 C7.1385915,2.078125 2,7.2167165 2,13.5589421 C2,19.9011676 7.1385915,25.0397591 13.4808171,25.0397591 C19.8230426,25.0397591 24.9616341,19.9011676 24.9616341,13.5589421 C24.9616341,7.2167165 19.8230426,2.078125 13.4808171,2.078125 Z" id="path-1"></path>
             <path d="M26.5120671,8.515625 C20.1698415,8.515625 15.03125,13.6542165 15.03125,19.9964421 C15.03125,26.3386676 20.1698415,31.4772591 26.5120671,31.4772591 C32.8542926,31.4772591 37.9928841,26.3386676 37.9928841,19.9964421 C37.9928841,13.6542165 32.8542926,8.515625 26.5120671,8.515625 Z" id="path-2"></path>
@@ -234,10 +203,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="ospo-noaa-smoke-live">
                 <g transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) ">
@@ -259,10 +225,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 0.5,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="nws-smoke-forecast">
                 <g transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) ">
@@ -284,10 +247,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="air-quality">
                 <g>
@@ -307,10 +267,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="current-weather">
                 <g>
@@ -331,10 +288,7 @@ export const navigationDefinitions = [
     id: 'traffic-cameras',
     active: false,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="all-traffic-cameras">
                 <g>
@@ -350,7 +304,6 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
   },
-
   {
     isGroupControl: false,
     id: 'bc-traffic-cameras',
@@ -358,10 +311,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="traffic-camera">
                 <g>
@@ -382,10 +332,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="traffic-camera">
                 <g>
@@ -406,10 +353,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="traffic-camera">
                 <g>
@@ -430,10 +374,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="traffic-camera">
                 <g>
@@ -455,10 +396,7 @@ export const navigationDefinitions = [
     style: 'highwaycams',
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="traffic-camera">
                 <g>
@@ -472,17 +410,13 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: false,
   },
-
   {
     isGroupControl: false,
     id: 'berkley-earth-air-quality',
     active: true,
     opacity: 0.25,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="air-quality">
                 <g>
@@ -503,10 +437,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 0.25,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="fire-danger">
                 <g>
@@ -527,10 +458,7 @@ export const navigationDefinitions = [
     opacity: 0.25,
 
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="fire-danger">
                 <g>
@@ -550,10 +478,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 0.75,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="radar">
                 <g>
@@ -576,10 +501,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="lightning-density">
                 <g>
@@ -599,10 +521,7 @@ export const navigationDefinitions = [
     active: false,
     opacity: 0.75,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="wind-conditions">
                 <g>
@@ -624,10 +543,7 @@ export const navigationDefinitions = [
     active: true,
     opacity: 1,
     icon: `
-    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
+    <svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="here-live-traffic">
                 <g id="here-live-traffc">
