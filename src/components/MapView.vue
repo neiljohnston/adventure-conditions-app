@@ -147,24 +147,22 @@ export default {
     },
 
     layerVisibilityHandler(id, active) {
-      console.log('layerVisibilityHandler', id, active);
       const layer = this.getLayerById(this.layers, id);
       if (layer) this.setLayerVisibility(layer, active);
     },
 
     initializeLayers(layers) {
       layers.forEach((layer, index) => {
-        console.log('initializeLayers', layer.id);
-        const zindex = layers.length - index;
+        this.$set(layer, 'zIndex', (layers.length - index));
 
         // Set initial visibility here to match navigation
         const control = this.getNavigationControlById(layer.id);
         if (control) this.$set(layer, 'visible', control.active);
+        if (layer.visible) {
+          this.$set(layer, 'loadState', 'loading');
+        }
 
         if (layer.type === 'geojson') {
-          if (layer.visible) {
-            this.$set(layer, 'loadState', 'loading');
-          }
           const newSource = new VectorSource({
             format: new GeoJSON(),
             loader: this.geoJsonLoader(layer),
@@ -172,27 +170,17 @@ export default {
 
           this.$set(layer, 'source', newSource);
 
-          const newLayer = new VectorLayer({
-            source: layer.source,
-            visible: layer.visible,
-            opacity: layer.opacity,
-            style: this.styleFunction,
-            zIndex: zindex,
-          });
-
-          this.$set(layer, 'layer', newLayer);
+          const newLayer = new VectorLayer(this.getLayerOptions(layer));
+          newLayer.setStyle(this.styleFunction);
 
           layer.source.on('addfeature', (event) => {
             event.feature.set('layerId', layer.id);
           });
 
-          map.addLayer(layer.layer);
+          this.addMapLayer(layer, newLayer);
         }
 
         if (layer.type === 'esrijson') {
-          if (layer.visible) {
-            this.$set(layer, 'loadState', 'loading');
-          }
           const newSource = new VectorSource({
             format: new EsriJSON(),
             loader: this.geoJsonLoader(layer),
@@ -200,99 +188,87 @@ export default {
 
           this.$set(layer, 'source', newSource);
 
-          const newLayer = new VectorLayer({
-            source: layer.source,
-            visible: layer.visible,
-            opacity: layer.opacity,
-            style: this.styleFunction,
-            zIndex: zindex,
-          });
-
-          this.$set(layer, 'layer', newLayer);
+          const newLayer = new VectorLayer(this.getLayerOptions(layer));
+          newLayer.setStyle(this.styleFunction);
 
           layer.source.on('addfeature', (event) => {
             event.feature.set('layerId', layer.id);
           });
 
-          map.addLayer(layer.layer);
+          this.addMapLayer(layer, newLayer);
         }
 
 
-        if (layer.type == 'arcgisrestmapeserver') {
-          layer.source = new ImageArcGISRest({
+        if (layer.type === 'arcgisrestmapeserver') {
+          const newSource = new ImageArcGISRest({
             ratio: layer.ratio,
             params: layer.params,
             url: layer.endpoint,
             crossOrigin: 'Anonymous',
           });
+          this.$set(layer, 'source', newSource);
+
+          const newLayer = new ImageLayer(this.getLayerOptions(layer));
 
           this.imageLoadEventing(layer);
-
-          layer.layer = new ImageLayer({
-            source: layer.source,
-            visible: layer.visible,
-            opacity: layer.opacity,
-            zIndex: zindex,
-          });
-
-          map.addLayer(layer.layer);
+          this.addMapLayer(layer, newLayer);
         }
 
-        
-      if (layer.type == 'imagewms') {
-        layer.source = new ImageWMS({
-          ratio: layer.ratio,
-          params: layer.params,
-          url: layer.endpoint
-          // crossOrigin: 'anonymous'
-        });
+        if (layer.type === 'imagewms') {
+          const newSource = new ImageWMS({
+            ratio: layer.ratio,
+            params: layer.params,
+            url: layer.endpoint,
+            // crossOrigin: 'anonymous'
+          });
+          this.$set(layer, 'source', newSource);
 
-        this.imageLoadEventing(layer);
+          const newLayer = new ImageLayer(this.getLayerOptions(layer));
 
-        layer.layer = new ImageLayer({
-          source: layer.source,
-          visible: layer.visible,
-          opacity: layer.opacity,
-          zIndex: zindex
-        });
+          this.imageLoadEventing(layer);
+          this.addMapLayer(layer, newLayer);
+        }
 
-        map.addLayer(layer.layer);
-      }
+        if (layer.type === 'xyz') {
+          const newSource = new XYZ({
+            url: layer.endpoint,
+          });
+          this.$set(layer, 'source', newSource);
 
-      if (layer.type == 'xyz') {
-        layer.source = new XYZ({
-          url: layer.endpoint,
-          // attributions: 'Traffic Tiles &copy; ' + new Date().getFullYear() + ' ' +
-          //   '<a href="http://developer.here.com">HERE</a>'
-        });
+          const newLayer = new TileLayer(this.getLayerOptions(layer));
+          newLayer.setPreload(Infinity);
 
-        this.imageLoadEventing(layer);
-
-        layer.layer = new TileLayer({
-          source: layer.source,
-          visible: layer.visible,
-          opacity: layer.opacity,
-          zIndex: zindex,
-          preload: Infinity
-        });
-
-        map.addLayer(layer.layer);
-      }
-
+          this.imageLoadEventing(layer);
+          this.addMapLayer(layer, newLayer);
+        }
       });
+    },
+
+    addMapLayer(layer, newLayer) {
+      this.$set(layer, 'layer', newLayer);
+      map.addLayer(layer.layer);
+    },
+
+    getLayerOptions(layer) {
+      return {
+        source: layer.source,
+        visible: layer.visible,
+        opacity: layer.opacity,
+        zIndex: layer.zIndex,
+      };
     },
 
     imageLoadEventing(layer) {
       layer.source.on('imageloadstart', () => {
-        layer.loadState = 'loading';
+        this.$set(layer, 'loadState', 'loading');
       });
 
       layer.source.on('imageloaderror', () => {
-        layer.loadState = 'error';
+        this.$set(layer, 'loadState', 'error');
       });
 
       layer.source.on('imageloadend', () => {
-        layer.loadState = '';
+        this.$set(layer, 'loadState', 'loaing');
       });
     },
 
