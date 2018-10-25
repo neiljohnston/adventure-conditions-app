@@ -2,7 +2,7 @@ import moment from 'moment';
 
 // Import the URL to an image file
 import cameraPointURL from '../images/video-solid.png';
-import firePointURL from '../images/fire-solid.png';
+import firePointURL from '../images/fire-point.svg';
 import buildingPointURL from '../images/building-solid.png';
 
 const firePoint = `
