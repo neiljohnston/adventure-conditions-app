@@ -130,7 +130,9 @@ export default {
       // Open overlay
       // Create Pop-up display
       // Add Pop-up display to overlay
-      });
+      },
+      // { hitTolerance: 10 }
+      );
     },
 
     initializeMap() {
