@@ -264,6 +264,7 @@ export default {
       });
 
       layer.source.on('imageloaderror', () => {
+        console.log('imageloaderror', layer.id);
         this.$set(layer, 'loadState', 'error');
       });
 
