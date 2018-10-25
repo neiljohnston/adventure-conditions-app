@@ -109,9 +109,30 @@ export default {
     this.layers = layerDefinitions;
 
     this.initializeLayers(this.layers);
+    
+    map.on('click', (evt) => this.featuresInformationDisplay(evt));
   },
 
   methods: {
+    featuresInformationDisplay(evt) {
+      let self = this;
+      
+      // eslint-disable-next-line no-unused-vars
+      map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+      const layerMap = self.getLayerById(self.layers, feature.getProperties().layerId);
+
+      var properties = feature.getProperties();
+      for (var key in properties) {
+        // eslint-disable-next-line no-console
+        console.log(key + ': ', properties[key]);
+      }
+
+      // Open overlay
+      // Create Pop-up display
+      // Add Pop-up display to overlay
+      });
+    },
+
     initializeMap() {
       return new Map({
         target: 'map',
