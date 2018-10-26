@@ -9,7 +9,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    title: 'Advneture Conditions',
+    title: 'Adventure Conditions',
     name: 'Adventure Conditions', // process.env.name,
     tagline: 'Finding Safe and Healthy Stoke', // process.env.tagline,
     hasLegends: true, // process.env.hasLegends
@@ -21,26 +21,42 @@ export default new Vuex.Store({
     zoom: 5,
 
     navigation: navigationDefinitions,
+
+    // bottom sheet data
+    tilesArray: [],
+    isSheetVisible: false,
   },
 
   getters: {
-    getNavigationControlById: (state) => (id) => {
+    getNavigationControlById: state => (id) => {
       return state.navigation.find(control => control.id === id);
     },
+
+    getTiles: state => state.tiles,
   },
 
   mutations: {
     SET_NAVIGATION_ACTIVE: ({ state }, { control, active }) => {
       control.active = active;
     },
+    SET_TILES_ARRAY(state, tileArray) {
+      state.tilesArray = tileArray;
+    },
+    SET_SHEET_VISIBLE(state, visible) {
+      state.isSheetVisible = visible;
+    },
   },
 
   actions: {
     setNavigationActive: ({ getters, commit }, { id, active }) => {
       const control = getters.getNavigationControlById(id);
-      // console.log('setNavigationActive', control.id, control.active);
       commit('SET_NAVIGATION_ACTIVE', { control: control, active: active });
-      // console.log('setNavigationActive', control.id, control.active);
+    },
+    setTilesArray: ({ commit }, tilesArray) => {
+      commit('SET_TILES_ARRAY', tilesArray);
+    },
+    setSheetVisible: ({ commit }, visible) => {
+      commit('SET_SHEET_VISIBLE', visible);
     },
   },
 });

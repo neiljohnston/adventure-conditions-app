@@ -43,7 +43,7 @@ import {
   ScaleLine,
 } from 'ol/control';
 
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 
 
 import {
@@ -109,30 +109,55 @@ export default {
     this.layers = layerDefinitions;
 
     this.initializeLayers(this.layers);
-    
-    map.on('click', (evt) => this.featuresInformationDisplay(evt));
+
+    map.on('singleclick', (evt) => this.featuresInformationDisplay(evt));
   },
 
   methods: {
+    ...mapActions([
+      'setTilesArray', 'setSheetVisible',
+    ]),
+
     featuresInformationDisplay(evt) {
-      let self = this;
-      
+      const tilesArray = [];
       // eslint-disable-next-line no-unused-vars
-      map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-      const layerMap = self.getLayerById(self.layers, feature.getProperties().layerId);
+      map.forEachFeatureAtPixel(evt.pixel, (feature, layer) => {
+        const layerId = feature.getProperties().layerId;
+        const layerMap = this.getLayerById(this.layers, layerId);
+        const properties = feature.getProperties();
 
-      var properties = feature.getProperties();
-      for (var key in properties) {
-        // eslint-disable-next-line no-console
-        console.log(key + ': ', properties[key]);
+        const tileDisplayMeta = layerMap.popup;
+
+        const featureValues = [];
+        Object.keys(properties).forEach((key) => {
+          featureValues.push({
+            key: `${feature.getId()}-${key}`,
+            fieldName: key,
+            fieldValue: `${properties[key]}`,
+          });
+        });
+
+        console.log('featureValues', featureValues);
+
+        const tile = {
+          key: feature.getId(),
+          headline: tileDisplayMeta.title,
+          title: tileDisplayMeta.note,
+          img: feature.getProperties()[tileDisplayMeta.image] || false,
+          fields: featureValues,
+        };
+
+        tilesArray.push(tile);
+
+        // Open overlay
+        // Create Pop-up display
+        // Add Pop-up display to overlay
+      });
+
+      if (tilesArray.length) {
+        this.setTilesArray(tilesArray);
+        this.setSheetVisible(true);
       }
-
-      // Open overlay
-      // Create Pop-up display
-      // Add Pop-up display to overlay
-      },
-      // { hitTolerance: 10 }
-      );
     },
 
     initializeMap() {

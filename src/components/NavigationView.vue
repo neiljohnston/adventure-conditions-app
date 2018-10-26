@@ -1,42 +1,18 @@
 <template>
   <v-navigation-drawer
-    :permanent="stateless"
-    :right="right"
-    :mini-variant="miniVariant"
-    :clipped="clipped"
+    right
+    permanent
+    :mini-variant="!isDrawerOpen"
+    clipped
     v-model="drawer"
     app
     fixed
     scrollable
     touchless
-    stateless>
+    stateless
+    class="grey lighten-4">
+
     <v-list>
-      <v-list-tile>
-        <v-list-tile-action>
-          <v-btn
-            icon
-            @click.stop="toggleVariant">
-            <v-icon v-html="miniVariant ? 'chevron_left' : 'chevron_right'"></v-icon>
-          </v-btn>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ appTitle }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-
-      <!-- <v-list-tile
-        v-for="(item, i) in items"
-        :key="i"
-        value="true"
-        @click="linkto(item.linkpath)">
-        <v-list-tile-action>
-          <v-icon v-html="item.icon"></v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile> -->
-
       <v-list-tile
         v-for="(control, i) in navigation"
         v-if="control.navigation"
@@ -63,16 +39,23 @@ import { mapGetters, mapState, mapActions } from 'vuex';
 export default {
   name: 'MapView',
 
+  props: {
+    isDrawerOpen: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+  },
+
   data() {
     return {
       clipped: false,
       drawer: true,
       fixed: false,
-      miniVariant: true,
+      miniVariant: this.isDrawerOpen,
       right: true,
       status: false,
       stateless: true,
-      appTitle: 'Adventure Conditions',
     };
   },
 
@@ -114,11 +97,6 @@ export default {
           }
         });
       }
-    },
-
-    toggleVariant() {
-      this.miniVariant = !this.miniVariant;
-      this.onResize();
     },
 
     onResize() {

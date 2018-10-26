@@ -1,26 +1,54 @@
 <template>
-  <v-app v-resize="onResize">
-    <navigation-view></navigation-view>
+  <v-app
+    v-resize="onResize"
+    id="app"
+    light>
+    <navigation-view
+      :is-drawer-open="isDrawerOpen"
+    ></navigation-view>
+    <v-toolbar
+      color="orange lighten-4"
+      app
+      absolute
+      clipped-right>
+      <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span>
+
+      <!-- <v-text-field
+        flat
+        solo
+        placeholder="Search Places"
+        prepend-icon="place"
+        clearable
+      ></v-text-field> -->
+
+      <v-spacer></v-spacer>
+      <v-toolbar-side-icon
+        @click.native="toggleDrawer"
+      ></v-toolbar-side-icon>
+    </v-toolbar>
     <v-content>
       <map-view></map-view>
     </v-content>
+    <bottom-sheet-view></bottom-sheet-view>
   </v-app>
 </template>
 <script>
 import { mapState } from 'vuex';
 
 import MapView from './components/MapView';
+import BottomSheetView from './components/BottomSheetView';
 import NavigationView from './components/NavigationView';
 import AboutView from './components/AboutView';
 
 export default {
   components: {
-    MapView, NavigationView, AboutView,
+    MapView, NavigationView, AboutView, BottomSheetView,
   },
 
   data() {
     return {
       title: 'AdventureConditions.com',
+      isDrawerOpen: false,
     };
   },
 
@@ -31,7 +59,7 @@ export default {
   },
 
   mounted() {
-    this.miniVariant = this.$vuetify.breakpoint.smAndDown;
+    this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
   },
 
@@ -40,8 +68,8 @@ export default {
       this.$router.push({ path: pathname });
     },
 
-    toggleVariant() {
-      this.miniVariant = !this.miniVariant;
+    toggleDrawer() {
+      this.isDrawerOpen = !this.isDrawerOpen;
       this.onResize();
     },
 
