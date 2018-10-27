@@ -15,14 +15,14 @@
             row>
             <v-flex xs12>
               <v-card class="elevation-3">
-                  <v-flex row xs12>
-                    <v-card-title >
-                      <div class="title">{{ tile.headline }}</div>
-                    </v-card-title>
-                  </v-flex>
+                <v-flex row xs12>
+                  <v-card-title >
+                    <div class="title">{{ tile.headline }}</div>
+                  </v-card-title>
+                </v-flex>
                 <v-layout row>
-                  <v-flex 
-                    v-bind:class="[tile.img ? 'xs7' : 'xs12']">
+                  <v-flex
+                    :class="[tile.img ? 'xs7' : 'xs12']">
                     <div>{{ tile.note }}</div>
                     <v-card-text xs12>
                       <v-data-table
@@ -42,14 +42,14 @@
                   <v-flex v-if="tile.img" xs5>
                     <v-img
                       :src="getImageUrl(tile)"
-                      @error="onImageError(tile.imgLoadError)"
+                      @error="onImageError(tile)"
                       :aspect-ratio="16/9"
-                      contain
-                    >
-                      <v-layout slot="placeholder"
+                      contain>
+                      <v-layout
+                        slot="placeholder"
                         fill-height align-center justify-center ma-0>
                         <v-progress-circular
-                          v-if="tile.imgLoadError"
+                          v-if="!tile.imgLoadError"
                           indeterminate
                           color="grey lighten-5">
                         </v-progress-circular>
@@ -96,6 +96,7 @@ export default {
     return {
       loaderImage: loaderImageURL,
       error: false,
+      imageLoadErrors: [],
     };
   },
 
@@ -124,11 +125,14 @@ export default {
     ]),
 
     getImageUrl(tile) {
+      this.$set(tile, 'imgLoadError', false);
       return tile.img;
     },
 
     onImageError(tile) {
-      tile.imgLoadError = true;
+      this.$set(tile, 'imgLoadError', true);
+
+      // this.imgLoadErrors[key] = true;
       console.log('Image Load Error');
       // tile.img = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif';
     },
