@@ -121,6 +121,8 @@ export default {
 
     featuresInformationDisplay(evt) {
       const tilesArray = [];
+      // clear the store
+      this.setTilesArray(tilesArray);
       // eslint-disable-next-line no-unused-vars
       map.forEachFeatureAtPixel(evt.pixel, (feature, layer) => {
         const layerId = feature.getProperties().layerId;
@@ -181,7 +183,7 @@ export default {
           tilesArray.push(tile);
         }
       }, {
-        hitTolerance: 48,
+        hitTolerance: 10,
       });
 
       if (tilesArray.length) {
