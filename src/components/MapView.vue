@@ -7,6 +7,7 @@
 <script>
 import 'ol/ol.css';
 import axios from 'axios';
+import moment from 'moment';
 
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -124,30 +125,60 @@ export default {
       map.forEachFeatureAtPixel(evt.pixel, (feature, layer) => {
         const layerId = feature.getProperties().layerId;
         const layerMap = this.getLayerById(this.layers, layerId);
-        const properties = feature.getProperties();
+        const featureProperties = feature.getProperties();
 
-        const tileDisplayMeta = layerMap.popup;
+        const popup = layerMap.popup;
 
-        const featureValues = [];
-        Object.keys(properties).forEach((key) => {
-          featureValues.push({
-            key: `${feature.getId()}-${key}`,
-            fieldName: key,
-            fieldValue: `${properties[key]}`,
+        if (popup) {
+          // const featureValues = [];
+          const displayeFields = [];
+          // Object.keys(featureProperties).forEach((key) => {
+          //   featureValues.push({
+          //     key: `${feature.getId()}-${key}`,
+          //     fieldName: key,
+          //     fieldValue: `${featureProperties[key]}`,
+          //   });
+          // });
+
+          Object.keys(popup.fields).forEach((fieldKey) => {
+            let fieldValue = featureProperties[popup.fields[fieldKey]];
+
+            if (fieldValue && (fieldValue != null) && (typeof fieldValue !== 'undefined')) {
+
+              // detect and convert unix dates
+              if (Number.isInteger(fieldValue)
+                && fieldValue.toString().length === 13
+                && moment(fieldValue, ['x', 'X'], true).isValid()) {
+                // Convert to human readable date
+                fieldValue = moment(fieldValue).format('dddd, MM Do YYYY, h:mm a');
+              }
+
+              // handle newlines as html
+              if (typeof fieldValue === 'string') {
+                fieldValue = fieldValue.replace(/(?:\r\n|\r|\n)/g, '<br>');
+              }
+
+              displayeFields.push({
+                key: `${feature.getId()}-${fieldKey}`,
+                fieldName: fieldKey,
+                fieldValue: fieldValue,
+              });
+            }
           });
-        });
 
-        console.log('featureValues', featureValues);
+          const tile = {
+            key: feature.getId(),
+            headline: popup.title,
+            note: popup.note,
+            img: featureProperties[popup.image] || false,
+            link: featureProperties[popup.link] || false,
+            map: featureProperties[popup.map] || false,
+            displayFields: displayeFields,
+            imgLoadError: false,
+          };
 
-        const tile = {
-          key: feature.getId(),
-          headline: tileDisplayMeta.title,
-          title: tileDisplayMeta.note,
-          img: feature.getProperties()[tileDisplayMeta.image] || false,
-          fields: featureValues,
-        };
-
-        tilesArray.push(tile);
+          tilesArray.push(tile);
+        }
 
         // Open overlay
         // Create Pop-up display

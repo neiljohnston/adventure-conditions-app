@@ -2,64 +2,64 @@ html {
   overflow: hidden;
 }
 
-.content{
-  -webkit-transition: none;
-  transition: none;
+.v-content{
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
-.navigation-drawer {
-  -webkit-transition: none;
-  transition: none;
+.v-navigation-drawer {
+  -webkit-transition: none !important;
+  transition: none !important;
 
-  .list__tile {
+  .v-list__tile {
     height: 80px;
   }
 
-  &.navigation-drawer--mini-variant {
+  &.v-navigation-drawer--mini-variant {
     overflow-y: auto;
 
-    .list__tile {
+    .v-list__tile {
       height: 80px;
       padding: 0 2px;
       flex-direction: column;
       font-weight: 300px;
     }
 
-    .list__tile__title {
+    .v-list__tile__title {
       font-size: 0.8em;
       line-height: 0.95em;
       text-align: center;
     }
 
-    .list__tile__content {
+    .v-list__tile__content {
       opacity: 1;
       height: 40px;
     }
 
-    .list__tile__sub-title {
+    .v-list__tile__sub-title {
       display: none;
     }
 
-    .list__tile__action {
+    .v-list__tile__action {
       height: 40px;
       span {
         height: 40px;
       }
     }
 
-    .list__tile__title, .list__tile__sub-title {
+    .v-list__tile__title, .v-list__tile__sub-title {
       white-space: normal;
     }
   }
 }
 
-.list__tile svg {
+.v-list__tile svg {
   height: 40px;
   width: 40px;
 }
 
-.list__tile:not(.list__tile--active) {
-  .list__tile__title, .list__tile__sub-title {
+.v-list__tile:not(.v-list__tile--active) {
+  .v-list__tile__title, .v-list__tile__sub-title {
     color: #a5a5a5;
   }
 
@@ -68,7 +68,7 @@ html {
   }
 }
 
-.list__tile.list__tile--active{
+.v-list__tile.v-list__tile--active{
     svg {
       opacity: 1;
     }

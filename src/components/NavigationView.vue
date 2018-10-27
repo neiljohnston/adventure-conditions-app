@@ -1,15 +1,15 @@
 <template>
   <v-navigation-drawer
+    :mini-variant="!isDrawerOpen"
+    v-model="drawer"
     right
     permanent
-    :mini-variant="!isDrawerOpen"
     clipped
-    v-model="drawer"
     app
     fixed
-    scrollable
     touchless
     stateless
+    scrollable
     class="grey lighten-4">
 
     <v-list>

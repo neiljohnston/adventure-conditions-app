@@ -7,7 +7,7 @@
       :is-drawer-open="isDrawerOpen"
     ></navigation-view>
     <v-toolbar
-      color="orange lighten-4"
+      color="#f3845a"
       app
       absolute
       clipped-right>
@@ -15,7 +15,8 @@
 
       <!-- <v-text-field
         flat
-        solo
+        solo-inverted
+        light
         placeholder="Search Places"
         prepend-icon="place"
         clearable

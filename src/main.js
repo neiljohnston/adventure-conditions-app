@@ -20,8 +20,8 @@ Vue.prototype.$bus = new Vue();
 /* eslint-disable no-new */
 new Vue({
   store,
-  // el: '#app',
+  el: '#app',
+  components: { App },
   template: '<App/>',
-  // components: { App },
   render: h => h(App),
-}).$mount('#app');
+});

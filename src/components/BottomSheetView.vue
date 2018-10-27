@@ -2,25 +2,6 @@
   <div class="text-xs-center">
     <v-bottom-sheet
       v-model="bottomSheetState">
-      <!-- <v-list three-line>
-        <v-subheader>Open in</v-subheader>
-        <v-list-tile
-          v-for="tile in tilesArray"
-          :key="tile.title"
-        >
-          <v-list-tile-avatar>
-            <v-avatar
-              size="32px"
-              tile>
-              <img
-                :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
-                :alt="tile.title"
-              >
-            </v-avatar>
-          </v-list-tile-avatar>
-          <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
-        </v-list-tile>
-      </v-list> -->
 
       <v-card>
         <v-container
@@ -28,69 +9,74 @@
           style="min-height: 0;"
           grid-list-lg
         >
-          <v-layout row wrap>
-            <v-flex
-              v-for="tile in tilesArray"
-              :key="tile.key"
-              xs12>
-              <v-card color="cyan darken-2" class="white--text">
-                <v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs7>
-                      <div>
-                        <div class="headline">{{ tile.headline }}</div>
-                        <div class="title">{{ tile.title }}</div>
-                        <!-- <div>Foster the People</div> -->
-                      </div>
-                      <v-divider></v-divider>
-                      <v-flex
-                        xs12>
-                        <v-card>
-                          <v-list
-                            v-for="field in tile.fields"
-                            :key="field.key"
-                            dense >
-                            <v-list-tile>
-                              <v-list-tile-content>{{ field.fieldName }}</v-list-tile-content>
-                              <v-list-tile-content class="align-end"> {{ field.fieldValue }} </v-list-tile-content>
-                            </v-list-tile>
-                          </v-list>
-                        </v-card>
-                      </v-flex>
-                    </v-flex>
-                    <v-flex xs5>
-                      <v-card-media
-                        v-if="tile.img"
-                        :src="tile.img"
-                        height="125px"
-                        contain
-                      ></v-card-media>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+          <v-layout
+            v-for="tile in tilesArray"
+            :key="tile.key"
+            row>
+            <v-flex xs12>
+              <v-card class="elevation-3">
+                  <v-flex row xs12>
+                    <v-card-title >
+                      <div class="title">{{ tile.headline }}</div>
+                    </v-card-title>
+                  </v-flex>
+                <v-layout row>
+                  <v-flex 
+                    v-bind:class="[tile.img ? 'xs7' : 'xs12']">
+                    <div>{{ tile.note }}</div>
+                    <v-card-text xs12>
+                      <v-data-table
+                        :items="tile.displayFields"
+                        class="elevation-1"
+                        hide-actions
+                        hide-headers>
+                        <template
+                          slot="items"
+                          slot-scope="props">
+                          <td class="text-xs-left">{{ props.item.fieldName }}</td>
+                          <td class="text-xs-right">{{ props.item.fieldValue }}</td>
+                        </template>
+                      </v-data-table>
+                    </v-card-text>
+                  </v-flex>
+                  <v-flex v-if="tile.img" xs5>
+                    <v-img
+                      :src="getImageUrl(tile)"
+                      @error="onImageError(tile.imgLoadError)"
+                      :aspect-ratio="16/9"
+                      contain
+                    >
+                      <v-layout slot="placeholder"
+                        fill-height align-center justify-center ma-0>
+                        <v-progress-circular
+                          v-if="tile.imgLoadError"
+                          indeterminate
+                          color="grey lighten-5">
+                        </v-progress-circular>
+                        <div v-else class="error--text">Image Unavailable</div>
+                      </v-layout>
+                    </v-img>
+                  </v-flex>
+                </v-layout>
+                <v-divider light></v-divider>
+                <v-card-actions class="pa-3">
+                  Actions
+                  <v-spacer></v-spacer>
+                  <v-icon>place</v-icon>
+
+                  <v-btn
+                    v-if="tile.link"
+                    :href="tile.link"
+                    target="_blank"
+                    flat
+                    icon
+                    color="orange">
+                    <v-icon>open_in_new</v-icon>
+                  </v-btn>
+
+                </v-card-actions>
               </v-card>
             </v-flex>
-            <!-- <v-flex xs12>
-              <v-card color="purple" class="white--text">
-                <v-container fluid grid-list-lg>
-                  <v-layout row>
-                    <v-flex xs7>
-                      <div>
-                        <div class="headline">Halycon Days</div>
-                        <div>Ellie Goulding</div>
-                      </div>
-                    </v-flex>
-                    <v-flex xs5>
-                      <v-card-media
-                        src="/static/doc-images/cards/halcyon.png"
-                        height="125px"
-                        contain
-                      ></v-card-media>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card>
-            </v-flex> -->
           </v-layout>
         </v-container>
       </v-card>
@@ -101,12 +87,15 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import loaderImageURL from '../assets/images/loader.gif';
 
 export default {
   name: 'BottomSheetView',
 
   data() {
     return {
+      loaderImage: loaderImageURL,
+      error: false,
     };
   },
 
@@ -133,17 +122,28 @@ export default {
     ...mapActions([
       'setSheetVisible',
     ]),
+
+    getImageUrl(tile) {
+      return tile.img;
+    },
+
+    onImageError(tile) {
+      tile.imgLoadError = true;
+      console.log('Image Load Error');
+      // tile.img = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif';
+    },
   },
 
 };
 </script>
 
 <style>
-.dialog.bottom-sheet{
+.v-dialog.v-bottom-sheet{
   /* make scrollable */
   overflow-y: auto;
 }
-.dialog:not(.dialog--fullscreen) {
-    max-height: 60%;
+
+.v-dialog:not(.v-dialog--fullscreen) {
+    max-height: 50%;
 }
 </style>
