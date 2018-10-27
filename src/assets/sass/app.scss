@@ -26,10 +26,17 @@ html {
     }
 
     .v-list__tile__title {
-      font-size: 0.8em;
-      line-height: 0.85em;
-      font-weight: normal;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      margin-top: 4px;
+      max-width: 60px;
+      max-height: 20px;
+      font-size: 10px;
+      line-height: 10px;
       text-align: center;
+      hyphens: auto;
     }
 
     .v-list__tile__content {
