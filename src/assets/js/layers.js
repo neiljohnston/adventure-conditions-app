@@ -150,7 +150,7 @@ export const navigationDefinitions = [
     isGroupControl: false,
     id: 'modis-satellite',
     groupControlId: 'fire-points',
-    active: true,
+    active: false,
     opacity: 1,
     icon: `
     <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -331,7 +331,7 @@ export const navigationDefinitions = [
   {
     isGroupControl: false,
     id: 'noaa-radar',
-    active: true,
+    active: false,
     opacity: 0.75,
     icon: `
     <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -432,6 +432,7 @@ export const layerDefinitions = [
     },
     visible: true,
     opacity: 1,
+    labelPrefix: 'Fire Perimeter: \n',
     label: 'FIRE_OF_NOTE_NAME',
     popup: {
       title: 'Active Fire Perimeter',
@@ -561,7 +562,7 @@ export const layerDefinitions = [
     type: 'geojson',
     endpoint: 'https://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/3/query?where=load_stat%3D%27Active+Burning%27++OR+load_stat%3D%27Last+12-24+hrs%27+OR+load_stat%3D%27Last+24-48+hrs%27&text=&objectIds=&time=&geometry=-15464286.158429246%2C5897585.730705328%2C-12589206.644992914%2C8575781.652083585&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=load_stat&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson',
     style: 'modis',
-    visible: true,
+    visible: false,
     opacity: 1,
     popup: {
       title: 'MODIS NASA/NOAA Satellite Hotspot Detection',
@@ -756,7 +757,7 @@ export const layerDefinitions = [
       'imageSR': '102100',
     },
     ratio: 1.5,
-    visible: true,
+    visible: false,
     opacity: 0.75,
   },
   {
