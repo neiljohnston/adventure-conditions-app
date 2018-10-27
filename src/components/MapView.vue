@@ -177,6 +177,7 @@ export default {
             imgLoadError: false,
           };
 
+          // better to push to the store so results stream in
           tilesArray.push(tile);
         }
 
