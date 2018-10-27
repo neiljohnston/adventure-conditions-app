@@ -180,10 +180,8 @@ export default {
           // better to push to the store so results stream in
           tilesArray.push(tile);
         }
-
-        // Open overlay
-        // Create Pop-up display
-        // Add Pop-up display to overlay
+      }, {
+        hitTolerance: 48,
       });
 
       if (tilesArray.length) {
