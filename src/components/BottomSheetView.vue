@@ -20,9 +20,11 @@
                     <div class="title">{{ tile.headline }}</div>
                   </v-card-title>
                 </v-flex>
-                <v-layout row>
+                <v-layout
+                  :class="[$vuetify.breakpoint.name === 'xs' ? 'column reverse' : 'row']">
                   <v-flex
-                    :class="[tile.img ? 'xs7' : 'xs12']">
+                    :class="[tile.img ? 'xs12' : 'xs12']"
+                    md7>
                     <div>{{ tile.note }}</div>
                     <v-card-text xs12>
                       <v-data-table
@@ -33,17 +35,19 @@
                         <template
                           slot="items"
                           slot-scope="props">
-                          <td class="text-xs-left">{{ props.item.fieldName }}</td>
+                          <td class="text-xs-left align-start justify-start">{{ props.item.fieldName }}</td>
                           <td class="text-xs-right">{{ props.item.fieldValue }}</td>
                         </template>
                       </v-data-table>
                     </v-card-text>
                   </v-flex>
-                  <v-flex v-if="tile.img" xs5>
+                  <v-flex v-if="tile.img"
+                    xs12
+                    md5>
                     <v-img
                       :src="getImageUrl(tile)"
-                      @error="onImageError(tile)"
                       :aspect-ratio="16/9"
+                      @error="onImageError(tile)"
                       contain>
                       <v-layout
                         slot="placeholder"
@@ -124,6 +128,7 @@ export default {
   },
 
   mounted() {
+    console.log(this.$vuetify.breakpoint.name);
   },
 
   methods: {
