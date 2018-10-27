@@ -85,6 +85,7 @@ export default {
     ]),
     ...mapGetters([
       'getNavigationControlById',
+      'getIsSheetVisible',
     ]),
     // Other properties
   },
@@ -116,7 +117,7 @@ export default {
 
   methods: {
     ...mapActions([
-      'setTilesArray', 'setSheetVisible',
+      'setTilesArray', 'setSheetVisible', 'pushToTilesArray',
     ]),
 
     featuresInformationDisplay(evt) {
@@ -180,16 +181,13 @@ export default {
           };
 
           // better to push to the store so results stream in
-          tilesArray.push(tile);
+          // tilesArray.push(tile);
+          if (!this.getIsSheetVisible) this.setSheetVisible(true);
+          this.pushToTilesArray(tile);
         }
       }, {
         hitTolerance: 10,
       });
-
-      if (tilesArray.length) {
-        this.setTilesArray(tilesArray);
-        this.setSheetVisible(true);
-      }
     },
 
     initializeMap() {

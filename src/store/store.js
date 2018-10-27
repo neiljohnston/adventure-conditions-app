@@ -33,6 +33,7 @@ export default new Vuex.Store({
     },
 
     getTiles: state => state.tiles,
+    getIsSheetVisible: state => state.isSheetVisible,
   },
 
   mutations: {
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     },
     SET_TILES_ARRAY(state, tileArray) {
       state.tilesArray = tileArray;
+    },
+    PUSH_TO_TILES_ARRAY(state, tile) {
+      state.tilesArray.push(tile);
     },
     SET_SHEET_VISIBLE(state, visible) {
       state.isSheetVisible = visible;
@@ -54,6 +58,9 @@ export default new Vuex.Store({
     },
     setTilesArray: ({ commit }, tilesArray) => {
       commit('SET_TILES_ARRAY', tilesArray);
+    },
+    pushToTilesArray: ({ commit }, tile) => {
+      commit('PUSH_TO_TILES_ARRAY', tile);
     },
     setSheetVisible: ({ commit }, visible) => {
       commit('SET_SHEET_VISIBLE', visible);
