@@ -174,7 +174,7 @@ export default {
             note: popup.note,
             img: featureProperties[popup.image] || false,
             link: featureProperties[popup.link] || false,
-            map: featureProperties[popup.map] || false,
+            directions: featureProperties[popup.map] || false,
             displayFields: displayeFields,
             imgLoadError: false,
           };

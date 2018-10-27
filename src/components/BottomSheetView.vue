@@ -62,8 +62,15 @@
                 <v-card-actions class="pa-3">
                   Actions
                   <v-spacer></v-spacer>
-                  <v-icon>place</v-icon>
-
+                  <v-btn
+                    v-if="tile.directions"
+                    :href="tile.directions"
+                    target="_blank"
+                    flat
+                    icon
+                    color="orange">
+                    <v-icon>directions</v-icon>
+                  </v-btn>
                   <v-btn
                     v-if="tile.link"
                     :href="tile.link"
