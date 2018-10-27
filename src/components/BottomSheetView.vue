@@ -1,8 +1,8 @@
 <template>
   <div class="text-xs-center">
     <v-bottom-sheet
-      v-model="bottomSheetState">
-
+      v-model="bottomSheetState"
+      lazy>
       <v-card>
         <v-container
           fluid
@@ -15,7 +15,9 @@
             row>
             <v-flex xs12>
               <v-card class="elevation-3">
-                <v-flex row xs12>
+                <v-flex
+                  row
+                  xs12>
                   <v-card-title primary-title>
                     <div class="headline">{{ tile.headline }}</div>
                     <div>{{ tile.note }}</div>
@@ -35,29 +37,37 @@
                         <template
                           slot="items"
                           slot-scope="props">
-                          <td class="text-xs-left align-start justify-start">{{ props.item.fieldName }}</td>
+                          <td class="text-xs-left align-start justify-start">
+                            {{ props.item.fieldName }}
+                          </td>
                           <td class="text-xs-right">{{ props.item.fieldValue }}</td>
                         </template>
                       </v-data-table>
                     </v-card-text>
                   </v-flex>
-                  <v-flex v-if="tile.img"
+                  <v-flex
+                    v-if="tile.img"
                     xs12
                     md5>
                     <v-img
                       :src="getImageUrl(tile)"
                       :aspect-ratio="16/9"
-                      @error="onImageError(tile)"
-                      contain>
+                      contain
+                      @error="onImageError(tile)">
                       <v-layout
                         slot="placeholder"
-                        fill-height align-center justify-center ma-0>
+                        fill-height
+                        align-center
+                        justify-center
+                        ma-0>
                         <v-progress-circular
                           v-if="!tile.imgLoadError"
                           indeterminate
                           color="grey lighten-5">
                         </v-progress-circular>
-                        <div v-else class="error--text">Image Unavailable</div>
+                        <div
+                          v-else
+                          class="error--text">Image Unavailable</div>
                       </v-layout>
                     </v-img>
                   </v-flex>
@@ -127,8 +137,15 @@ export default {
     },
   },
 
-  mounted() {
-    console.log(this.$vuetify.breakpoint.name);
+  watch: {
+    isSheetVisible(visible) {
+      if (visible) {
+        this.$nextTick(() => {
+          const container = document.getElementsByClassName('v-dialog v-bottom-sheet v-dialog--active')[0];
+          container.scrollTop = 0;
+        });
+      }
+    },
   },
 
   methods: {
