@@ -51,7 +51,7 @@ import {
   layerDefinitions,
 } from '../assets/js/layers';
 
-const style = [];
+import {style} from '../assets/js/styles';
 
 
 const scaleLineControl = new ScaleLine();
@@ -181,7 +181,6 @@ export default {
           };
 
           // better to push to the store so results stream in
-          // tilesArray.push(tile);
           if (!this.getIsSheetVisible) this.setSheetVisible(true);
           this.pushToTilesArray(tile);
         }
@@ -359,6 +358,7 @@ export default {
       let returnStyle = null;
 
       if (layer.style && style[layer.style] && style[layer.style][geomName]) {
+        console.log('layer.style');
         returnStyle = style[layer.style][geomName](feature, resolution);
       } else {
         returnStyle = this.defaultStyles(layer, feature, resolution);
