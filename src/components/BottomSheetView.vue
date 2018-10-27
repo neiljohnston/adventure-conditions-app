@@ -16,8 +16,9 @@
             <v-flex xs12>
               <v-card class="elevation-3">
                 <v-flex row xs12>
-                  <v-card-title >
-                    <div class="title">{{ tile.headline }}</div>
+                  <v-card-title primary-title>
+                    <div class="headline">{{ tile.headline }}</div>
+                    <div>{{ tile.note }}</div>
                   </v-card-title>
                 </v-flex>
                 <v-layout
@@ -25,7 +26,6 @@
                   <v-flex
                     :class="[tile.img ? 'xs12' : 'xs12']"
                     md7>
-                    <div>{{ tile.note }}</div>
                     <v-card-text xs12>
                       <v-data-table
                         :items="tile.displayFields"
