@@ -11,17 +11,9 @@
       app
       absolute
       clipped-right>
-      <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span>
+      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
 
-      <!-- <v-text-field
-        flat
-        solo-inverted
-        light
-        placeholder="Search Places"
-        prepend-icon="place"
-        clearable
-      ></v-text-field> -->
-
+      <place-search-view></place-search-view>
       <v-spacer></v-spacer>
       <v-toolbar-side-icon
         @click.native="toggleDrawer"
@@ -40,10 +32,11 @@ import MapView from './components/MapView';
 import BottomSheetView from './components/BottomSheetView';
 import NavigationView from './components/NavigationView';
 import AboutView from './components/AboutView';
+import PlaceSearchView from './components/PlaceSearchView';
 
 export default {
   components: {
-    MapView, NavigationView, AboutView, BottomSheetView,
+    MapView, NavigationView, AboutView, BottomSheetView, PlaceSearchView,
   },
 
   data() {
