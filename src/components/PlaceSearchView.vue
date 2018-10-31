@@ -60,15 +60,12 @@ export default {
       });
     },
     items() {
-      // if (this.suggestions) {
-        return this.suggestions.map((entry) => {
-          const Description = entry.text.length > this.descriptionLimit
-            ? entry.text.slice(0, this.descriptionLimit) + '...'
-            : entry.text;
-          return Object.assign({}, entry, { Description });
-        });
-      // }
-      // return [];
+      return this.suggestions.map((entry) => {
+        const Description = entry.text.length > this.descriptionLimit
+          ? entry.text.slice(0, this.descriptionLimit) + '...'
+          : entry.text;
+        return Object.assign({}, entry, { Description });
+      });
     },
   },
 
