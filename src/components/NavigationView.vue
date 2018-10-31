@@ -61,11 +61,14 @@ export default {
 
   computed: {
     ...mapState([
-      'navigation',
+      'uiState',
     ]),
     ...mapGetters([
       'getNavigationControlById',
     ]),
+    navigation() {
+      return this.uiState.navigation;
+    },
   },
 
   mounted() {

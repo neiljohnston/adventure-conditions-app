@@ -71,12 +71,7 @@ export default {
       siteId: 'adventureconditions', // process.env.siteId,
       description: 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires', // process.env.description,
       keywords: 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health', // process.env.keywords,
-      center: [-14173186.261234362, 7196206.431941464],
-      zoom: 5,
-
       layers: [],
-      navigation: [],
-
       labelBreakpoint: 612,
     };
   },
@@ -84,13 +79,15 @@ export default {
   computed: {
     ...mapState([
       'title',
-      'mapViewState',
+      'uiState',
     ]),
     ...mapGetters([
       'getNavigationControlById',
       'getIsSheetVisible',
     ]),
-    // Other properties
+    mapViewState() {
+      return this.uiState.mapViewState;
+    },
   },
 
   created() {
@@ -107,22 +104,32 @@ export default {
 
   mounted() {
     map = this.initializeMap();
-    mapView = this.updateMapView(this.center, this.zoom);
+    mapView = this.updateMapView(
+      this.mapViewState.center,
+      this.mapViewState.zoom,
+    );
 
     map.setView(mapView);
     this.mapResizeHandler();
 
-    // initialize layers and navigation as reactive
+    // initialize layers as reactive
     this.layers = layerDefinitions;
 
     this.initializeLayers(this.layers);
 
     map.on('singleclick', (evt) => this.featuresInformationDisplay(evt));
+
+    map.on('moveend', (evt) => this.mapMoveEndHandler(evt));
   },
 
   methods: {
+    // import actions from store
     ...mapActions([
-      'setTilesArray', 'setSheetVisible', 'pushToTilesArray',
+      'setTilesArray',
+      'setSheetVisible',
+      'pushToTilesArray',
+      'setMapViewStateCenter',
+      'setMapViewStateZoom',
     ]),
 
     featuresInformationDisplay(evt) {
@@ -221,6 +228,14 @@ export default {
       });
     },
 
+    animateMapCenter(newMapCenter, minZoom) {
+      mapView.animate({
+        center: newMapCenter,
+        duration: 500,
+        zoom: (mapView.getZoom() < minZoom) ? minZoom : mapView.getZoom(),
+      });
+    },
+
     mapResizeHandler() {
       this.$nextTick(() => {
         map.updateSize();
@@ -237,12 +252,9 @@ export default {
       this.animateMapCenter(newMapCenter, 10);
     },
 
-    animateMapCenter(newMapCenter, minZoom) {
-      mapView.animate({
-        center: newMapCenter,
-        duration: 500,
-        zoom: (mapView.getZoom() < minZoom) ? minZoom : mapView.getZoom(),
-      });
+    mapMoveEndHandler() {
+      this.setMapViewStateCenter(mapView.getCenter());
+      this.setMapViewStateZoom(mapView.getZoom());
     },
 
     initializeLayers(layers) {
@@ -393,7 +405,7 @@ export default {
         let labelText = '';
 
         if (resolution < this.labelBreakpoint) {
-          if (feature.getProperties()[layer.label].length > 0) labelText += layer.labelPrefix || '';
+          if (feature.getProperties()[layer.label] && feature.getProperties()[layer.label].length > 0) labelText += layer.labelPrefix || '';
           labelText += feature.getProperties()[layer.label] || '';
         }
 

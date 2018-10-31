@@ -9,10 +9,10 @@ import {
 Vue.use(Vuex);
 
 const vuexLocalStorage = new VuexPersist({
-  key: 'vuex', // The key to store the state on in the storage provider.
+  key: 'adventure-conditons', // The key to store the state on in the storage provider.
   storage: window.localStorage, // or window.sessionStorage or localForage
   // Function that passes the state and returns the state with only the objects you want to store.
-  reducer: state => ({ navigation: state.navigation, mapState: state.mapState }),
+  reducer: state => ({ uiState: state.uiState }),
   // Function that passes a mutation and lets you decide if it should
   // update the state in localStorage.
   // filter: mutation => (true)
@@ -29,12 +29,14 @@ export default new Vuex.Store({
     description: 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires', // process.env.description,
     keywords: 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health', // process.env.keywords,
 
-    mapViewState: {
-      // TODO: Initialize Map Center from DB
-      center: [-14173186.261234362, 7196206.431941464],
-      zoom: 5,
+    uiState: {
+      mapViewState: {
+        // TODO: Initialize Map Center from DB
+        center: [-14173186.261234362, 7196206.431941464],
+        zoom: 5,
+      },
+      navigation: navigationDefinitions,
     },
-    navigation: navigationDefinitions,
 
     // bottom sheet data
     tilesArray: [],
@@ -44,7 +46,7 @@ export default new Vuex.Store({
 
   getters: {
     getNavigationControlById: state => (id) => {
-      return state.navigation.find(control => control.id === id);
+      return state.uiState.navigation.find(control => control.id === id);
     },
 
     getTiles: state => state.tiles,
@@ -65,10 +67,10 @@ export default new Vuex.Store({
       state.isSheetVisible = visible;
     },
     SET_MAP_VIEW_STATE_CENTER(state, center) {
-      state.mapViewState.center = center;
+      state.uiState.mapViewState.center = center;
     },
     SET_MAP_VIEW_STATE_ZOOM(state, zoom) {
-      state.mapViewState.zoom = zoom;
+      state.uiState.mapViewState.zoom = zoom;
     },
   },
 
