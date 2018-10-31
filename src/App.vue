@@ -9,7 +9,7 @@
     <v-toolbar
       color="#f3845a"
       app
-      absolute
+      fixed
       clipped-right>
       <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
 
