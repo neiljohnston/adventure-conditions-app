@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import VuexPersistence from 'vuex-persist';
+import VuexPersist from 'vuex-persist';
 
 import {
   navigationDefinitions,
@@ -8,12 +8,13 @@ import {
 
 Vue.use(Vuex);
 
-const vuexLocalStorage = new VuexPersistence({
+const vuexLocalStorage = new VuexPersist({
   key: 'vuex', // The key to store the state on in the storage provider.
   storage: window.localStorage, // or window.sessionStorage or localForage
   // Function that passes the state and returns the state with only the objects you want to store.
-  reducer: (state) => ({ navigation: state.navigation }),
-  // Function that passes a mutation and lets you decide if it should update the state in localStorage.
+  reducer: state => ({ navigation: state.navigation, mapState: state.mapState }),
+  // Function that passes a mutation and lets you decide if it should
+  // update the state in localStorage.
   // filter: mutation => (true)
 });
 
@@ -27,9 +28,12 @@ export default new Vuex.Store({
     siteId: 'adventureconditions', // process.env.siteId,
     description: 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires', // process.env.description,
     keywords: 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health', // process.env.keywords,
-    center: [-14173186.261234362, 7196206.431941464],
-    zoom: 5,
 
+    mapViewState: {
+      // TODO: Initialize Map Center from DB
+      center: [-14173186.261234362, 7196206.431941464],
+      zoom: 5,
+    },
     navigation: navigationDefinitions,
 
     // bottom sheet data
@@ -60,6 +64,12 @@ export default new Vuex.Store({
     SET_SHEET_VISIBLE(state, visible) {
       state.isSheetVisible = visible;
     },
+    SET_MAP_VIEW_STATE_CENTER(state, center) {
+      state.mapViewState.center = center;
+    },
+    SET_MAP_VIEW_STATE_ZOOM(state, zoom) {
+      state.mapViewState.zoom = zoom;
+    },
   },
 
   actions: {
@@ -75,6 +85,12 @@ export default new Vuex.Store({
     },
     setSheetVisible: ({ commit }, visible) => {
       commit('SET_SHEET_VISIBLE', visible);
+    },
+    setMapViewStateCenter: ({ commit }, center) => {
+      commit('SET_MAP_VIEW_STATE_CENTER', center);
+    },
+    setMapViewStateZoom: ({ commit }, zoom) => {
+      commit('SET_MAP_VIEW_STATE_ZOOM', zoom);
     },
   },
 });

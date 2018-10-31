@@ -84,6 +84,7 @@ export default {
   computed: {
     ...mapState([
       'title',
+      'mapViewState',
     ]),
     ...mapGetters([
       'getNavigationControlById',
