@@ -20,7 +20,9 @@
       ></v-toolbar-side-icon>
     </v-toolbar>
     <v-content>
+      <v-container fluid fill-height pa-0>
       <map-view></map-view>
+      </v-container>
     </v-content>
     <bottom-sheet-view></bottom-sheet-view>
   </v-app>
