@@ -1,12 +1,4 @@
 <template>
-  <!-- <v-text-field
-    solo-inverted
-    flat
-    hide-details
-    label="Place"
-    prepend-inner-icon="search">
-  </v-text-field> -->
-
   <v-autocomplete
     v-model="select"
     :items="items"
@@ -46,6 +38,7 @@ export default {
       previousValue: '',
       geocoderAPI: 'https://plume-api.now.sh/proxy/https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?' +
                    'f=json&' +
+                   'maxSuggestions=10&' +
                    'searchExtent={"xmin": -19580583.886643037,"ymin": 2723407.405924198,"xmax": -5824364.780216439,"ymax": 12761729.456559826,"spatialReference": {"wkid": 3857}}&' +
                    '&category=Address,Populated%20Place,Land%20Features,Parks%20and%20Outdoors&',
       //  'searchExtent={"xmin": -15781582.608539863,"ymin": 6077137.871205063,"xmax": -12342527.831933213,"ymax": 8586718.383863969,"spatialReference": {"wkid": 3857}}&', // BC      
@@ -80,8 +73,9 @@ export default {
   },
 
   watch: {
-    model() {
-      console.log(this.model);
+    select() {
+      if (!this.select) return;
+      this.selectLocation(this.select.magicKey);
     },
     search(val) {
       if (!val) {
@@ -117,17 +111,25 @@ export default {
         .then((res) => {
           // this.suggestions = [];
           const { suggestions } = res.data;
-          console.log('suggestions', suggestions);
           this.suggestions = suggestions;
         })
         .catch((err) => {
-          console.log(err);
+          this.suggestions = [];
         })
         .finally(() => {
           this.isLoading = false;
-          clearTimeout(this.timer);
+          // clearTimeout(this.timer);
         });
-      // }, 500);
+    },
+
+    selectLocation(magicKey) {
+      axios.get(this.locationDetailsAPI + magicKey)
+        .then((response) => {
+          this.$bus.$emit('fly-to', response.data.candidates[0].location, response.data.candidates[0].extent);
+        })
+        .catch((e) => {
+          this.errors.push(e);
+        });
     },
   },
 };

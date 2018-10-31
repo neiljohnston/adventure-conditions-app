@@ -95,11 +95,13 @@ export default {
   created() {
     this.$bus.$on('map-resize', this.mapResizeHandler);
     this.$bus.$on('layer-visibility', this.layerVisibilityHandler);
+    this.$bus.$on('fly-to', this.flyToHandler);
   },
 
   beforeDestroy() {
     this.$bus.$off('map-resize');
     this.$bus.$off('layer-visibility');
+    this.$bus.$off('fly-to');
   },
 
   mounted() {
@@ -227,6 +229,19 @@ export default {
     layerVisibilityHandler(id, active) {
       const layer = this.getLayerById(this.layers, id);
       if (layer) this.setLayerVisibility(layer, active);
+    },
+
+    flyToHandler(location, extent) {
+      const newMapCenter = [location.x, location.y];
+      this.animateMapCenter(newMapCenter, 10);
+    },
+
+    animateMapCenter(newMapCenter, minZoom) {
+      mapView.animate({
+        center: newMapCenter,
+        duration: 500,
+        zoom: (mapView.getZoom() < minZoom) ? minZoom : mapView.getZoom(),
+      });
     },
 
     initializeLayers(layers) {
