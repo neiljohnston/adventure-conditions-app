@@ -11,10 +11,11 @@
       app
       absolute
       clipped-right>
-      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
 
+      <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span>
+      <!-- <v-spacer></v-spacer> -->
       <place-search-view></place-search-view>
-      <v-spacer></v-spacer>
+
       <v-toolbar-side-icon
         @click.native="toggleDrawer"
       ></v-toolbar-side-icon>
