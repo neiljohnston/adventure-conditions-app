@@ -1,84 +1,85 @@
 <template>
-  <v-dialog
-    id="placeSearchDialog"
-    v-model="isDialogOpen"
-    fullscreen
-    transition="slide-y-transition">
-    <v-btn
-      id="place-search-activator"
-      flat
-      solo
-      slot="activator">
-      <v-icon>search</v-icon>
-    </v-btn>
-    <v-card>
-      <v-toolbar
-        dark
-        fixed
-        color="#f3845a">
+  <v-layout align-center justify-end>
+    <v-dialog
+      id="placeSearchDialog"
+      v-model="isDialogOpen"
+      light
+      fullscreen
+      hide-overlay
+      scrollable
+      transition="slide-y-transition">
+      <v-btn
+        id="place-search-activator"
+        slot="activator"
+        flat
+        solo>
+        <v-icon>search</v-icon>
+      </v-btn>
+      <v-card>
+        <v-toolbar
+          dark
+          fixed
+          color="#f3845a">
 
-        <v-text-field
-          v-if="isDialogOpen"
-          ref="placeSearchTextField"
-          :loading="isLoading"
-          v-model="search"
-          prepend-inner-icon="search"
-          placeholder="Search for Places..."
-          label="Solo"
-          solo-inverted
-          clearable
-          clear-icon="backspace"
-          autofocus
-          color="#f3845a"
-        ></v-text-field>
+          <v-spacer></v-spacer>
+          <v-text-field
+            v-if="isDialogOpen"
+            ref="placeSearchTextField"
+            :loading="isLoading"
+            v-model="search"
+            prepend-inner-icon="search"
+            placeholder="Search for Places..."
+            label="Solo"
+            solo-inverted
+            clearable
+            clear-icon="backspace"
+            autofocus
+            color="#f3845a"
+          ></v-text-field>
+          <v-btn
+            icon
+            @click.native="closeDialog">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-list
+          id="placeSearchInstructions"
+          two-line
+          subheader>
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>Place Search</v-list-tile-title>
+              <v-list-tile-sub-title
+                v-if="items.length">
+                Select a result to navigate to.
+              </v-list-tile-sub-title>
+              <v-list-tile-sub-title
+                v-else>
+                Enter a place name above.
+              </v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-divider></v-divider>
 
-        <v-spacer></v-spacer>
-        <v-btn
-          icon
-          @click.native="isDialogOpen = false">
-          <v-icon>close</v-icon>
-        </v-btn>
-      </v-toolbar>
-      <v-list
-        two-line
-        subheader>
-        <v-list-tile>
-          <v-list-tile-content>
-            <v-list-tile-title>Place Search</v-list-tile-title>
-            <v-list-tile-sub-title
-              v-if="items.length">
-              Select a result to navigate to.
-            </v-list-tile-sub-title>
-            <v-list-tile-sub-title
-              v-else>
-              Enter a place name above.
-            </v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-divider></v-divider>
-
-      </v-list>
-      <v-list>
-        <v-list-tile
-          v-for="(item) in items"
-          :key="item.magicKey"
-          ripple
-          @click="selectLocation(item.magicKey)"
-        >
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{ item.Description }}
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-card>
-  </v-dialog>
+        </v-list>
+        <v-list>
+          <v-list-tile
+            v-for="(item) in items"
+            :key="item.magicKey"
+            ripple
+            @click="selectLocation(item.magicKey)"
+          >
+            <v-list-tile-content>
+              <v-list-tile-title v-text="item.Description"></v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-card>
+    </v-dialog>
+    </v-layout>
 </template>
 <script>
 import axios from 'axios';
-
-let cancel = null;
 
 export default {
   name: 'PlaceSearchView',
@@ -173,11 +174,15 @@ export default {
           // this.errors.push(err);
         })
         .finally(() => {
-          this.isDialogOpen = false;
-          this.search = null;
-          this.suggestions = [];
-          this.isLoading = false;
+          this.closeDialog();
         });
+    },
+
+    closeDialog() {
+      this.isDialogOpen = false;
+      this.search = null;
+      this.suggestions = [];
+      this.isLoading = false;
     },
   },
 };
@@ -185,8 +190,13 @@ export default {
 </script>
 
 <style lang="scss">
+  .v-toolbar__content {
+    // height: 56px !important;
+  }
+
   .v-dialog {
     // max-height: 250px;
+    background: #fff;
   }
   button#place-search-activator {
       margin: 0px;
@@ -200,11 +210,11 @@ export default {
       margin: 0;
   }
 
-  .v-dialog--fullscreen > .v-card {
-    margin: 56px 0 0 0 !important;
-  }
-
   .v-dialog--fullscreen .v-input__slot{
     margin: 0;
+  }
+
+  .v-dialog--fullscreen > .v-card {
+    margin: 54px 0 0 0 !important;
   }
 </style>
