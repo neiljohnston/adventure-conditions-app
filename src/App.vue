@@ -12,8 +12,8 @@
       absolute
       clipped-right>
 
-      <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span>
-      <!-- <v-spacer></v-spacer> -->
+      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
+      <v-spacer></v-spacer>
       <place-search-view></place-search-view>
 
       <v-toolbar-side-icon

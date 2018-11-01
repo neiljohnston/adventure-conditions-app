@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       search: null,
-      isDialogOpen: true,
+      isDialogOpen: false,
 
       descriptionLimit: 60,
       suggestions: [],
@@ -127,16 +127,14 @@ export default {
         this.suggestions = [];
         return;
       }
-      // debounce search
-      // this.timer = setTimeout(() => {
       this.searchForSuggestions(val);
-      // }, 500);
     },
   },
 
   methods: {
     searchForSuggestions(val) {
       // Items have already been requested
+      // debounce using isLoading
       if (this.isLoading) return;
 
       // set loading to true
