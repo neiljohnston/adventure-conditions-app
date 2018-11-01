@@ -10,18 +10,23 @@
       color="#f3845a"
       app
       fixed
-      clipped-right>
-      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
-
-      <place-search-view></place-search-view>
-      <v-spacer></v-spacer>
+      clipped-right
+      justify-space-between
+      class="toolbar">
       <v-toolbar-side-icon
+        class="toolbar-side-icon"
         @click.native="toggleDrawer"
       ></v-toolbar-side-icon>
+      <place-search-view></place-search-view>
+      <span class="toolbar-title title ml-3 mr-5 font-weight-light">BCFireMap.com</span>
+
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height pa-0>
-      <map-view></map-view>
+      <v-container
+        fluid
+        fill-height
+        pa-0>
+        <map-view></map-view>
       </v-container>
     </v-content>
     <bottom-sheet-view></bottom-sheet-view>

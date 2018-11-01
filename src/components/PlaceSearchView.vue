@@ -4,6 +4,7 @@
     :items="items"
     :loading="isLoading"
     :search-input.sync="search"
+    class="toolbar-autocomplete"
     editable
     color="#cccccc"
     dark
@@ -13,12 +14,13 @@
     hide-selected
     item-text="Description"
     item-value="magicKey"
-    placeholder="Start typing to Search"
-    prepend-icon="search"
+    placeholder="Search Places"
     return-object
     clearable
     clearable-icon="close-circle"
-    append-icon="">
+    prepend-inner-icon="search"
+    append-icon=""
+    justify-end>
   </v-autocomplete>
 </template>
 <script>
@@ -97,6 +99,7 @@ export default {
   },
 
   methods: {
+
     searchForSuggestions(val) {
       // Items have already been requested
       if (this.isLoading) return;
@@ -133,5 +136,5 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss">
 </style>
