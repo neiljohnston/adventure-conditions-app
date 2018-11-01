@@ -26,6 +26,8 @@
 <script>
 import axios from 'axios';
 
+let cancel = null;
+
 export default {
   name: 'PlaceSearchView',
 
@@ -82,8 +84,9 @@ export default {
 
   watch: {
     select() {
-      if (!this.select) return;
-      this.selectLocation(this.select.magicKey);
+      cancel();
+      this.isLoading = false;
+      if (this.select) this.selectLocation(this.select.magicKey);
     },
     search(val) {
       if (!val) {
@@ -110,13 +113,20 @@ export default {
   methods: {
 
     searchForSuggestions(val) {
+      const CancelToken = axios.CancelToken;
       // Items have already been requested
       if (this.isLoading) return;
 
       // set loading to true
       this.isLoading = true;
 
-      axios.get(`${this.geocoderAPI}text=${encodeURI(val)}`)
+      axios.get(`${this.geocoderAPI}text=${encodeURI(val)}`,
+        {
+          cancelToken: new CancelToken(function executor(c) {
+            // An executor function receives a cancel function as a parameter
+            cancel = c;
+          }),
+        })
         .then((res) => {
           // this.suggestions = [];
           const { suggestions } = res.data;
@@ -124,6 +134,7 @@ export default {
         })
         .catch((err) => {
           this.suggestions = [];
+          console.log(err);
         })
         .finally(() => {
           this.isLoading = false;

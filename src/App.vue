@@ -18,7 +18,7 @@
         @click.native="toggleDrawer"
       ></v-toolbar-side-icon>
       <place-search-view></place-search-view>
-      <span class="rg-toolbar-title title ml-3 mr-5 font-weight-light">AdventureConditions.com</span>
+      <span class="rg-toolbar-title subheading ml-3 mr-3 font-weight-light">AdventureConditions.com</span>
 
     </v-toolbar>
     <v-content>
