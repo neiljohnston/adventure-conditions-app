@@ -7,7 +7,7 @@
       fullscreen
       hide-overlay
       scrollable
-      transition="slide-y-transition">
+      transition="slide-x-reverse-transition">
       <v-btn
         id="place-search-activator"
         slot="activator"
