@@ -4,14 +4,14 @@
     :items="items"
     :loading="isLoading"
     :search-input.sync="search"
-    class="toolbar-autocomplete"
+    :menu-props="menuOptions"
+    class="rg-toolbar-autocomplete"
     editable
     color="#cccccc"
     dark
     solo-inverted
     hide-details
     hide-no-data
-    hide-selected
     item-text="Description"
     item-value="magicKey"
     placeholder="Search Places"
@@ -38,6 +38,15 @@ export default {
       select: null,
       search: null,
       previousValue: '',
+      menuOptions: {
+        closeOnClick: true,
+        closeOnContentClick: true,
+        openOnClick: false,
+        maxHeight: 250,
+        offsetY: true,
+        offsetOverflow: true,
+        transition: false,
+      },
       geocoderAPI: 'https://plume-api.now.sh/proxy/https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?' +
                    'f=json&' +
                    'maxSuggestions=10&' +
@@ -125,6 +134,7 @@ export default {
     selectLocation(magicKey) {
       axios.get(this.locationDetailsAPI + magicKey)
         .then((response) => {
+          // document.getElementById('map').dispatchEvent( new Event( 'click' ) );
           this.$bus.$emit('fly-to', response.data.candidates[0].location, response.data.candidates[0].extent);
         })
         .catch((e) => {

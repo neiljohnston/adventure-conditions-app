@@ -12,13 +12,13 @@
       fixed
       clipped-right
       justify-space-between
-      class="toolbar">
+      class="em-toolbar toolbar">
       <v-toolbar-side-icon
         class="toolbar-side-icon"
         @click.native="toggleDrawer"
       ></v-toolbar-side-icon>
       <place-search-view></place-search-view>
-      <span class="toolbar-title title ml-3 mr-5 font-weight-light">BCFireMap.com</span>
+      <span class="rg-toolbar-title title ml-3 mr-5 font-weight-light">AdventureConditions.com</span>
 
     </v-toolbar>
     <v-content>
