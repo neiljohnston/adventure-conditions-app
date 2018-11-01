@@ -11,16 +11,18 @@
       app
       absolute
       clipped-right>
-      <span class="rg-toolbar-title subheading ml-3 mr-3 font-weight-light">AdventureConditions</span>
-
-      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
+      <span v-html="siteMeta.logo"></span>
+      <span
+        class="rg-toolbar-title subheading ml-3 mr-3 font-weight-light">{{ siteMeta.name }}</span>
+      <span
+        class="hidden-sm-and-down caption font-weight-light">{{ siteMeta.tagline }}</span>
       <v-spacer></v-spacer>
       <place-search-view></place-search-view>
 
       <v-toolbar-side-icon
         class="toolbar-side-icon"
-        @click.native="toggleDrawer"
-      ></v-toolbar-side-icon>
+        @click.native="toggleDrawer">
+      </v-toolbar-side-icon>
 
     </v-toolbar>
     <v-content>
@@ -50,15 +52,14 @@ export default {
 
   data() {
     return {
-      title: 'AdventureConditions.com',
       isDrawerOpen: false,
     };
   },
 
   computed: {
     ...mapState([
+      'siteMeta',
     ]),
-    // Other properties
   },
 
   mounted() {
