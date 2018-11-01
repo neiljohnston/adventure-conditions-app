@@ -1,78 +1,79 @@
 <template>
-    <v-dialog 
+  <v-dialog
     id="placeSearchDialog"
-    v-model="isDialogOpen" 
-    fullscreen 
-    hide-overlay
-    transition="dialog-bottom-transition">
-      <v-btn
-        id="place-search-activator"
-        flat
-        solo
-        slot="activator">
-        <v-icon>search</v-icon>
-      </v-btn>
-      <v-card>
-        <v-toolbar
-          dark
-          fixed
+    v-model="isDialogOpen"
+    fullscreen
+    transition="slide-y-transition">
+    <v-btn
+      id="place-search-activator"
+      flat
+      solo
+      slot="activator">
+      <v-icon>search</v-icon>
+    </v-btn>
+    <v-card>
+      <v-toolbar
+        dark
+        fixed
+        color="#f3845a">
+
+        <v-text-field
+          v-if="isDialogOpen"
+          ref="placeSearchTextField"
+          :loading="isLoading"
+          v-model="search"
+          prepend-inner-icon="search"
+          placeholder="Search for Places..."
+          label="Solo"
+          solo-inverted
+          clearable
+          clear-icon="backspace"
+          autofocus
           color="#f3845a"
-          >
-          
-          <v-text-field
-            v-if="isDialogOpen"
-            v-model="search"
-            ref="placeSearchTextField"
-            prepend-inner-icon="search"
-            placeholder="Search for Places..."
-            label="Solo"
-            solo-inverted
-            clearable
-            clear-icon="backspace"
-            autofocus
-            color="#f3845a"
-            :loading="isLoading"
-          ></v-text-field>
+        ></v-text-field>
 
-          <v-spacer></v-spacer>
-          <v-btn icon dark @click.native="isDialogOpen = false">
-            <v-icon>close</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <v-list 
-          two-line
-          subheader>
-          <v-list-tile>
-            <v-list-tile-content>
-              <v-list-tile-title>Place Search</v-list-tile-title>
-              <v-list-tile-sub-title
-                v-if="items.length">
-                  Select a result to navigate to.
-                </v-list-tile-sub-title>
-              <v-list-tile-sub-title
-                v-else>
-                  Enter a place name above.
-                </v-list-tile-sub-title>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-divider></v-divider>
+        <v-spacer></v-spacer>
+        <v-btn
+          icon
+          @click.native="isDialogOpen = false">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </v-toolbar>
+      <v-list
+        two-line
+        subheader>
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>Place Search</v-list-tile-title>
+            <v-list-tile-sub-title
+              v-if="items.length">
+              Select a result to navigate to.
+            </v-list-tile-sub-title>
+            <v-list-tile-sub-title
+              v-else>
+              Enter a place name above.
+            </v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider></v-divider>
 
-        </v-list>
-        <v-list>
-          <v-list-tile
-            v-for="(item) in items"
-            :key="item.magicKey"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title
-              @click="selectLocation(item.magicKey)">
-              {{item.Description}}
+      </v-list>
+      <v-list>
+        <v-list-tile
+          v-for="(item) in items"
+          :key="item.magicKey"
+          ripple
+          @click="selectLocation(item.magicKey)"
+        >
+          <v-list-tile-content>
+            <v-list-tile-title>
+              {{ item.Description }}
             </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card>
-    </v-dialog>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-card>
+  </v-dialog>
 </template>
 <script>
 import axios from 'axios';
@@ -86,6 +87,7 @@ export default {
     return {
       search: null,
       isDialogOpen: false,
+      errors: [],
 
       descriptionLimit: 60,
       suggestions: [],
@@ -116,7 +118,6 @@ export default {
 
   watch: {
     search(val) {
-      console.log(val);
       if (!val) {
         this.suggestions = [];
         return;
@@ -138,7 +139,6 @@ export default {
   methods: {
 
     searchForSuggestions(val) {
-      const CancelToken = axios.CancelToken;
       // Items have already been requested
       // debounce using isLoading
       if (this.isLoading) return;
@@ -146,13 +146,7 @@ export default {
       // set loading to true
       this.isLoading = true;
 
-      axios.get(`${this.geocoderAPI}text=${encodeURI(val)}`,
-        {
-          cancelToken: new CancelToken(function executor(c) {
-            // An executor function receives a cancel function as a parameter
-            cancel = c;
-          }),
-        })
+      axios.get(`${this.geocoderAPI}text=${encodeURI(val)}`)
         .then((res) => {
           const { suggestions } = res.data;
           this.suggestions = suggestions;
@@ -167,14 +161,16 @@ export default {
     },
 
     selectLocation(magicKey) {
+      console.log('selectLocation', magicKey);
       this.isLoading = true;
       axios.get(this.locationDetailsAPI + magicKey)
         .then((response) => {
           // document.getElementById('map').dispatchEvent( new Event( 'click' ) );
           this.$bus.$emit('fly-to', response.data.candidates[0].location, response.data.candidates[0].extent);
         })
-        .catch((e) => {
-          this.errors.push(e);
+        .catch((err) => {
+          console.log(err);
+          // this.errors.push(err);
         })
         .finally(() => {
           this.isDialogOpen = false;
@@ -189,6 +185,9 @@ export default {
 </script>
 
 <style lang="scss">
+  .v-dialog {
+    // max-height: 250px;
+  }
   button#place-search-activator {
       margin: 0px;
       padding: 0px !important;
