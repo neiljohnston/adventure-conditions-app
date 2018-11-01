@@ -162,7 +162,6 @@ export default {
     },
 
     selectLocation(magicKey) {
-      console.log('selectLocation', magicKey);
       this.isLoading = true;
       axios.get(this.locationDetailsAPI + magicKey)
         .then((response) => {
