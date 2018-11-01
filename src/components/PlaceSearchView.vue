@@ -1,28 +1,78 @@
 <template>
-  <!-- TODO: Replace with Input and Dropdown -->
-  <v-autocomplete
-    v-model="select"
-    :items="items"
-    :loading="isLoading"
-    :search-input.sync="search"
-    :menu-props="menuOptions"
-    class="rg-toolbar-autocomplete"
-    editable
-    color="#cccccc"
-    dark
-    solo-inverted
-    hide-details
-    hide-no-data
-    item-text="Description"
-    item-value="magicKey"
-    placeholder="Search Places"
-    return-object
-    clearable
-    clearable-icon="close-circle"
-    prepend-inner-icon="search"
-    append-icon=""
-    justify-end>
-  </v-autocomplete>
+    <v-dialog 
+    id="placeSearchDialog"
+    v-model="isDialogOpen" 
+    fullscreen 
+    hide-overlay
+    transition="dialog-bottom-transition">
+      <v-btn
+        id="place-search-activator"
+        flat
+        solo
+        slot="activator">
+        <v-icon>search</v-icon>
+      </v-btn>
+      <v-card>
+        <v-toolbar
+          dark
+          fixed
+          color="#f3845a"
+          >
+          
+          <v-text-field
+            v-if="isDialogOpen"
+            v-model="search"
+            ref="placeSearchTextField"
+            prepend-inner-icon="search"
+            placeholder="Search for Places..."
+            label="Solo"
+            solo-inverted
+            clearable
+            clear-icon="backspace"
+            autofocus
+            color="#f3845a"
+            :loading="isLoading"
+          ></v-text-field>
+
+          <v-spacer></v-spacer>
+          <v-btn icon dark @click.native="isDialogOpen = false">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-list 
+          two-line
+          subheader>
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>Place Search</v-list-tile-title>
+              <v-list-tile-sub-title
+                v-if="items.length">
+                  Select a result to navigate to.
+                </v-list-tile-sub-title>
+              <v-list-tile-sub-title
+                v-else>
+                  Enter a place name above.
+                </v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-divider></v-divider>
+
+        </v-list>
+        <v-list>
+          <v-list-tile
+            v-for="(item) in items"
+            :key="item.magicKey"
+          >
+            <v-list-tile-content>
+              <v-list-tile-title
+              @click="selectLocation(item.magicKey)">
+              {{item.Description}}
+            </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-card>
+    </v-dialog>
 </template>
 <script>
 import axios from 'axios';
@@ -34,22 +84,12 @@ export default {
 
   data() {
     return {
-      timer: 0,
+      search: null,
+      isDialogOpen: false,
+
       descriptionLimit: 60,
       suggestions: [],
       isLoading: false,
-      select: null,
-      search: null,
-      previousValue: '',
-      menuOptions: {
-        closeOnClick: true,
-        closeOnContentClick: true,
-        openOnClick: false,
-        maxHeight: 250,
-        offsetY: true,
-        offsetOverflow: true,
-        transition: false,
-      },
       geocoderAPI: 'https://plume-api.now.sh/proxy/https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?' +
                    'f=json&' +
                    'maxSuggestions=10&' +
@@ -64,15 +104,6 @@ export default {
   },
 
   computed: {
-    fields() {
-      if (!this.model) return [];
-      return Object.keys(this.model).map((key) => {
-        return {
-          key: key,
-          value: this.model[key] || 'n/a',
-        };
-      });
-    },
     items() {
       return this.suggestions.map((entry) => {
         const Description = entry.text.length > this.descriptionLimit
@@ -84,12 +115,8 @@ export default {
   },
 
   watch: {
-    select() {
-      cancel();
-      this.isLoading = false;
-      if (this.select) this.selectLocation(this.select.magicKey);
-    },
     search(val) {
+      console.log(val);
       if (!val) {
         this.suggestions = [];
         return;
@@ -104,10 +131,7 @@ export default {
         this.suggestions = [];
         return;
       }
-      // debounce search
-      // this.timer = setTimeout(() => {
       this.searchForSuggestions(val);
-      // }, 500);
     },
   },
 
@@ -116,6 +140,7 @@ export default {
     searchForSuggestions(val) {
       const CancelToken = axios.CancelToken;
       // Items have already been requested
+      // debounce using isLoading
       if (this.isLoading) return;
 
       // set loading to true
@@ -129,7 +154,6 @@ export default {
           }),
         })
         .then((res) => {
-          // this.suggestions = [];
           const { suggestions } = res.data;
           this.suggestions = suggestions;
         })
@@ -139,11 +163,11 @@ export default {
         })
         .finally(() => {
           this.isLoading = false;
-          // clearTimeout(this.timer);
         });
     },
 
     selectLocation(magicKey) {
+      this.isLoading = true;
       axios.get(this.locationDetailsAPI + magicKey)
         .then((response) => {
           // document.getElementById('map').dispatchEvent( new Event( 'click' ) );
@@ -151,6 +175,12 @@ export default {
         })
         .catch((e) => {
           this.errors.push(e);
+        })
+        .finally(() => {
+          this.isDialogOpen = false;
+          this.search = null;
+          this.suggestions = [];
+          this.isLoading = false;
         });
     },
   },
@@ -159,4 +189,23 @@ export default {
 </script>
 
 <style lang="scss">
+  button#place-search-activator {
+      margin: 0px;
+      padding: 0px !important;
+      flex: 0 0 46px;
+      min-width: 46px;
+  }
+
+  button#place-search-activator .v-btn__content {
+      flex: 0 0 46px;
+      margin: 0;
+  }
+
+  .v-dialog--fullscreen > .v-card {
+    margin: 56px 0 0 0 !important;
+  }
+
+  .v-dialog--fullscreen .v-input__slot{
+    margin: 0;
+  }
 </style>

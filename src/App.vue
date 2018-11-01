@@ -9,16 +9,18 @@
     <v-toolbar
       color="#f3845a"
       app
-      fixed
-      clipped-right
-      justify-space-between
-      class="em-toolbar toolbar">
+      absolute
+      clipped-right>
+      <span class="rg-toolbar-title subheading ml-3 mr-3 font-weight-light">AdventureConditions</span>
+
+      <!-- <span class="title ml-3 mr-5 font-weight-light">AdventureConditions</span> -->
+      <v-spacer></v-spacer>
+      <place-search-view></place-search-view>
+
       <v-toolbar-side-icon
         class="toolbar-side-icon"
         @click.native="toggleDrawer"
       ></v-toolbar-side-icon>
-      <place-search-view></place-search-view>
-      <span class="rg-toolbar-title subheading ml-3 mr-3 font-weight-light">AdventureConditions.com</span>
 
     </v-toolbar>
     <v-content>
