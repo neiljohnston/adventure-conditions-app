@@ -325,7 +325,7 @@ export default {
 
           const newLayer = new ImageLayer(this.getLayerOptions(layer));
 
-          // this.imageLoadEventing(layer);
+          this.imageLoadEventing(layer);
           this.addMapLayer(layer, newLayer);
         }
 
