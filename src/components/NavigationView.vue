@@ -22,7 +22,17 @@
         ripple
         @click="toggleControl(control)">
         <v-list-tile-action>
-          <span v-html="control.icon"></span>
+          <span
+            v-if="control.loadState === ''"
+            v-html="control.icon"></span>
+          <span
+            v-if="control.loadState === 'loading'">
+            <v-icon x-large>cached</v-icon>
+          </span>
+          <span
+            v-if="control.loadState === 'error'">
+            <v-icon x-large>error</v-icon>
+          </span>
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>{{ control.label }}</v-list-tile-title>
