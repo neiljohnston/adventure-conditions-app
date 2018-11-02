@@ -131,6 +131,7 @@ export default {
       'setMapViewStateCenter',
       'setMapViewStateZoom',
       'setNavigationLoadState',
+      'setNavigationActive',
     ]),
 
     featuresInformationDisplay(evt) {
@@ -360,6 +361,8 @@ export default {
           });
           newSource.on('tileloaderror', () => {
             this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
+            this.setLayerVisibility(layer, false);
+            this.setNavigationActive({ id: layer.id, active: false });
           });
 
           this.addMapLayer(layer, newLayer);
@@ -390,6 +393,8 @@ export default {
         console.log(layer.id, 'imageloaderror');
         // console.log('imageloaderror', layer.id);
         this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
+        this.setLayerVisibility(layer, false);
+        this.setNavigationActive({ id: layer.id, active: false });
       });
 
       layer.source.on('imageloadend', () => {
@@ -494,6 +499,7 @@ export default {
         .catch((e) => {
           this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
           this.setLayerVisibility(layer, false);
+          this.setNavigationActive({ id: layer.id, active: false });
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
         });
@@ -511,7 +517,6 @@ export default {
         layer.source.setLoader(this.geoJsonLoader(layer));
       }
     },
-
   },
 };
 </script>
