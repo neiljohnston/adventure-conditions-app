@@ -22,6 +22,7 @@ html {
       height: 80px;
       padding: 0 2px;
       flex-direction: column;
+      justify-content: center;
       font-weight: 300px;
     }
 
@@ -41,7 +42,8 @@ html {
 
     .v-list__tile__content {
       opacity: 1;
-      height: 40px;
+      height: 25px;
+      overflow: hidden;
     }
 
     .v-list__tile__sub-title {
