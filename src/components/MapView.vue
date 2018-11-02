@@ -130,6 +130,7 @@ export default {
       'pushToTilesArray',
       'setMapViewStateCenter',
       'setMapViewStateZoom',
+      'setNavigationLoadingState',
     ]),
 
     featuresInformationDisplay(evt) {
@@ -266,6 +267,7 @@ export default {
         if (control) this.$set(layer, 'visible', control.active);
         if (layer.visible) {
           this.$set(layer, 'loadState', 'loading');
+          this.setNavigationLoadingState({ id: layer.id, loadingState: 'loading' });
         }
 
         if (layer.type === 'geojson') {
@@ -367,15 +369,18 @@ export default {
     imageLoadEventing(layer) {
       layer.source.on('imageloadstart', () => {
         this.$set(layer, 'loadState', 'loading');
+        this.setNavigationLoadingState({ id: layer.id, loadingState: 'loading' });
       });
 
       layer.source.on('imageloaderror', () => {
         console.log('imageloaderror', layer.id);
         this.$set(layer, 'loadState', 'error');
+          this.setNavigationLoadingState({ id: layer.id, loadingState: 'error' });
       });
 
       layer.source.on('imageloadend', () => {
         this.$set(layer, 'loadState', 'loaing');
+          this.setNavigationLoadingState({ id: layer.id, loadingState: 'loading' });
       });
     },
 
@@ -468,6 +473,7 @@ export default {
       axios.get(layer.endpoint, { timeout: 45000 })
         .then((response) => {
           this.$set(layer, 'loadState', '');
+          this.setNavigationLoadingState({ id: layer.id, loadingState: '' });
           const projectionsConversion = (layer.dataProjection) ? { dataProjection: layer.dataProjection, featureProjection: 'EPSG:3857' } : {};
           layer.source.addFeatures(
             layer.source.getFormat().readFeatures(response.data, projectionsConversion),
@@ -475,6 +481,7 @@ export default {
         })
         .catch((e) => {
           this.$set(layer, 'loadState', 'error');
+          this.setNavigationLoadingState({ id: layer.id, loadingState: 'error' });
           this.setLayerVisibility(layer, false);
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
@@ -490,6 +497,7 @@ export default {
 
       if (layer.type === 'geojson' && layer.loadState === 'error' && layer.visible) {
         this.$set(layer, 'loadState', 'loading');
+        this.setNavigationLoadingState({ id: layer.id, loadingState: 'loading' });
         layer.source.setLoader(this.geoJsonLoader(layer));
       }
     },

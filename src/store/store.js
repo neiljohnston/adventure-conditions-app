@@ -67,6 +67,9 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    SET_NAVIGATION_LOADING_STATE: ({ state }, { control, loadingState }) => {
+      control.loadingState = loadingState;
+    },
     SET_NAVIGATION_ACTIVE: ({ state }, { control, active }) => {
       control.active = active;
     },
@@ -91,6 +94,10 @@ export default new Vuex.Store({
   },
 
   actions: {
+    setNavigationLoadingState: ({ getters, commit }, { id, loadingState }) => {
+      const control = getters.getNavigationControlById(id);
+      commit('SET_NAVIGATION_LOADING_STATE', { control: control, loadingState: loadingState });
+    },
     setNavigationActive: ({ getters, commit }, { id, active }) => {
       const control = getters.getNavigationControlById(id);
       commit('SET_NAVIGATION_ACTIVE', { control: control, active: active });
