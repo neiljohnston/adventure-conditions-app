@@ -55,7 +55,7 @@ export default new Vuex.Store({
 
     // bottom sheet data
     tilesArray: [],
-    isSheetVisible: false,
+    isDetailsViewVisible: false,
   },
   plugins: [vuexLocalStorage.plugin],
 
@@ -65,7 +65,7 @@ export default new Vuex.Store({
     },
 
     getTiles: state => state.tiles,
-    getIsSheetVisible: state => state.isSheetVisible,
+    getIsSheetVisible: state => state.isDetailsViewVisible,
   },
 
   mutations: {
@@ -82,7 +82,7 @@ export default new Vuex.Store({
       state.tilesArray.push(tile);
     },
     SET_SHEET_VISIBLE(state, visible) {
-      state.isSheetVisible = visible;
+      state.isDetailsViewVisible = visible;
     },
     SET_MAP_VIEW_STATE_CENTER(state, center) {
       state.uiState.mapViewState.center = center;

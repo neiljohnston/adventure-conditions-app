@@ -1,7 +1,7 @@
 <template>
   <div class="text-xs-center">
     <v-bottom-sheet
-      v-model="bottomSheetState"
+      v-model="detailsViewState"
       lazy>
       <v-card>
         <v-container
@@ -123,12 +123,12 @@ export default {
 
   computed: {
     ...mapState([
-      'tilesArray', 'isSheetVisible',
+      'tilesArray', 'isDetailsViewVisible',
     ]),
 
-    bottomSheetState: {
+    detailsViewState: {
       get() {
-        return this.isSheetVisible;
+        return this.isDetailsViewVisible;
       },
       set(value) {
         // set store
@@ -138,7 +138,7 @@ export default {
   },
 
   watch: {
-    isSheetVisible(visible) {
+    isDetailsViewVisible(visible) {
       if (visible) {
         this.$nextTick(() => {
           const container = document.getElementsByClassName('v-dialog v-bottom-sheet v-dialog--active')[0];
