@@ -107,13 +107,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .v-dialog.v-bottom-sheet{
   /* make scrollable */
   overflow-y: auto;
 }
 
 .v-dialog:not(.v-dialog--fullscreen) {
-    max-height: 90%;
+    max-height: 50%;
 }
 </style>
