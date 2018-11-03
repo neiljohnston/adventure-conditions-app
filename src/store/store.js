@@ -36,19 +36,19 @@ export default new Vuex.Store({
     siteId: process.env.SITE_ID,
     siteMeta: {
       logo: defaultLogoSVG,
-      url: process.env.SITE_URL,
-      name: process.env.SITE_NAME,
-      tagline: process.env.SITE_TAGLINE,
-      hasLegends: process.env.HAS_LEGENDS,
-      hasReader: process.env.HAS_READER,
-      description: process.env.DESCRIPTION,
-      keywords: process.env.KEYWORDS,
+      url: process.env.SITE_URL || 'AdventureConditions.com',
+      name: process.env.SITE_NAME || 'Adventure Conditions',
+      tagline: process.env.SITE_TAGLINE || 'Finding Safe and Healthy Stoke',
+      hasLegends: process.env.HAS_LEGENDS || true,
+      hasReader: process.env.HAS_READER || true,
+      description: process.env.DESCRIPTION || 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires',
+      keywords: process.env.KEYWORDS || 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health',
     },
     uiState: {
       mapViewState: {
         // TODO: Initialize Map Center from DB
-        center: process.env.MAP_CENTER.split(' '),
-        zoom: process.env.MAP_ZOOM,
+        center: process.env.MAP_CENTER.split(' ') || [-14173186.261234362, 7196206.431941464],
+        zoom: process.env.MAP_ZOOM || 5,
       },
       navigation: navigationDefinitions,
     },
