@@ -21,14 +21,16 @@
         value="true"
         ripple
         @click="toggleControl(control)">
-        <v-list-tile-action>
+        <v-list-tile-action class="loaderIcon">
           <span
-            v-if="control.loadState === ''"
-            v-html="control.icon"></span>
-          <span
-            v-if="control.loadState === 'loading'"
+            class="loaderOverlay"
+            v-show="control.loadState === 'loading'"
             v-html="loaderIcon">
           </span>
+          <span
+            class="loadedIcon"
+            v-if="control.loadState !== 'error'"
+            v-html="control.icon"></span>
           <span
             v-if="control.loadState === 'error'"
             v-html="loaderErrorIcon">
@@ -69,34 +71,17 @@ export default {
       loaderIcon: `
         <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
-            <path d="M37.752 19.876C37.752 10.003 29.748 2 19.876 2 10.003 2 2 10.003 2 19.876c0 9.872 8.003 17.876 17.876 17.876a17.876 17.876 0 0 0 17.876-17.876" fill="#AC997C" fill-rule="nonzero"/>
-            <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
-            <g transform="translate(4 16)" fill-rule="nonzero" fill="#FFFFFF">
-              <circle cx="3.661" cy="3.661" r="3.661">
-                <animate
-                  attributeName="opacity"
-                  dur="1s"
-                  values="0;1;0"
-                  repeatCount="indefinite"
-                  begin="0.1"/> 
-              </circle>
-              <circle cx="15.863" cy="3.661" r="3.661">
-                <animate
-                  attributeName="opacity"
-                  dur="1s"
-                  values="0;1;0"
-                  repeatCount="indefinite" 
-                  begin="0.2"/>
-              </circle>
-              <circle cx="28.065" cy="3.661" r="3.661">
-                <animate
-                  attributeName="opacity"
-                  dur="1s"
-                  values="0;1;0"
-                  repeatCount="indefinite" 
-                  begin="0.3"/>
-              </circle>
-            </g>
+            <path fill-opacity=".01" fill="#D8D8D8" d="M0 0h40v40H0z"/>
+            <path d="M36 20.035c0-8.835-6.941-16-15.5-16-8.559 0-15.5 7.165-15.5 16m2.628 0c0-7.304 5.729-13.287 12.872-13.287s12.872 5.983 12.872 13.287" fill="#CCCCCC" fill-rule="nonzero">
+              <animateTransform 
+                attributeName="transform" 
+                attributeType="XML" 
+                type="rotate"
+                dur="1s" 
+                from="0 20 20"
+                to="360 20 20" 
+                repeatCount="indefinite" />
+            </path>
           </g>
         </svg>`,
       loaderErrorIcon: `
@@ -162,5 +147,15 @@ export default {
 </script>
 
 <style>
-
+.loaderIcon{
+  position: relative;
+}
+.loaderOverlay{
+  position: absolute;
+  z-index: 2;
+}
+.loadedIcon{
+  position: absolute;
+  z-index: 1;
+}
 </style>

@@ -353,6 +353,7 @@ export default {
           newLayer.setPreload(Infinity);
 
           // tiles have special events, because OpenLayers
+          // TODO: Debounce these
           newSource.on('tileloadstart', () => {
             this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
           });
@@ -517,6 +518,7 @@ export default {
         layer.source.setLoader(this.geoJsonLoader(layer));
       }
     },
+
   },
 };
 </script>
