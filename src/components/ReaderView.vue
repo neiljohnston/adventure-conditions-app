@@ -106,7 +106,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .v-dialog.v-bottom-sheet{
   /* make scrollable */
   overflow-y: auto;
