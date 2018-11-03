@@ -11,6 +11,8 @@ const path = require('path'),
   entryFile = path.join(__dirname, 'src/main.js'),
   devServerPort = 8081
 
+const Dotenv = require('dotenv-webpack');
+
 let config = function (env) {
   let returner = {
     entry: entryFile,
@@ -65,7 +67,8 @@ let config = function (env) {
           collapseWhitespace: true,
           minifyCSS: true
         }
-      })
+      }),
+      new Dotenv()
     ]
   }
   
