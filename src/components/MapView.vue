@@ -64,13 +64,6 @@ export default {
 
   data() {
     return {
-      name: 'Adventure Conditions', // process.env.name,
-      tagline: 'Finding Safe and Healthy Stoke', // process.env.tagline,
-      hasLegends: true, // process.env.hasLegends
-      hasReader: false, // process.env.hasReader,
-      siteId: 'adventureconditions', // process.env.siteId,
-      description: 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires', // process.env.description,
-      keywords: 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health', // process.env.keywords,
       layers: [],
       labelBreakpoint: 612,
     };

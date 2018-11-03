@@ -59,6 +59,7 @@ export default {
   computed: {
     ...mapState([
       'siteMeta',
+      'uiState',
     ]),
   },
 
@@ -66,7 +67,8 @@ export default {
     this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
     console.log(process.env);
-    console.log(process.env.APP_NAME);
+    console.log(this.siteMeta);
+    console.log(this.uiState.mapViewState);
   },
 
   methods: {
