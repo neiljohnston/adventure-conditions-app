@@ -130,6 +130,8 @@ export default {
       'pushToTilesArray',
       'setMapViewStateCenter',
       'setMapViewStateZoom',
+      'setNavigationLoadState',
+      'setNavigationActive',
     ]),
 
     featuresInformationDisplay(evt) {
@@ -259,16 +261,18 @@ export default {
 
     initializeLayers(layers) {
       layers.forEach((layer, index) => {
+        this.setNavigationLoadState({ id: layer.id, loadState: '' });
         this.$set(layer, 'zIndex', (layers.length - index));
 
         // Set initial visibility here to match navigation
         const control = this.getNavigationControlById(layer.id);
         if (control) this.$set(layer, 'visible', control.active);
-        if (layer.visible) {
-          this.$set(layer, 'loadState', 'loading');
-        }
 
         if (layer.type === 'geojson') {
+          if (layer.visible) {
+            this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
+          }
+
           const newSource = new VectorSource({
             format: new GeoJSON(),
             loader: this.geoJsonLoader(layer),
@@ -287,6 +291,10 @@ export default {
         }
 
         if (layer.type === 'esrijson') {
+          if (layer.visible) {
+            this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
+          }
+
           const newSource = new VectorSource({
             format: new EsriJSON(),
             loader: this.geoJsonLoader(layer),
@@ -344,7 +352,20 @@ export default {
           const newLayer = new TileLayer(this.getLayerOptions(layer));
           newLayer.setPreload(Infinity);
 
-          this.imageLoadEventing(layer);
+          // tiles have special events, because OpenLayers
+          // TODO: Debounce these
+          newSource.on('tileloadstart', () => {
+            this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
+          });
+          newSource.on('tileloadend', () => {
+            this.setNavigationLoadState({ id: layer.id, loadState: '' });
+          });
+          newSource.on('tileloaderror', () => {
+            this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
+            this.setLayerVisibility(layer, false);
+            this.setNavigationActive({ id: layer.id, active: false });
+          });
+
           this.addMapLayer(layer, newLayer);
         }
       });
@@ -366,16 +387,19 @@ export default {
 
     imageLoadEventing(layer) {
       layer.source.on('imageloadstart', () => {
-        this.$set(layer, 'loadState', 'loading');
+        this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
       });
 
       layer.source.on('imageloaderror', () => {
-        console.log('imageloaderror', layer.id);
-        this.$set(layer, 'loadState', 'error');
+        console.log(layer.id, 'imageloaderror');
+        // console.log('imageloaderror', layer.id);
+        this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
+        this.setLayerVisibility(layer, false);
+        this.setNavigationActive({ id: layer.id, active: false });
       });
 
       layer.source.on('imageloadend', () => {
-        this.$set(layer, 'loadState', 'loaing');
+        this.setNavigationLoadState({ id: layer.id, loadState: '' });
       });
     },
 
@@ -467,15 +491,16 @@ export default {
     geoJsonLoader(layer) {
       axios.get(layer.endpoint, { timeout: 45000 })
         .then((response) => {
-          this.$set(layer, 'loadState', '');
+          this.setNavigationLoadState({ id: layer.id, loadState: '' });
           const projectionsConversion = (layer.dataProjection) ? { dataProjection: layer.dataProjection, featureProjection: 'EPSG:3857' } : {};
           layer.source.addFeatures(
             layer.source.getFormat().readFeatures(response.data, projectionsConversion),
           );
         })
         .catch((e) => {
-          this.$set(layer, 'loadState', 'error');
+          this.setNavigationLoadState({ id: layer.id, loadState: 'error' });
           this.setLayerVisibility(layer, false);
+          this.setNavigationActive({ id: layer.id, active: false });
           // eslint-disable-next-line no-console
           console.log('Load Error: ', e);
         });
@@ -489,7 +514,7 @@ export default {
       layer.layer.setVisible(visibility);
 
       if (layer.type === 'geojson' && layer.loadState === 'error' && layer.visible) {
-        this.$set(layer, 'loadState', 'loading');
+        this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
         layer.source.setLoader(this.geoJsonLoader(layer));
       }
     },
