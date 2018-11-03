@@ -69,6 +69,7 @@ export default new Vuex.Store({
 
     getTiles: state => state.tiles,
     getIsDetailsViewVisible: state => state.isDetailsViewVisible,
+    getIsReaderViewVisible: state => state.isReaderViewVisible,
   },
 
   mutations: {
@@ -86,6 +87,9 @@ export default new Vuex.Store({
     },
     SET_DETAIL_VIEW_VISIBLE(state, visible) {
       state.isDetailsViewVisible = visible;
+    },
+    SET_READER_VIEW_VISIBLE(state, visible) {
+      state.isReaderViewVisible = visible;
     },
     SET_MAP_VIEW_STATE_CENTER(state, center) {
       state.uiState.mapViewState.center = center;
@@ -115,6 +119,9 @@ export default new Vuex.Store({
     },
     setDetailViewVisible: ({ commit }, visible) => {
       commit('SET_DETAIL_VIEW_VISIBLE', visible);
+    },
+    setReaderViewVisible: ({ commit }, visible) => {
+      commit('SET_READER_VIEW_VISIBLE', visible);
     },
     setMapViewStateCenter: ({ commit }, center) => {
       commit('SET_MAP_VIEW_STATE_CENTER', center);

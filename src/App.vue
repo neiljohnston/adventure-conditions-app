@@ -34,6 +34,7 @@
       </v-container>
     </v-content>
     <details-view></details-view>
+    <reader-view></reader-view>
   </v-app>
 </template>
 <script>

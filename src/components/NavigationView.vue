@@ -11,8 +11,17 @@
     stateless
     scrollable
     class="grey lighten-4">
-
     <v-list>
+      <v-list-tile
+        ripple
+        @click="openReaderView()">
+        <v-list-tile-action>
+          <v-icon>library_books</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>Update Reader</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
       <v-list-tile
         v-for="(control, i) in navigation"
         v-if="control.navigation"
@@ -98,6 +107,8 @@ export default {
   computed: {
     ...mapState([
       'uiState',
+      'isReaderViewAvailable',
+      'isReaderViewVisible',
     ]),
     ...mapGetters([
       'getNavigationControlById',
@@ -115,6 +126,7 @@ export default {
   methods: {
     ...mapActions([
       'setNavigationActive',
+      'setReaderViewVisible',
     ]),
 
     linkto(pathname) {
@@ -140,6 +152,10 @@ export default {
 
     onResize() {
       this.$bus.$emit('map-resize');
+    },
+
+    openReaderView(){
+      this.setReaderViewVisible(true);
     },
   },
 
