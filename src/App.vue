@@ -33,21 +33,21 @@
         <map-view></map-view>
       </v-container>
     </v-content>
-    <bottom-sheet-view></bottom-sheet-view>
+    <details-view></details-view>
   </v-app>
 </template>
 <script>
 import { mapState } from 'vuex';
 
 import MapView from './components/MapView';
-import BottomSheetView from './components/BottomSheetView';
+import DetailsView from './components/DetailsView';
 import NavigationView from './components/NavigationView';
 import AboutView from './components/AboutView';
 import PlaceSearchView from './components/PlaceSearchView';
 
 export default {
   components: {
-    MapView, NavigationView, AboutView, BottomSheetView, PlaceSearchView,
+    MapView, NavigationView, AboutView, DetailsView, PlaceSearchView,
   },
 
   data() {

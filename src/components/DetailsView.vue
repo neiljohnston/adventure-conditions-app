@@ -111,7 +111,7 @@ import { mapState, mapActions } from 'vuex';
 import loaderImageURL from '../assets/images/loader.gif';
 
 export default {
-  name: 'BottomSheetView',
+  name: 'DetailsView',
 
   data() {
     return {
