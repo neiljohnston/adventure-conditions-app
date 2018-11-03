@@ -6,6 +6,7 @@
       <v-card>
         <v-toolbar
           dark
+          absolute
           color="#f3845a">
           <span
             class=" subheading ml-3 mr-3 font-weight-light">
@@ -71,12 +72,12 @@ export default {
 
   watch: {
     isReaderViewVisible(visible) {
-      // if (visible) {
-      //   this.$nextTick(() => {
-      //     const container = document.getElementsByClassName('v-dialog v-bottom-sheet v-dialog--active')[0];
-      //     container.scrollTop = 0;
-      //   });
-      // }
+      if (visible) {
+        this.$nextTick(() => {
+          const container = document.getElementsByClassName('v-dialog v-bottom-sheet v-dialog--active')[0];
+          container.scrollTop = 0;
+        });
+      }
     },
   },
 
