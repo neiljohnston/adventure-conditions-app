@@ -76,7 +76,7 @@ export default {
     ]),
     ...mapGetters([
       'getNavigationControlById',
-      'getIsSheetVisible',
+      'getIsDetailsViewVisible',
     ]),
     mapViewState() {
       return this.uiState.mapViewState;
@@ -119,7 +119,7 @@ export default {
     // import actions from store
     ...mapActions([
       'setTilesArray',
-      'setSheetVisible',
+      'setDetailViewVisible',
       'pushToTilesArray',
       'setMapViewStateCenter',
       'setMapViewStateZoom',
@@ -185,8 +185,8 @@ export default {
           };
 
           // better to push to the store so results stream in
-          if (!this.getIsSheetVisible) {
-            this.setSheetVisible(true);
+          if (!this.getIsDetailsViewVisible) {
+            this.setDetailViewVisible(true);
           }
           this.pushToTilesArray(tile);
         }

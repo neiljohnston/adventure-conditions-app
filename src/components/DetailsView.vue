@@ -132,7 +132,7 @@ export default {
       },
       set(value) {
         // set store
-        this.setSheetVisible(value);
+        this.setDetailViewVisible(value);
       },
     },
   },
@@ -150,7 +150,7 @@ export default {
 
   methods: {
     ...mapActions([
-      'setSheetVisible',
+      'setDetailViewVisible',
     ]),
 
     getImageUrl(tile) {
