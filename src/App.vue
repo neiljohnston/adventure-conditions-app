@@ -65,8 +65,7 @@ export default {
   mounted() {
     this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
-    console.log(process.env);
-    console.log(process.env.APP_NAME);
+    console.log(process.env.SITE_ID);
   },
 
   methods: {
