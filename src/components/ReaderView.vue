@@ -107,7 +107,7 @@ export default {
       'setReaderViewVisible',
     ]),
 
-    closeReaderView(){
+    closeReaderView() {
       this.readerViewState = false;
     },
   },
@@ -115,7 +115,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .v-dialog.v-bottom-sheet{
   /* make scrollable */
   overflow-y: auto;
@@ -123,5 +123,15 @@ export default {
 
 .v-dialog:not(.v-dialog--fullscreen) {
     max-height: 50%;
+}
+
+.layout.rg-reader-layout.row {
+    height: 100vh;
+    overflow-y: auto;
+    margin: 48px -8px;
+}
+
+div#rg-reader-container {
+    padding-top: 48px;
 }
 </style>
