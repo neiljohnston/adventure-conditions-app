@@ -44,7 +44,8 @@ let config = function (env) {
         {test: /\.svg$/, loader: 'url-loader'},
         {test: /\.scss$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader']},
         {test: /\.sass$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax']},
-        {test: /\.vue$/, loader: 'vue-loader'}
+        {test: /\.less$/, loader: [ 'vue-style-loader', 'css-loader', 'less-loader?indentedSyntax']},
+        {test: /\.vue$/, loader: 'vue-loader'},
       ]
     },
     

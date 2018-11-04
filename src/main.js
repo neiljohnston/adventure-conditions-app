@@ -6,7 +6,7 @@ import store from './store/store';
 
 
 // Import App Custom Styles
-import AppStyles from './assets/sass/app.scss';
+import AppStyles from './assets/less/app.less';
 
 import App from './App';
 

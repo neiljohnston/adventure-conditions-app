@@ -1,34 +1,42 @@
 <template>
   <div class="text-xs-center">
     <v-bottom-sheet
-      v-model="readerViewState"
-      >
-      <v-card>
-        <v-toolbar
-          dark
-          absolute
-          color="#f3845a">
-          <span
-            class=" subheading ml-3 mr-3 font-weight-light">
-              News and Updates Reader
-            </span>
-          <v-spacer></v-spacer>
-          <v-btn
-            icon
-            @click.native="closeReaderView">
-            <v-icon>close</v-icon>
-          </v-btn>
-        </v-toolbar>
+      id="rg-bottom-sheet"
+      v-model="readerViewState">
+      <v-card
+        if="rg-reader-card">
         <v-container
+          id="rg-reader-container"
           fluid
           style="min-height: 0;"
           grid-list-lg
         >
+          <v-toolbar
+            id="rg-reader-toolbar"
+            dark
+            absolute
+            color="#f3845a">
+            <span
+              class=" subheading ml-3 mr-3 font-weight-light">
+              News and Updates Reader
+            </span>
+            <v-spacer></v-spacer>
+            <v-btn
+              icon
+              @click.native="closeReaderView">
+              <v-icon>close</v-icon>
+            </v-btn>
+          </v-toolbar>
+
           <v-layout
+            class="rg-reader-layout"
             row>
             <v-flex xs12>
-              <div ref="readerBody" id="information-body">
-                <a class="twitter-timeline"
+              <div
+                id="reader-body"
+                ref="readerBody">
+                <a
+                  class="twitter-timeline"
                   href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
                 </a>
                 <div ref="placeHolder"></div>
@@ -107,7 +115,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .v-dialog.v-bottom-sheet{
   /* make scrollable */
   overflow-y: auto;
