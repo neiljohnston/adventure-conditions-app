@@ -119,7 +119,6 @@ div#reader-body {
     overflow-y: auto;
     margin-bottom: 64px;
     padding: 0 16px;
-
 }
 
 </style>
