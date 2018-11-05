@@ -33,7 +33,12 @@
         <map-view></map-view>
       </v-container>
     </v-content>
-    <details-view></details-view>
+    <details-view
+      id="rg-details">
+    </details-view>
+    <reader-view
+      id="rg-reader">
+    </reader-view>
   </v-app>
 </template>
 <script>
@@ -41,13 +46,14 @@ import { mapState } from 'vuex';
 
 import MapView from './components/MapView';
 import DetailsView from './components/DetailsView';
+import ReaderView from './components/ReaderView';
 import NavigationView from './components/NavigationView';
 import AboutView from './components/AboutView';
 import PlaceSearchView from './components/PlaceSearchView';
 
 export default {
   components: {
-    MapView, NavigationView, AboutView, DetailsView, PlaceSearchView,
+    MapView, NavigationView, AboutView, DetailsView, PlaceSearchView, ReaderView,
   },
 
   data() {
@@ -66,9 +72,6 @@ export default {
   mounted() {
     this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
-    console.log(process.env);
-    console.log(this.siteMeta);
-    console.log(this.uiState.mapViewState);
   },
 
   methods: {

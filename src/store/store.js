@@ -43,6 +43,7 @@ export default new Vuex.Store({
       hasReader: process.env.HAS_READER || true,
       description: process.env.DESCRIPTION || 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires',
       keywords: process.env.KEYWORDS || 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health',
+      readerListKey: '',
     },
     uiState: {
       mapViewState: {
@@ -55,7 +56,9 @@ export default new Vuex.Store({
 
     // bottom sheet data
     tilesArray: [],
-    isSheetVisible: false,
+    isDetailsViewVisible: false,
+    isReaderViewAvailable: false,
+    isReaderViewVisible: false,
   },
   plugins: [vuexLocalStorage.plugin],
 
@@ -65,7 +68,8 @@ export default new Vuex.Store({
     },
 
     getTiles: state => state.tiles,
-    getIsSheetVisible: state => state.isSheetVisible,
+    getIsDetailsViewVisible: state => state.isDetailsViewVisible,
+    getIsReaderViewVisible: state => state.isReaderViewVisible,
   },
 
   mutations: {
@@ -81,8 +85,11 @@ export default new Vuex.Store({
     PUSH_TO_TILES_ARRAY(state, tile) {
       state.tilesArray.push(tile);
     },
-    SET_SHEET_VISIBLE(state, visible) {
-      state.isSheetVisible = visible;
+    SET_DETAIL_VIEW_VISIBLE(state, visible) {
+      state.isDetailsViewVisible = visible;
+    },
+    SET_READER_VIEW_VISIBLE(state, visible) {
+      state.isReaderViewVisible = visible;
     },
     SET_MAP_VIEW_STATE_CENTER(state, center) {
       state.uiState.mapViewState.center = center;
@@ -110,8 +117,11 @@ export default new Vuex.Store({
     pushToTilesArray: ({ commit }, tile) => {
       commit('PUSH_TO_TILES_ARRAY', tile);
     },
-    setSheetVisible: ({ commit }, visible) => {
-      commit('SET_SHEET_VISIBLE', visible);
+    setDetailViewVisible: ({ commit }, visible) => {
+      commit('SET_DETAIL_VIEW_VISIBLE', visible);
+    },
+    setReaderViewVisible: ({ commit }, visible) => {
+      commit('SET_READER_VIEW_VISIBLE', visible);
     },
     setMapViewStateCenter: ({ commit }, center) => {
       commit('SET_MAP_VIEW_STATE_CENTER', center);

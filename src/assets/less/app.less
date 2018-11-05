@@ -84,37 +84,14 @@ html {
     }
 }
 
-// toolbar : hide title on mobile when open
-// .v-toolbar__content {
-//   flex-direction: row-reverse;
-// }
+
 
 .rg-toolbar-title {
   flex: 0 1 auto;
 }
 
-// using vueify container class for .mobile, .desktop
-// .v-toolbar__content {
-//   flex-direction: row-reverse;
-// }
-
-// .v-toolbar__content > *:first-child.v-btn--icon {
-//   margin-left: 6px;
-//   margin-right: 6px;
-// }
-
 @media only screen and (max-width : 600px) {
   .v-menu__content {
     max-height: 200px !important;
-  }
-  .rg-toolbar-autocomplete:not(.v-select--is-menu-active){
-    flex: 0 0 48px;
-    overflow: hidden;
-  }
-
-  .rg-toolbar-autocomplete.v-select--is-menu-active + .rg-toolbar-title {
-    flex: 0 0 0px;
-    overflow: hidden;
-    margin: 0px !important;
   }
 }
