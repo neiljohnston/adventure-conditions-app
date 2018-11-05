@@ -8,7 +8,7 @@
         <v-toolbar
             id="rg-reader-toolbar"
             dark
-            absolute
+            
             color="#f3845a">
             <span
               class=" subheading ml-3 mr-3 font-weight-light">
@@ -105,15 +105,19 @@ export default {
 
 <style lang="less">
 div#rg-reader-card {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+}
+
+nav#rg-reader-toolbar {
+    flex: 0 0 48px;
 }
 
 div#reader-body {
+    flex: 0 1 calc(100vh - 64px); ;
     overflow-y: auto;
-    height: 100%;
-    margin-top: 64px;
+    margin-bottom: 64px;
 }
+
 </style>
