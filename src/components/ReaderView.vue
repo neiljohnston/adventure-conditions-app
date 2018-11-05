@@ -67,7 +67,7 @@ export default {
     isReaderViewVisible(visible) {
       if (visible) {
         this.$nextTick(() => {
-          const container = document.getElementsByClassName('v-dialog v-bottom-sheet v-dialog--active')[0];
+          const container = document.getElementById("rg-reader-body");
           container.scrollTop = 0;
         });
       }
