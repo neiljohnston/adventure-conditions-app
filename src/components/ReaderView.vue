@@ -118,6 +118,8 @@ div#reader-body {
     flex: 0 1 calc(100vh - 64px); ;
     overflow-y: auto;
     margin-bottom: 64px;
+    padding: 0 16px;
+
 }
 
 </style>
