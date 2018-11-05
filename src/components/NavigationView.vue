@@ -13,9 +13,11 @@
     class="grey lighten-4">
     <v-list>
       <v-list-tile
+        v-if="siteMeta.hasReader"
         ripple
         @click="openReaderView()">
-        <v-list-tile-action class="loaderIcon">
+        <v-list-tile-action
+          class="loaderIcon">
           <span class="loadedIcon">
             <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill-opacity=".01" fill="#FFF" d="M0 0h40v40H0z"/><circle fill="#FFF" cx="20" cy="20" r="18"/><path d="M20 38c-9.941 0-18-8.059-18-18S10.059 2 20 2s18 8.059 18 18-8.059 18-18 18zm10.593-26.956c-2.284.13-6.822.601-9.624 2.316a.64.64 0 0 0-.303.549V29.07c0 .481.526.785.97.562 2.883-1.45 7.052-1.847 9.113-1.955.704-.037 1.25-.601 1.25-1.277V12.323c.001-.738-.639-1.323-1.406-1.28zM19.03 13.36c-2.8-1.715-7.34-2.186-9.623-2.316C8.64 11 8 11.585 8 12.323V26.4c0 .677.547 1.24 1.25 1.277 2.063.109 6.234.505 9.116 1.957.443.223.967-.081.967-.561V13.9c0-.22-.109-.422-.303-.541z" fill="#AC997C"/></g></svg>
           </span>
@@ -110,6 +112,7 @@ export default {
   computed: {
     ...mapState([
       'uiState',
+      'siteMeta',
       'isReaderViewAvailable',
       'isReaderViewVisible',
     ]),

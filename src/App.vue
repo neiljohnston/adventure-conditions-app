@@ -37,6 +37,7 @@
       id="rg-details">
     </details-view>
     <reader-view
+      v-if="siteMeta.hasReader"
       id="rg-reader">
     </reader-view>
   </v-app>
