@@ -6,29 +6,29 @@
       <v-card
         id="rg-reader-card">
         <v-toolbar
-            id="rg-reader-toolbar"
-            dark
-            color="#f3845a">
-            <span
-              class=" subheading ml-3 mr-3 font-weight-light">
-              News and Updates Reader
-            </span>
-            <v-spacer></v-spacer>
-            <v-btn
-              icon
-              @click.native="closeReaderView">
-              <v-icon>close</v-icon>
-            </v-btn>
-          </v-toolbar>
-          <div
-            id="rg-reader-body"
-            ref="readerBody">
-            <a
-              class="twitter-timeline"
-              href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
-            </a>
-            <div ref="placeHolder"></div>
-          </div>
+          id="rg-reader-toolbar"
+          dark
+          color="#f3845a">
+          <span
+            class=" subheading ml-3 mr-3 font-weight-light">
+            News and Updates Reader
+          </span>
+          <v-spacer></v-spacer>
+          <v-btn
+            icon
+            @click.native="closeReaderView">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <div
+          id="rg-reader-body"
+          ref="readerBody">
+          <a
+            class="twitter-timeline"
+            href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
+          </a>
+          <div ref="placeHolder"></div>
+        </div>
       </v-card>
 
     </v-bottom-sheet>
