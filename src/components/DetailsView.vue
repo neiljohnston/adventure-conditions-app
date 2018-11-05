@@ -1,9 +1,31 @@
 <template>
   <div class="text-xs-center">
     <v-bottom-sheet
+      id="rg-details-bottom-sheet"
       v-model="detailsViewState"
       lazy>
-      <v-card>
+      <v-card
+        id="rg-details-card">
+        <v-toolbar
+            id="rg-details-toolbar"
+            dark
+            color="#f3845a">
+            <span
+              class="subheading ml-3 mr-3 font-weight-light">
+              Map Feature Details
+            </span>
+            <v-spacer></v-spacer>
+            <v-btn
+              icon
+              @click.native="closeDetailsView">
+              <v-icon>close</v-icon>
+            </v-btn>
+          </v-toolbar>
+
+          <div
+            id="rg-details-body"
+            ref="detailsBody">
+
         <v-container
           fluid
           style="min-height: 0;"
@@ -100,6 +122,8 @@
             </v-flex>
           </v-layout>
         </v-container>
+
+        </div>
       </v-card>
 
     </v-bottom-sheet>
@@ -165,18 +189,37 @@ export default {
       console.log('Image Load Error');
       // tile.img = 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif';
     },
+
+    closeDetailsView(){
+      this.setDetailViewVisible(false);
+    }
   },
 
 };
 </script>
 
-<style scoped>
-.v-dialog.v-bottom-sheet{
-  /* make scrollable */
+<style >
+/* .v-dialog.v-bottom-sheet{
   overflow-y: auto;
 }
 
 .v-dialog:not(.v-dialog--fullscreen) {
     max-height: 50%;
+} */
+div#rg-details-card {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav#rg-details-toolbar {
+    flex: 0 0 48px;
+}
+
+div#rg-details-body {
+    flex: 0 1 calc(100vh - 64px); ;
+    overflow-y: auto;
+    margin-bottom: 64px;
+    padding: 0 16px;
 }
 </style>

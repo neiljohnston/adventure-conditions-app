@@ -8,7 +8,6 @@
         <v-toolbar
             id="rg-reader-toolbar"
             dark
-            
             color="#f3845a">
             <span
               class=" subheading ml-3 mr-3 font-weight-light">
@@ -21,17 +20,15 @@
               <v-icon>close</v-icon>
             </v-btn>
           </v-toolbar>
-          
-              <div
-                id="reader-body"
-                ref="readerBody">
-                
-                <a
-                  class="twitter-timeline"
-                  href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
-                </a>
-                <div ref="placeHolder"></div>
-              </div>
+          <div
+            id="rg-reader-body"
+            ref="readerBody">
+            <a
+              class="twitter-timeline"
+              href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
+            </a>
+            <div ref="placeHolder"></div>
+          </div>
       </v-card>
 
     </v-bottom-sheet>
@@ -114,7 +111,7 @@ nav#rg-reader-toolbar {
     flex: 0 0 48px;
 }
 
-div#reader-body {
+div#rg-reader-body {
     flex: 0 1 calc(100vh - 64px); ;
     overflow-y: auto;
     margin-bottom: 64px;
