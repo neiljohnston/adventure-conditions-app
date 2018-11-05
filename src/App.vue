@@ -33,8 +33,12 @@
         <map-view></map-view>
       </v-container>
     </v-content>
-    <details-view></details-view>
-    <reader-view></reader-view>
+    <details-view
+      id="rg-details">
+    </details-view>
+    <reader-view
+      id="rg-reader">
+    </reader-view>
   </v-app>
 </template>
 <script>

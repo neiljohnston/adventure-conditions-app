@@ -1,17 +1,11 @@
 <template>
-  <div class="text-xs-center">
+  <div id="rg-reader-view-holder" class="text-xs-center">
     <v-bottom-sheet
       id="rg-bottom-sheet"
       v-model="readerViewState">
       <v-card
-        if="rg-reader-card">
-        <v-container
-          id="rg-reader-container"
-          fluid
-          style="min-height: 0;"
-          grid-list-lg
-        >
-          <v-toolbar
+        id="rg-reader-card">
+        <v-toolbar
             id="rg-reader-toolbar"
             dark
             absolute
@@ -27,23 +21,17 @@
               <v-icon>close</v-icon>
             </v-btn>
           </v-toolbar>
-
-          <v-layout
-            class="rg-reader-layout"
-            row>
-            <v-flex xs12>
+          
               <div
                 id="reader-body"
                 ref="readerBody">
+                
                 <a
                   class="twitter-timeline"
                   href="https://twitter.com/NeilJohnston/lists/bcwildfires?ref_src=twsrc%5Etfw">
                 </a>
                 <div ref="placeHolder"></div>
               </div>
-            </v-flex>
-          </v-layout>
-        </v-container>
       </v-card>
 
     </v-bottom-sheet>
@@ -116,22 +104,16 @@ export default {
 </script>
 
 <style lang="less">
-.v-dialog.v-bottom-sheet{
-  /* make scrollable */
-  overflow-y: auto;
-}
-
-.v-dialog:not(.v-dialog--fullscreen) {
-    max-height: 50%;
-}
-
-.layout.rg-reader-layout.row {
+div#rg-reader-card {
     height: 100vh;
-    overflow-y: auto;
-    margin: 48px -8px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-div#rg-reader-container {
-    padding-top: 48px;
+div#reader-body {
+    overflow-y: auto;
+    height: 100%;
+    margin-top: 64px;
 }
 </style>
