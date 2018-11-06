@@ -66,8 +66,8 @@
         </v-list-tile-action>
 
         <v-list-tile-content class="rg-tile-content">
-          <v-list-tile-title class="rg-tile-title">Legend</v-list-tile-title>
-          <v-list-tile-sub-title class="rg-tile-sub-title">legend text</v-list-tile-sub-title>
+          <v-list-tile-title class="rg-tile-title">{{control.legendText}}</v-list-tile-title>
+          <v-list-tile-sub-title class="rg-tile-sub-title">{{control.legendContent}}</v-list-tile-sub-title>
         </v-list-tile-content>
 
       </v-list-tile>

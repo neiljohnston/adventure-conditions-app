@@ -93,6 +93,8 @@ export const navigationDefinitions = [
     label: 'Evacuation Order',
     loadState: '',
     navigation: true,
+    legendText: 'Evacuation Orders',
+    legendContent: 'Leave these areas for your own safety.',
   },
   {
     isGroupControl: true,
@@ -110,6 +112,8 @@ export const navigationDefinitions = [
     label: 'Evacuation Alert',
     loadState: '',
     navigation: true,
+    legendText: 'Evacuation Alerts',
+    legendContent: 'Be on standby to evacuate these areas.',
   },
   {
     isGroupControl: true,
@@ -127,6 +131,8 @@ export const navigationDefinitions = [
     label: 'Evacuation All Clear',
     loadState: '',
     navigation: true,
+    legendText: 'Lifted BC Evacuation Orders',
+    legendContent: 'Safe to Return to these areas.',
   },
   // {
   //   isGroupControl: true,
@@ -143,6 +149,8 @@ export const navigationDefinitions = [
   //   label: 'ESS Reception Centers',
   //   loadState: '',
   //   navigation: true,
+  // legendText: '',
+  // legendContent: '',
   // },
   {
     isGroupControl: true,
@@ -160,6 +168,8 @@ export const navigationDefinitions = [
     label: 'DriveBC Traffic',
     loadState: '',
     navigation: true,
+    legendText: 'Drive BC Traffic Incidents',
+    legendContent: '',
   },
   {
     isGroupControl: true,
@@ -169,6 +179,8 @@ export const navigationDefinitions = [
     label: 'All Fire Perimiters',
     loadState: '',
     navigation: true,
+    legendText: 'Toggle All Fire Perimiters',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -180,6 +192,8 @@ export const navigationDefinitions = [
     label: 'BC Fire Perimeters',
     loadState: '',
     navigation: true,
+    legendText: 'BC Wildfire Perimeters',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -191,6 +205,8 @@ export const navigationDefinitions = [
     label: 'US Fire Perimeters',
     loadState: '',
     navigation: true,
+    legendText: 'US Wildfire Perimeters',
+    legendContent: '',
   },
   {
     isGroupControl: true,
@@ -200,6 +216,8 @@ export const navigationDefinitions = [
     label: 'All Fire Points',
     loadState: '',
     navigation: true,
+    legendText: 'Toggle All Fire Points',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -211,6 +229,8 @@ export const navigationDefinitions = [
     label: 'BC Fire Points',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: 'BC Active Wildfire Points',
   },
   {
     isGroupControl: false,
@@ -222,6 +242,8 @@ export const navigationDefinitions = [
     label: 'AB Fire Points',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: 'Alberan Wildfire Points',
   },
   {
     isGroupControl: false,
@@ -233,6 +255,8 @@ export const navigationDefinitions = [
     label: 'US Fire Points',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: 'US Large Forest Fire Points',
   },
   {
     isGroupControl: false,
@@ -251,6 +275,8 @@ export const navigationDefinitions = [
     label: 'Satellite Fire Sensor',
     loadState: '',
     navigation: true,
+    legendText: 'MODIS Satellite Fire Sensors',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -268,6 +294,8 @@ export const navigationDefinitions = [
     label: 'OSPO NOAA Smoke Live',
     loadState: '',
     navigation: true,
+    legendText: 'Live Smoke Layer',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -285,6 +313,8 @@ export const navigationDefinitions = [
     label: 'Experimental NWS Smoke',
     loadState: '',
     navigation: true,
+    legendText: 'Experimental Smoke Layer',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -295,6 +325,8 @@ export const navigationDefinitions = [
     label: 'Realtime World Air Quality',
     loadState: '',
     navigation: true,
+    legendText: 'Realtine Air Quality',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -305,6 +337,8 @@ export const navigationDefinitions = [
     label: 'Berkley Earth Air Quality',
     loadState: '',
     navigation: true,
+    legendText: 'Berkley Earth Air Quality',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -322,6 +356,8 @@ export const navigationDefinitions = [
     label: 'Cdn Current Weather',
     loadState: '',
     navigation: true,
+    legendText: 'Current Canadian Weather',
+    legendContent: '',
   },
   {
     isGroupControl: true,
@@ -338,6 +374,8 @@ export const navigationDefinitions = [
     label: 'All Traffic Cameras',
     loadState: '',
     navigation: true,
+    legendText: 'Toggle All Highway Cameras',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -349,6 +387,8 @@ export const navigationDefinitions = [
     label: 'BC Cameras',
     loadState: '',
     navigation: false,
+    legendText: '',
+    legendContent: 'DriveBC Highway Cameras',
   },
   {
     isGroupControl: false,
@@ -360,6 +400,8 @@ export const navigationDefinitions = [
     label: 'Idaho Cameras',
     loadState: '',
     navigation: false,
+    legendText: '',
+    legendContent: 'Idaho Highway Cameras',
   },
   {
     isGroupControl: false,
@@ -371,6 +413,8 @@ export const navigationDefinitions = [
     label: 'Washington Cameras',
     loadState: '',
     navigation: false,
+    legendText: '',
+    legendContent: 'Washington Highway Cameras',
   },
   {
     isGroupControl: false,
@@ -382,6 +426,8 @@ export const navigationDefinitions = [
     label: 'Oregon Cameras',
     loadState: '',
     navigation: false,
+    legendText: 'Oregon Highway Cameras',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -394,6 +440,8 @@ export const navigationDefinitions = [
     label: 'California Cameras',
     loadState: '',
     navigation: false,
+    legendText: 'California Highway Cameras',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -405,6 +453,8 @@ export const navigationDefinitions = [
     label: 'Cdn Fire Danger',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -415,6 +465,8 @@ export const navigationDefinitions = [
     label: 'US Fire Danger',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -434,6 +486,8 @@ export const navigationDefinitions = [
     label: 'NOAA Weather Radar',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -451,6 +505,8 @@ export const navigationDefinitions = [
     label: 'Lightning Density',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -468,6 +524,8 @@ export const navigationDefinitions = [
     label: 'Wind Speed & Direction',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -485,6 +543,8 @@ export const navigationDefinitions = [
     label: 'HERE Live Traffic',
     loadState: '',
     navigation: true,
+    legendText: '',
+    legendContent: '',
   },
 ];
 
