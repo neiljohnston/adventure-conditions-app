@@ -94,7 +94,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Evacuation Orders',
-    legendContent: 'Leave these areas for your own safety.',
+    legendContent: '<img src="static/evacuation-order-legend.svg" />',
   },
   {
     isGroupControl: true,
@@ -113,7 +113,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Evacuation Alerts',
-    legendContent: 'Be on standby to evacuate these areas.',
+    legendContent: '<img src="static/evacuation-alert-legend.svg" />',
   },
   {
     isGroupControl: true,
@@ -132,7 +132,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Lifted BC Evacuation Orders',
-    legendContent: 'Safe to Return to these areas.',
+    legendContent: '<img src="static/evacuation-all-clear-legend.svg" />',
   },
   // {
   //   isGroupControl: true,
@@ -193,7 +193,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'BC Wildfire Perimeters',
-    legendContent: '',
+    legendContent: '<img src="static/wildfire-perimeter-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -206,7 +206,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'US Wildfire Perimeters',
-    legendContent: '',
+    legendContent: '<img src="static/wildfire-perimeter-legend.svg" />',
   },
   {
     isGroupControl: true,
@@ -229,8 +229,8 @@ export const navigationDefinitions = [
     label: 'BC Fire Points',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: 'BC Active Wildfire Points',
+    legendText: 'BC Active Wildfire Points',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -242,8 +242,8 @@ export const navigationDefinitions = [
     label: 'AB Fire Points',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: 'Alberan Wildfire Points',
+    legendText: 'Albertan Wildfire Points',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -255,8 +255,8 @@ export const navigationDefinitions = [
     label: 'US Fire Points',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: 'US Large Forest Fire Points',
+    legendText: 'US Large Forest Fire Points',
+    legendContent: '',
   },
   {
     isGroupControl: false,
@@ -276,7 +276,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'MODIS Satellite Fire Sensors',
-    legendContent: '',
+    legendContent: '<img src="static/modis-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -314,7 +314,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Experimental Smoke Layer',
-    legendContent: '',
+    legendContent: '<img src="static/nws-smoke-forecast.svg" />',
   },
   {
     isGroupControl: false,
@@ -326,7 +326,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Realtine Air Quality',
-    legendContent: '',
+    legendContent: '<img src="static/world-air-quality-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -337,8 +337,8 @@ export const navigationDefinitions = [
     label: 'Berkley Earth Air Quality',
     loadState: '',
     navigation: true,
-    legendText: 'Berkley Earth Air Quality',
-    legendContent: '',
+    legendText: 'Berkley Earth Realtime Air Quality',
+    legendContent: '<img src="static/world-air-quality-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -453,8 +453,9 @@ export const navigationDefinitions = [
     label: 'Cdn Fire Danger',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'CWFIS Fire Danger',
+    legendContent: '<img src="static/canadian-fire-danger-legend.svg" />',
+
   },
   {
     isGroupControl: false,
@@ -524,8 +525,8 @@ export const navigationDefinitions = [
     label: 'Wind Speed & Direction',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'Meteorological Service of Canada Wind Speed and Driection',
+    legendContent: '<img src="static/wind-conditions-legend.svg" />',
   },
   {
     isGroupControl: false,

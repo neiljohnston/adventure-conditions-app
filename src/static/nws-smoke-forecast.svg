@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="56px" viewBox="0 0 204 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>nws-smoke-forecast</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="2" y="13" width="20" height="14" rx="3"></rect>
+        <rect id="path-2" x="45" y="13" width="20" height="14" rx="3"></rect>
+        <rect id="path-3" x="130" y="13" width="20" height="14" rx="3"></rect>
+        <rect id="path-4" x="172" y="13" width="20" height="14" rx="3"></rect>
+        <rect id="path-5" x="87" y="13" width="20" height="14" rx="3"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nws-smoke-forecast">
+            <g id="Rectangle">
+                <use fill="#FFFEC9" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#000000" stroke-width="0.5" x="2.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
+            </g>
+            <g id="Rectangle-Copy">
+                <use fill="#F8E19D" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#000000" stroke-width="0.5" x="45.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
+            </g>
+            <text id="0---3" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="2.28515625" y="36">0 - 3</tspan>
+            </text>
+            <text id="25---63" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="82.1992188" y="36">25 - 63</tspan>
+            </text>
+            <text id="&gt;-159" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="169.691406" y="36">&gt; 159</tspan>
+            </text>
+            <text id="(µg/m³)" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="80.4335938" y="46">(µg/m³)</tspan>
+            </text>
+            <g id="Rectangle-Copy-3">
+                <use fill="#C08F6E" fill-rule="evenodd" xlink:href="#path-3"></use>
+                <rect stroke="#000000" stroke-width="0.5" x="130.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
+            </g>
+            <g id="Rectangle-Copy-5">
+                <use fill="#955E5A" fill-rule="evenodd" xlink:href="#path-4"></use>
+                <rect stroke="#000000" stroke-width="0.5" x="172.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
+            </g>
+            <g id="Rectangle-Copy-2">
+                <use fill="#F0C585" fill-rule="evenodd" xlink:href="#path-5"></use>
+                <rect stroke="#000000" stroke-width="0.5" x="87.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
+            </g>
+            <text id="Light" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="2.07617188" y="10">Light</tspan>
+            </text>
+            <text id="Heavy" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="169.505859" y="10">Heavy</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

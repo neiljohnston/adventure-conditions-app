@@ -67,7 +67,7 @@
 
         <v-list-tile-content class="rg-tile-content">
           <v-list-tile-title class="rg-tile-title">{{control.legendText}}</v-list-tile-title>
-          <v-list-tile-sub-title class="rg-tile-sub-title">{{control.legendContent}}</v-list-tile-sub-title>
+          <v-list-tile-sub-title class="rg-tile-sub-title" v-html="control.legendContent"></v-list-tile-sub-title>
         </v-list-tile-content>
 
       </v-list-tile>
@@ -238,7 +238,7 @@ export default {
   text-align: center;
   hyphens: auto;
   margin: 0;
-  padding: 0 8px;
+  padding: 0 2px;
 }
 
 .rg-tile-content {
