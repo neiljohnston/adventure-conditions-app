@@ -11,23 +11,33 @@
     stateless
     scrollable
     class="grey lighten-4">
-    <v-list>
+    <v-list
+      class="rg-navigation-list">
       <v-list-tile
         v-if="siteMeta.hasReader"
+        class="rg-list-tile"
         ripple
+        value="true"
         @click="openReaderView()">
-        <v-list-tile-action
-          class="loaderIcon">
-          <span class="loadedIcon">
+        <v-list-tile-action class="rg-loader-icon">
+          <span
+            class="rg-overlay"
+            v-show="false">
+          </span>
+          <span class="rg-loaded-icon">
             <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill-opacity=".01" fill="#FFF" d="M0 0h40v40H0z"/><circle fill="#FFF" cx="20" cy="20" r="18"/><path d="M20 38c-9.941 0-18-8.059-18-18S10.059 2 20 2s18 8.059 18 18-8.059 18-18 18zm10.593-26.956c-2.284.13-6.822.601-9.624 2.316a.64.64 0 0 0-.303.549V29.07c0 .481.526.785.97.562 2.883-1.45 7.052-1.847 9.113-1.955.704-.037 1.25-.601 1.25-1.277V12.323c.001-.738-.639-1.323-1.406-1.28zM19.03 13.36c-2.8-1.715-7.34-2.186-9.623-2.316C8.64 11 8 11.585 8 12.323V26.4c0 .677.547 1.24 1.25 1.277 2.063.109 6.234.505 9.116 1.957.443.223.967-.081.967-.561V13.9c0-.22-.109-.422-.303-.541z" fill="#AC997C"/></g></svg>
           </span>
+          <span class="rg-navigation-label">
+            News Reader
+          </span>
         </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>Read News Updates</v-list-tile-title>
-          <v-list-tile-sub-title>News Updates from Twitter</v-list-tile-sub-title>
+        <v-list-tile-content class="rg-tile-content">
+          <v-list-tile-title class="rg-tile-title">News Updates from:</v-list-tile-title>
+          <v-list-tile-sub-title class="rg-tile-sub-title">@EmergencyInfoBC, @BCGovFireInfo &amp; @DriveBC</v-list-tile-sub-title>
         </v-list-tile-content>
       </v-list-tile>
       <v-list-tile
+        class="rg-list-tile"
         v-for="(control, i) in navigation"
         v-if="control.navigation"
         v-model="control.active"
@@ -35,25 +45,31 @@
         value="true"
         ripple
         @click="toggleControl(control)">
-        <v-list-tile-action class="loaderIcon">
+
+        <v-list-tile-action class="rg-loader-icon">
           <span
-            class="loaderOverlay"
+            class="rg-overlay"
             v-show="control.loadState === 'loading'"
-            v-html="loaderIcon">
+            v-html="loadingOverlay">
           </span>
           <span
-            class="loadedIcon"
+            class="rg-loaded-icon"
             v-if="control.loadState !== 'error'"
             v-html="control.icon"></span>
           <span
             v-if="control.loadState === 'error'"
             v-html="loaderErrorIcon">
           </span>
+          <span class="rg-navigation-label">
+            {{ control.label }}
+          </span>
         </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ control.label }}</v-list-tile-title>
-          <v-list-tile-sub-title>legend text</v-list-tile-sub-title>
+
+        <v-list-tile-content class="rg-tile-content">
+          <v-list-tile-title class="rg-tile-title">Legend</v-list-tile-title>
+          <v-list-tile-sub-title class="rg-tile-sub-title">legend text</v-list-tile-sub-title>
         </v-list-tile-content>
+
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
@@ -82,11 +98,11 @@ export default {
       right: true,
       status: false,
       stateless: true,
-      loaderIcon: `
+      loadingOverlay: `
         <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
-            <path fill-opacity=".01" fill="#D8D8D8" d="M0 0h40v40H0z"/>
-            <path d="M36 20.035c0-8.835-6.941-16-15.5-16-8.559 0-15.5 7.165-15.5 16m2.628 0c0-7.304 5.729-13.287 12.872-13.287s12.872 5.983 12.872 13.287" fill="#CCCCCC" fill-rule="nonzero">
+            <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+            <path d="M36 20.035c0-8.835-6.941-16-15.5-16-8.559 0-15.5 7.165-15.5 16m2.628 0c0-7.304 5.729-13.287 12.872-13.287s12.872 5.983 12.872 13.287" fill="#FFFFFF" fill-rule="nonzero">
               <animateTransform 
                 attributeName="transform" 
                 attributeType="XML" 
@@ -160,7 +176,7 @@ export default {
       this.$bus.$emit('map-resize');
     },
 
-    openReaderView(){
+    openReaderView() {
       this.setReaderViewVisible(true);
     },
   },
@@ -168,16 +184,76 @@ export default {
 };
 </script>
 
-<style>
-.loaderIcon{
-  position: relative;
+<style lang="less">
+.rg-tile {
+  display: flex;
+  flex-direction: column;
 }
-.loaderOverlay{
+.rg-loader-icon{
+  position: relative;
+  flex: 0 0 80px;
+  display: flex;
+  flex-direction: column;
+  white-space: normal;
+  justify-content: center;
+  align-items: center;
+}
+.rg-overlay{
   position: absolute;
   z-index: 2;
+  top: 8px;
 }
-.loadedIcon{
-  position: absolute;
+.rg-loaded-icon{
+  /* position: absolute; */
   z-index: 1;
+  flex: 0 0 40px;
+  width: 40px;
+}
+
+.rg-navigation-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rg-list-tile {
+  flex: 1 1 80px;
+
+  .v-list__tile {
+    height: auto;
+    max-height: 80px;
+    padding: 0;
+  }
+}
+
+.rg-navigation-label {
+  flex: 0 0 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-top: 4px;
+  max-width: 100%;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  hyphens: auto;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.rg-tile-content {
+    padding: 8px;
+    flex: 0 1 100%;
+
+    .rg-tile-title {
+      flex: 0 1 24px;
+    }
+
+    .rg-tile-sub-title {
+      flex: 0 0 56px;
+      white-space: normal;
+      font-size: 12px !important;
+      font-weight: 400;
+    }
 }
 </style>
