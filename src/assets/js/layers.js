@@ -1,9 +1,10 @@
 import moment from 'moment';
+// import essReceptionCentersURL from '../images/eSSReceptionCenters.geojson';
 
 // Import the URL to an image file
 import cameraPointURL from '../images/video-solid.png';
 import firePointURL from '../images/fire-point.svg';
-import buildingPointURL from '../images/building-solid.png';
+import shelterPointURL from '../images/shelter-point.svg';
 
 const firePoint = `
 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -73,6 +74,90 @@ const fireDanger = `
 </svg>`;
 
 export const navigationDefinitions = [
+  {
+    isGroupControl: true,
+    id: 'bc-evacuation-orders',
+    active: true,
+    icon: `
+    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+        <path d="M22.888 36.44c-1.278 2.223-4.493 2.223-5.778 0L.451 7.553c-1.277-2.215.32-5 2.89-5h33.324c2.562 0 4.166 2.778 2.888 5L22.888 36.44z" fill-opacity=".7" fill="#C00177" fill-rule="nonzero"/>
+        <path d="M22.888 36.44c-1.278 2.223-4.493 2.223-5.778 0L.451 7.553c-1.277-2.215.32-5 2.89-5h33.324c2.562 0 4.166 2.778 2.888 5L22.888 36.44zM3.333 5.887L20 34.774 36.665 5.887H3.333z" fill="#C00177" fill-rule="nonzero"/>
+        <path d="M20.077 11.615a2.308 2.308 0 1 0 0-4.615 2.308 2.308 0 0 0 0 4.615zm-7.611 10.648l-.712 1.66H8.538a1.539 1.539 0 0 0 0 3.077h3.724c.925 0 1.759-.55 2.12-1.399l.423-.987-.513-.302a4.578 4.578 0 0 1-1.826-2.049zm12.996-4.494h-2.117l-1.253-2.56c-.601-1.229-1.704-2.127-2.97-2.45l-3.418-1.016a4.596 4.596 0 0 0-3.886.824L9.91 14.03a1.537 1.537 0 1 0 1.872 2.442l1.908-1.462c.369-.284.838-.385 1.215-.296l.707.21-1.801 4.202a3.085 3.085 0 0 0 1.264 3.861l4.086 2.412-1.321 4.218a1.538 1.538 0 1 0 2.936.92l1.521-4.86a2.317 2.317 0 0 0-1.04-2.614l-2.945-1.738 1.506-3.763.974 1.991a2.322 2.322 0 0 0 2.073 1.293h2.596a1.539 1.539 0 0 0 0-3.076zM24 12.01V9.293c0-.376.303-.678.679-.678h5.655V5.68a.68.68 0 0 1 1.16-.481l4.977 4.971a.68.68 0 0 1 0 .962L31.494 16.1a.68.68 0 0 1-1.16-.48v-2.933H24.68a.677.677 0 0 1-.679-.679z" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+    </svg>`,
+    label: 'Evacuation Order',
+    loadState: '',
+    navigation: true,
+  },
+  {
+    isGroupControl: true,
+    id: 'bc-evacuation-alerts',
+    active: true,
+    icon: `
+    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+        <path d="M38 20c0-9.941-8.059-18-18-18S2 10.059 2 20s8.059 18 18 18a18 18 0 0 0 18-18" fill-opacity=".7" fill="#C00177" fill-rule="nonzero"/>
+        <path d="M38 20a18 18 0 0 1-18 18c-9.941 0-18-8.059-18-18S10.059 2 20 2s18 8.059 18 18zm-3 0c0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15a15 15 0 0 0 15-15z" fill="#C00177" fill-rule="nonzero"/>
+        <path d="M19.614 7a3.076 3.076 0 1 1 0 6.153 3.076 3.076 0 0 1 0-6.153zm2.308 6.922h-.546a4.224 4.224 0 0 1-3.523 0h-.546A2.307 2.307 0 0 0 15 16.229v6.537c0 .637.516 1.153 1.154 1.153h.769v6.537c0 .638.516 1.154 1.153 1.154h3.077c.637 0 1.153-.516 1.153-1.154V23.92h.77c.636 0 1.153-.516 1.153-1.153v-6.537a2.307 2.307 0 0 0-2.307-2.307zM31.323 17.2a2.635 2.635 0 0 1-2.632 2.633 2.635 2.635 0 0 1-2.632-2.632 2.635 2.635 0 0 1 2.632-2.632 2.635 2.635 0 0 1 2.632 2.632zm-4.96-13.382l.448 8.948a.79.79 0 0 0 .789.75h2.182a.79.79 0 0 0 .789-.75l.447-8.948a.79.79 0 0 0-.789-.83h-3.077a.79.79 0 0 0-.788.83z" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+    </svg>`,
+    label: 'Evacuation Alert',
+    loadState: '',
+    navigation: true,
+  },
+  {
+    isGroupControl: true,
+    id: 'bc-evacuation-all-clear',
+    active: true,
+    icon: `
+    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+        <path d="M34.143 2H5.857A3.858 3.858 0 0 0 2 5.857v28.286A3.858 3.858 0 0 0 5.857 38h28.286A3.858 3.858 0 0 0 38 34.143V5.857A3.858 3.858 0 0 0 34.143 2z" fill-opacity=".7" fill="#F768A1" fill-rule="nonzero"/>
+        <path d="M34.143 2H5.857A3.858 3.858 0 0 0 2 5.857v28.286A3.858 3.858 0 0 0 5.857 38h28.286A3.858 3.858 0 0 0 38 34.143V5.857A3.858 3.858 0 0 0 34.143 2zm-.482 32.143H6.339a.484.484 0 0 1-.482-.482V6.339c0-.265.217-.482.482-.482h27.322c.265 0 .482.217.482.482v27.322a.484.484 0 0 1-.482.482z" fill="#F768A1" fill-rule="nonzero"/>
+        <path d="M16.296 11.433a2.328 2.328 0 1 1 .001-4.657 2.328 2.328 0 0 1-.001 4.657zm-4.583 7.23l1.13-.572.47-1.426c.713-2.163 2.702-3.676 4.957-3.68 1.746-.005 2.71.49 4.524 1.222a4.626 4.626 0 0 1 2.41 2.24l.325.66a1.557 1.557 0 0 1-.688 2.08 1.53 1.53 0 0 1-2.061-.693l-.325-.66a1.541 1.541 0 0 0-.8-.747l-1.3-.524.737 2.944a3.114 3.114 0 0 1-.722 2.852l-2.905 3.171a3.13 3.13 0 0 0-.723 1.343l-.887 3.555a1.555 1.555 0 0 1-1.882 1.13 1.555 1.555 0 0 1-1.13-1.882l1.077-4.316c.126-.5.373-.965.722-1.343l2.207-2.41-.834-3.332-.267.8a3.093 3.093 0 0 1-1.537 1.795l-1.13.572a1.53 1.53 0 0 1-2.061-.693 1.57 1.57 0 0 1 .693-2.086zm11.1 6.823c.156.393.389.747.69 1.043l2.424 2.43c.606.606.606 1.59 0 2.196a1.548 1.548 0 0 1-2.192 0l-2.88-2.88a3.152 3.152 0 0 1-.69-1.043l-.654-1.639c2.682-2.924 1.877-2.027 2.299-2.604l1.004 2.497zM39 13.298v-3.214a.802.802 0 0 0-.803-.803H31.5V5.806c0-.717-.864-1.075-1.373-.57l-5.892 5.886a.804.804 0 0 0 0 1.138l5.892 5.882c.506.506 1.373.148 1.373-.569v-3.471h6.696a.802.802 0 0 0 .803-.804z" fill="#FFFFFF" fill-rule="nonzero"/>
+      </g>
+    </svg>`,
+    label: 'Evacuation All Clear',
+    loadState: '',
+    navigation: true,
+  },
+  // {
+  //   isGroupControl: true,
+  //   id: 'bc-shelters',
+  //   active: false,
+  //   icon: `
+  //   <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+  //     <g fill="none" fill-rule="evenodd">
+  //       <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+  //       <path d="M38 20c0-9.941-8.059-18-18-18S2 10.059 2 20s8.059 18 18 18a18 18 0 0 0 18-18" fill="#FFFFFF" fill-rule="nonzero"/>
+  //       <path d="M13.938 36.954V31.75h.624c.518 0 .938-.42.938-.938V25.5c0-1.036-.84-1.875-1.875-1.875h-.444a3.433 3.433 0 0 1-2.862 0h-.444C8.839 23.625 8 24.465 8 25.5v5.313c0 .517.42.937.938.937h.624v2.917C4.986 31.403 2 26.05 2 20c0-9.941 8.059-18 18-18s18 8.059 18 18a18 18 0 0 1-6.913 14.18v-2.43h.625c.518 0 .937-.42.937-.938V25.5c0-1.036-.84-1.875-1.875-1.875h-.443a3.433 3.433 0 0 1-2.863 0h-.444c-1.035 0-1.875.84-1.875 1.875v5.313c0 .517.42.937.938.937h.625v4.952a17.998 17.998 0 0 1-4.754 1.191v-2.726h.417c.345 0 .625-.28.625-.625V31c0-.69-.56-1.25-1.25-1.25h-.296a2.289 2.289 0 0 1-1.908 0h-.296c-.69 0-1.25.56-1.25 1.25v3.542c0 .345.28.625.625.625h.417v2.808a17.927 17.927 0 0 1-5.105-1.021zM20.5 26a1.667 1.667 0 1 0 0 3.333 1.667 1.667 0 0 0 0-3.333zm8.4-8a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm-17.15 0a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM21.799 4.646a2.83 2.83 0 0 0-3.601 0L3.256 16.955a.71.71 0 0 0-.094.998l1.505 1.83a.71.71 0 0 0 .998.094L19.55 8.442a.72.72 0 0 1 .903 0l13.885 11.435a.71.71 0 0 0 .997-.094l1.506-1.83a.71.71 0 0 0-.1-.998L21.798 4.646z" fill="#F995BD" fill-rule="nonzero"/>
+  //     </g>
+  //   </svg>`,
+  //   label: 'ESS Reception Centers',
+  //   loadState: '',
+  //   navigation: true,
+  // },
+  {
+    isGroupControl: true,
+    id: 'drive-bc-traffic-conditions',
+    active: true,
+    icon: `
+    <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path fill-opacity=".01" fill="#FFFFFF" d="M0 0h40v40H0z"/>
+        <path d="M38 20c0-9.941-8.059-18-18-18S2 10.059 2 20s8.059 18 18 18a18 18 0 0 0 18-18" fill="#FFFFFF" fill-rule="nonzero"/>
+        <path d="M25.434 36.866a17.874 17.874 0 0 0 12.318-16.99C37.752 10.003 29.748 2 19.876 2 10.003 2 2 10.003 2 19.876c0 8.075 5.354 14.9 12.706 17.117a8.005 8.005 0 0 1-2.52-4.302C9.767 31.918 8 29.677 8 27h4v-2.367C9.675 23.806 8 21.608 8 19h4v-2.367C9.675 15.806 8 13.608 8 11h4V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2h4c0 2.609-1.675 4.806-4 5.633V19h4c0 2.609-1.675 4.806-4 5.633V27h4c0 2.677-1.766 4.918-4.187 5.69a8.003 8.003 0 0 1-2.379 4.176z" fill="#AC997C"/>
+        <path d="M20 33a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM20 25a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM20 17a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="#AC997C"/>
+      </g>
+    </svg>`,
+    label: 'DriveBC Traffic',
+    loadState: '',
+    navigation: true,
+  },
   {
     isGroupControl: true,
     id: 'fire-perimeters',
@@ -401,6 +486,148 @@ export const navigationDefinitions = [
 ];
 
 export const layerDefinitions = [
+  {
+    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    id: 'bc-evacuation-orders',
+    type: 'geojson',
+    endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27Order%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ORDER_DATE%20desc&outSR=102100&resultOffset=0',
+    oStroke: {
+      color: [122, 1, 119, 1],
+      width: 2,
+    },
+    oFill: {
+      color: [122, 1, 119, 0.7],
+    },
+    visible: true,
+    opacity: 1,
+    label: 'EVENT_NAME',
+    labelPrefix: 'EVACUATION Order: \n',
+    popup: {
+      title: 'Evacuation Order',
+      fields: {
+        'Event Name': 'EVENT_NAME',
+        'Event Number': 'EVENT_NUMBER',
+        'Event Type': 'EVENT_TYPE',
+        'Start Date': 'ALERT_START_DATE',
+        'Status': 'ORDER_ALERT_STATUS',
+        'Issuer': 'ISSUING_AGENCY',
+        'Regional District': 'REGIONAL_DISTRICT',
+        'Municipality': 'MUNICIPALITY',
+        'First Nation': 'INDIAN_BAND_NAME',
+      },
+    },
+  },
+  {
+    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    id: 'bc-evacuation-alerts',
+    type: 'geojson',
+    endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27Alert%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ALERT_DATE%20desc&outSR=102100&resultOffset=0&resultRecordCount=50',
+    oStroke: {
+      color: [226, 0, 147, 1],
+      width: 2,
+    },
+    oFill: {
+      color: [226, 0, 147, 0.7],
+    },
+    visible: true,
+    opacity: 1,
+    label: 'EVENT_NAME',
+    labelPrefix: 'EVACUATION ALERT: \n',
+    popup: {
+      title: 'Evacuation Alert',
+      fields: {
+        'Event Name': 'EVENT_NAME',
+        'Event Number': 'EVENT_NUMBER',
+        'Event Type': 'EVENT_TYPE',
+        'Start Date': 'ALERT_START_DATE',
+        'Status': 'ORDER_ALERT_STATUS',
+        'Issuer': 'ISSUING_AGENCY',
+        'Regional District': 'REGIONAL_DISTRICT',
+        'Municipality': 'MUNICIPALITY',
+        'First Nation': 'INDIAN_BAND_NAME',
+      },
+    },
+  },
+  {
+    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    id: 'bc-evacuation-all-clear',
+    type: 'geojson',
+    endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27All%20Clear%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ALERT_DATE%20desc&outSR=102100&resultOffset=0&resultRecordCount=50',
+    oStroke: {
+      color: [247, 104, 161, 1],
+      width: 2,
+    },
+    oFill: {
+      color: [247, 104, 161, 0.7]
+    },
+    visible: true,
+    opacity: 1,
+    label: 'EVENT_NAME',
+    labelPrefix: 'ALL-CLEAR: \n',
+    popup: {
+      title: 'Evacuation All Clear',
+      fields: {
+        'Event Name': 'EVENT_NAME',
+        'Event Number': 'EVENT_NUMBER',
+        'Event Type': 'EVENT_TYPE',
+        'Start Date': 'ALERT_START_DATE',
+        'Status': 'ORDER_ALERT_STATUS',
+        'Issuer': 'ISSUING_AGENCY',
+        'Regional District': 'REGIONAL_DISTRICT',
+        'Municipality': 'MUNICIPALITY',
+        'First Nation': 'INDIAN_BAND_NAME',
+      },
+    },
+  },
+  // {
+  //   siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+  //   id: 'bc-shelters',
+  //   type: 'geojson',
+  //   endpoint: essReceptionCentersURL,
+  //   // style: 'firepoint',
+  //   oImageOptions: {
+  //     anchor: [0.5, 17],
+  //     anchorXUnits: 'fraction',
+  //     anchorYUnits: 'pixels',
+  //     src: shelterPointURL,
+  //   },
+  //   visible: false,
+  //   opacity: 1,
+  //   label: 'Title',
+  //   popup: {
+  //     title: 'ESS Reception Center',
+  //     note: 'Emergency Social Services Receptions Centers provide support for evacuees, ' + 
+  //           'view more details on <a href="https://www.emergencyinfobc.gov.bc.ca/home/information-for-affected-residents-and-evacuees/what-are-emergency-social-services/" target="_blank">' + 
+  //           'EmergencyInfoBC</a>',
+  //     map: 'map',
+  //     fields: {
+  //       'Title': 'Title',
+  //       'Address': 'Address',
+  //       'Phone': 'Phone',
+  //     },
+  //   },
+  // },
+  {
+    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    id: 'drive-bc-traffic-conditions',
+    type: 'geojson',
+    dataProjection: 'EPSG:4326',
+    endpoint: 'https://plume-api.now.sh/drive511proxy',
+    visible: true,
+    opacity: 1,
+    labelPrefix: 'DriveBC: \n',
+    label: 'title',
+    popup: {
+      title: 'DriveBC Incident',
+      fields: {
+        'Title': 'title',
+        'Headline': 'headline',
+        'Severity': 'severity',
+        'Status': 'status',
+        'Description': 'description',
+      },
+    },
+  },
   {
     siteTags: ['bcfiremap', 'adventureconditions'],
     id: 'cdn-current-weather',
