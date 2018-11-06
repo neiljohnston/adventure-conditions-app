@@ -1,10 +1,13 @@
 import moment from 'moment';
-// import essReceptionCentersURL from '../images/eSSReceptionCenters.geojson';
+// import essReceptionCentersURL from 'static/eSSReceptionCenters.geojson';
 
 // Import the URL to an image file
 import cameraPointURL from '../images/video-solid.png';
 import firePointURL from '../images/fire-point.svg';
 import shelterPointURL from '../images/shelter-point.svg';
+
+// const essReceptionCentersURL = require('./../../static/eSSReceptionCenters.geojson');
+
 
 const firePoint = `
 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
