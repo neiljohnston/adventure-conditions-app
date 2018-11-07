@@ -208,6 +208,8 @@ export default {
   z-index: 1;
   flex: 0 0 40px;
   width: 40px;
+  overflow: hidden;
+  padding: 0;
 }
 
 .rg-navigation-list {
@@ -217,6 +219,7 @@ export default {
 
 .rg-list-tile {
   flex: 1 1 80px;
+  padding-bottom: 8px;
 
   .v-list__tile {
     height: auto;
@@ -226,15 +229,15 @@ export default {
 }
 
 .rg-navigation-label {
-  flex: 0 0 20px;
+  flex: 0 0 40px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   margin-top: 4px;
   max-width: 100%;
-  font-size: 10px;
-  line-height: 10px;
+  // font-size: 10px;
+  line-height: 14px;
   text-align: center;
   hyphens: auto;
   margin: 0;
