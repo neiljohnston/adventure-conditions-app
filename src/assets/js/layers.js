@@ -169,7 +169,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Drive BC Traffic Incidents',
-    legendContent: '',
+    legendContent: '<img src="static/drivebc-legend.svg" />',
   },
   {
     isGroupControl: true,
@@ -275,7 +275,7 @@ export const navigationDefinitions = [
     label: 'Satellite Fire Sensor',
     loadState: '',
     navigation: true,
-    legendText: 'MODIS Satellite Fire Sensors',
+    legendText: 'NASA MODIS Satellite Fire Sensors',
     legendContent: '<img src="static/modis-legend.svg" />',
   },
   {
@@ -294,8 +294,8 @@ export const navigationDefinitions = [
     label: 'OSPO NOAA Smoke Live',
     loadState: '',
     navigation: true,
-    legendText: 'Live Smoke Layer',
-    legendContent: '',
+    legendText: 'NOAA OSPO Live Smoke Layer',
+    legendContent: '<img src="static/ospo-noaa-smoke.svg" />',
   },
   {
     isGroupControl: false,
@@ -313,7 +313,7 @@ export const navigationDefinitions = [
     label: 'Experimental NWS Smoke',
     loadState: '',
     navigation: true,
-    legendText: 'Experimental Smoke Layer',
+    legendText: 'National Weather Service Smoke Forecast (NDGD)',
     legendContent: '<img src="static/nws-smoke-forecast.svg" />',
   },
   {
@@ -325,8 +325,8 @@ export const navigationDefinitions = [
     label: 'Realtime World Air Quality',
     loadState: '',
     navigation: true,
-    legendText: 'Realtine Air Quality',
-    legendContent: '<img src="static/world-air-quality-legend.svg" />',
+    legendText: "World's Air Pollution: Real-time Air Quality Index",
+    legendContent: '<img src="static/air-quality-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -338,7 +338,7 @@ export const navigationDefinitions = [
     loadState: '',
     navigation: true,
     legendText: 'Berkley Earth Realtime Air Quality',
-    legendContent: '<img src="static/world-air-quality-legend.svg" />',
+    legendContent: '<img src="static/air-quality-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -466,8 +466,8 @@ export const navigationDefinitions = [
     label: 'US Fire Danger',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'USGS Fire Danger Forcast',
+    legendContent: '<img src="static/us-fire-danger-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -487,8 +487,8 @@ export const navigationDefinitions = [
     label: 'NOAA Weather Radar',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'NOAA Weather Radar',
+    legendContent: '<img src="static/noaa-radar-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -506,8 +506,8 @@ export const navigationDefinitions = [
     label: 'Lightning Density',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'NOAA Emulated Lightning Strike Density',
+    legendContent: '<img src="static/lightning-strike-density-legend.svg" />',
   },
   {
     isGroupControl: false,
@@ -541,11 +541,11 @@ export const navigationDefinitions = [
         <path d="M26.58 22.574h-4.428a1.48 1.48 0 0 1-1.475-1.476 1.48 1.48 0 0 1 1.475-1.475h4.427s4.427-4.935 4.427-7.378a4.428 4.428 0 0 0-8.854 0c0 1.175 1.024 2.923 2.09 4.426h-2.09a4.434 4.434 0 0 0-4.427 4.427 4.434 4.434 0 0 0 4.427 4.427h4.427a1.48 1.48 0 0 1 1.476 1.476 1.48 1.48 0 0 1-1.476 1.475H15.95a31.836 31.836 0 0 1-2.181 2.951h12.81a4.434 4.434 0 0 0 4.427-4.426 4.434 4.434 0 0 0-4.427-4.427zm0-11.805c.815 0 1.475.66 1.475 1.476s-.66 1.475-1.476 1.475-1.475-.66-1.475-1.475c0-.817.659-1.476 1.475-1.476zm-14.757 8.854a4.428 4.428 0 0 0-4.427 4.426c0 2.444 4.427 7.378 4.427 7.378s4.427-4.934 4.427-7.378a4.428 4.428 0 0 0-4.427-4.426zm0 5.902c-.816 0-1.476-.66-1.476-1.476s.66-1.475 1.476-1.475 1.476.66 1.476 1.475c0 .817-.66 1.476-1.476 1.476z" fill="#FFF" fill-rule="nonzero"/>
       </g>
     </svg>`,
-    label: 'HERE Live Traffic',
+    label: 'Live Traffic',
     loadState: '',
     navigation: true,
-    legendText: '',
-    legendContent: '',
+    legendText: 'HERE Technologies Live Traffic',
+    legendContent: '<img src="static/traffic-legend.svg" />',
   },
 ];
 
@@ -660,8 +660,8 @@ export const layerDefinitions = [
   //   label: 'Title',
   //   popup: {
   //     title: 'ESS Reception Center',
-  //     note: 'Emergency Social Services Receptions Centers provide support for evacuees, ' + 
-  //           'view more details on <a href="https://www.emergencyinfobc.gov.bc.ca/home/information-for-affected-residents-and-evacuees/what-are-emergency-social-services/" target="_blank">' + 
+  //     note: 'Emergency Social Services Receptions Centers provide support for evacuees, ' +
+  //           'view more details on <a href="https://www.emergencyinfobc.gov.bc.ca/home/information-for-affected-residents-and-evacuees/what-are-emergency-social-services/" target="_blank">' +
   //           'EmergencyInfoBC</a>',
   //     map: 'map',
   //     fields: {

@@ -3,53 +3,29 @@
     <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
     <title>nws-smoke-forecast</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <rect id="path-1" x="2" y="13" width="20" height="14" rx="3"></rect>
-        <rect id="path-2" x="45" y="13" width="20" height="14" rx="3"></rect>
-        <rect id="path-3" x="130" y="13" width="20" height="14" rx="3"></rect>
-        <rect id="path-4" x="172" y="13" width="20" height="14" rx="3"></rect>
-        <rect id="path-5" x="87" y="13" width="20" height="14" rx="3"></rect>
-    </defs>
+    <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="nws-smoke-forecast">
-            <g id="Rectangle">
-                <use fill="#FFFEC9" fill-rule="evenodd" xlink:href="#path-1"></use>
-                <rect stroke="#000000" stroke-width="0.5" x="2.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
-            </g>
-            <g id="Rectangle-Copy">
-                <use fill="#F8E19D" fill-rule="evenodd" xlink:href="#path-2"></use>
-                <rect stroke="#000000" stroke-width="0.5" x="45.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
-            </g>
-            <text id="0---3" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="2.28515625" y="36">0 - 3</tspan>
+            <rect id="Rectangle-Copy-8" fill="#F0C585" transform="translate(96.992678, 38.783569) scale(1, -1) translate(-96.992678, -38.783569) " x="78.4298014" y="29.5671385" width="37.1257542" height="18.4328615"></rect>
+            <text id="Low-0-3" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="9">Low</tspan>
+                <tspan x="1" y="19">0-3</tspan>
             </text>
-            <text id="25---63" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="82.1992188" y="36">25 - 63</tspan>
+            <text id="High-25---63" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="87.8657253" y="9">High</tspan>
+                <tspan x="82.1918972" y="19">25 - 63</tspan>
             </text>
-            <text id="&gt;-159" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="169.691406" y="36">&gt; 159</tspan>
+            <text id="(µg/m³)" font-family="Verdana" font-size="6" font-weight="normal" fill="#000000">
+                <tspan x="84.5751953" y="26">(µg/m³)</tspan>
             </text>
-            <text id="(µg/m³)" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="80.4335938" y="46">(µg/m³)</tspan>
+            <text id="Extreme-159+" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="158.328125" y="9">Extreme</tspan>
+                <tspan x="170.195312" y="19">159+</tspan>
             </text>
-            <g id="Rectangle-Copy-3">
-                <use fill="#C08F6E" fill-rule="evenodd" xlink:href="#path-3"></use>
-                <rect stroke="#000000" stroke-width="0.5" x="130.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
-            </g>
-            <g id="Rectangle-Copy-5">
-                <use fill="#955E5A" fill-rule="evenodd" xlink:href="#path-4"></use>
-                <rect stroke="#000000" stroke-width="0.5" x="172.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
-            </g>
-            <g id="Rectangle-Copy-2">
-                <use fill="#F0C585" fill-rule="evenodd" xlink:href="#path-5"></use>
-                <rect stroke="#000000" stroke-width="0.5" x="87.25" y="13.25" width="19.5" height="13.5" rx="3"></rect>
-            </g>
-            <text id="Light" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="2.07617188" y="10">Light</tspan>
-            </text>
-            <text id="Heavy" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
-                <tspan x="169.505859" y="10">Heavy</tspan>
-            </text>
+            <rect id="Rectangle-Copy-15" fill="#955E5A" transform="translate(173.437123, 34.740153) scale(1, -1) translate(-173.437123, -34.740153) " x="154.874246" y="21.7401527" width="37.1257542" height="26"></rect>
+            <rect id="Rectangle-Copy-14" fill="#C08F6E" transform="translate(135.214901, 37.759521) scale(1, -1) translate(-135.214901, -37.759521) " x="116.652024" y="27.5190427" width="37.1257542" height="20.4809573"></rect>
+            <rect id="Rectangle-Copy-9" fill="#F8E19D" transform="translate(58.770456, 40.490316) scale(1, -1) translate(-58.770456, -40.490316) " x="40.2075792" y="32.9806313" width="37.1257542" height="15.0193687"></rect>
+            <rect id="Rectangle-Copy-11" fill="#FFFEC9" transform="translate(20.548234, 41.855713) scale(1, -1) translate(-20.548234, -41.855713) " x="1.98535693" y="35.7114256" width="37.1257542" height="12.2885744"></rect>
         </g>
     </g>
 </svg>

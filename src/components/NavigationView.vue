@@ -32,8 +32,8 @@
           </span>
         </v-list-tile-action>
         <v-list-tile-content class="rg-tile-content">
-          <v-list-tile-title class="rg-tile-title">Twitter News Updates from:</v-list-tile-title>
-          <v-list-tile-sub-title class="rg-tile-sub-title">@EmergencyInfoBC, @BCGovFireInfo &amp; @DriveBC</v-list-tile-sub-title>
+          <v-list-tile-title class="rg-tile-title caption">Twitter News Updates from:</v-list-tile-title>
+          <v-list-tile-sub-title class="rg-tile-sub-title caption">@EmergencyInfoBC, @BCGovFireInfo &amp; @DriveBC</v-list-tile-sub-title>
         </v-list-tile-content>
       </v-list-tile>
       <v-list-tile
@@ -66,7 +66,7 @@
         </v-list-tile-action>
 
         <v-list-tile-content class="rg-tile-content">
-          <v-list-tile-title class="rg-tile-title">{{control.legendText}}</v-list-tile-title>
+          <v-list-tile-title class="rg-tile-title caption">{{control.legendText}}</v-list-tile-title>
           <v-list-tile-sub-title class="rg-tile-sub-title" v-html="control.legendContent"></v-list-tile-sub-title>
         </v-list-tile-content>
 
