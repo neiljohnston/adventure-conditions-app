@@ -1,29 +1,6 @@
 import moment from 'moment';
 // import essReceptionCentersURL from 'static/eSSReceptionCenters.geojson';
 
-// Import the URL to an image file
-import firePointIcon from 'static/fire-point-icon.svg';
-import firePerimeterIcon from 'static/fire-perimeter-icon.svg';
-import airQualityIcon from 'static/air-quality-icon.svg';
-import cameraIcon from 'static/camera-icon.svg';
-import radarIcon from 'static/radar-icon.svg';
-import allCamerasIcon from 'static/all-cameras-icon.svg';
-import fireDangerIcon from 'static/fire-danger-icon.svg';
-import evacuationOrderIcon from 'static/evacuation-order-icon.svg';
-import evacuationAlertIcon from 'static/evacuation-alert-icon.svg';
-import evacuationAllclearIcon from 'static/evacuation-allclear-icon.svg';
-import drivebcIcon from 'static/drivebc-icon.svg';
-import modisIcon from 'static/modis-icon.svg';
-import currentWeatherIcon from 'static/current-weather-icon.svg';
-import smokeForecastIcon from 'static/smoke-forecast-icon.svg';
-import smokeIcon from 'static/smoke-icon.svg';
-import allFirePointsIcon from 'static/all-fire-points-icon.svg';
-import allFirePerimetersIcon from 'static/all-fire-perimeters-icon.svg';
-import lightningIcon from 'static/lightning-icon.svg';
-import windConditionsIcon from 'static/wind-conditions-icon.svg';
-import liveTrafficIcon from 'static/live-traffic-icon.svg';
-import shelterIcon from 'static/shelter-icon.svg'
-
 import firePointURL from '../images/fire-point.svg';
 // const essReceptionCentersURL = require('./../../static/eSSReceptionCenters.geojson');
 
@@ -34,7 +11,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'bc-evacuation-orders',
     active: true,
-    icon: evacuationOrderIcon,
+    icon: '<img src="static/evacuation-order-icon.svg" />',
     label: 'Evacuation Order',
     loadState: '',
     navigation: true,
@@ -45,7 +22,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'bc-evacuation-alerts',
     active: true,
-    icon: evacuationAlertIcon,
+    icon: '<img src="static/evacuation-alert-icon.svg" />',
     label: 'Evacuation Alert',
     loadState: '',
     navigation: true,
@@ -56,7 +33,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'bc-evacuation-all-clear',
     active: true,
-    icon: evacuationAllclearIcon,
+    icon: '<img src="static/evacuation-all-clear-icon.svg" />',
     label: 'Evacuation All Clear',
     loadState: '',
     navigation: true,
@@ -78,7 +55,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'drive-bc-traffic-conditions',
     active: true,
-    icon: drivebcIcon,
+    icon: '<img src="static/drivebc-icon.svg" />',
     label: 'DriveBC Traffic',
     loadState: '',
     navigation: true,
@@ -89,7 +66,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'fire-perimeters',
     active: true,
-    icon: allFirePerimetersIcon,
+    icon: '<img src="static/all-fire-perimeters-icon.svg" />',
     label: 'All Fire Perimiters',
     loadState: '',
     navigation: true,
@@ -102,7 +79,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-perimeters',
     active: true,
     opacity: 1,
-    icon: firePerimeterIcon,
+    icon: '<img src="static/fire-perimeter-icon.svg" />',
     label: 'BC Fire Perimeters',
     loadState: '',
     navigation: true,
@@ -115,7 +92,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-perimeters',
     active: true,
     opacity: 1,
-    icon: firePerimeterIcon,
+    icon: '<img src="static/fire-perimeter-icon.svg" />',
     label: 'US Fire Perimeters',
     loadState: '',
     navigation: true,
@@ -126,7 +103,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'fire-points',
     active: true,
-    icon: allFirePointsIcon,
+    icon: '<img src="static/all-fire-points-icon.svg" />',
     label: 'All Fire Points',
     loadState: '',
     navigation: true,
@@ -139,7 +116,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-points',
     active: true,
     opacity: 1,
-    icon: firePointIcon,
+    icon: '<img src="static/fire-point-icon.svg" />',
     label: 'BC Fire Points',
     loadState: '',
     navigation: true,
@@ -152,7 +129,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-points',
     active: true,
     opacity: 1,
-    icon: firePointIcon,
+    icon: '<img src="static/fire-point-icon.svg" />',
     label: 'AB Fire Points',
     loadState: '',
     navigation: true,
@@ -165,7 +142,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-points',
     active: true,
     opacity: 1,
-    icon: firePointIcon,
+    icon: '<img src="static/fire-point-icon.svg" />',
     label: 'US Fire Points',
     loadState: '',
     navigation: true,
@@ -178,7 +155,7 @@ export const navigationDefinitions = [
     groupControlId: 'fire-points',
     active: false,
     opacity: 1,
-    icon: modisIcon,
+    icon: '<img src="static/modis-icon.svg" />',
     label: 'Satellite Fire Sensor',
     loadState: '',
     navigation: true,
@@ -190,7 +167,7 @@ export const navigationDefinitions = [
     id: 'ospo-noaa-smoke',
     active: false,
     opacity: 1,
-    icon: smokeIcon,
+    icon: '<img src="static/smoke-icon.svg" />',
     label: 'Live Smoke',
     loadState: '',
     navigation: true,
@@ -202,7 +179,7 @@ export const navigationDefinitions = [
     id: 'nws-experimental-smoke',
     active: true,
     opacity: 0.5,
-    icon: smokeForecastIcon,
+    icon: '<img src="static/smoke-forecast-icon.svg" />',
     label: 'Smoke Forecast',
     loadState: '',
     navigation: true,
@@ -214,7 +191,7 @@ export const navigationDefinitions = [
     id: 'world-air-quality',
     active: false,
     opacity: 1,
-    icon: airQualityIcon,
+    icon: '<img src="static/air-quality-icon.svg" />',
     label: 'Air Quality Points',
     loadState: '',
     navigation: true,
@@ -226,7 +203,7 @@ export const navigationDefinitions = [
     id: 'berkley-earth-air-quality',
     active: true,
     opacity: 0.25,
-    icon: airQualityIcon,
+    icon: '<img src="static/air-quality-icon.svg" />',
     label: 'Air Quality Map',
     loadState: '',
     navigation: true,
@@ -238,7 +215,7 @@ export const navigationDefinitions = [
     id: 'cdn-current-weather',
     active: false,
     opacity: 1,
-    icon: currentWeatherIcon,
+    icon: '<img src="static/current-weather-icon.svg" />',
     label: 'Canadian Weather',
     loadState: '',
     navigation: true,
@@ -250,7 +227,7 @@ export const navigationDefinitions = [
     id: 'bc-traffic-cameras',
     active: true,
     opacity: 1,
-    icon: cameraIcon,
+    icon: '<img src="static/camera-icon.svg" />',
     label: 'BC Cameras',
     loadState: '',
     navigation: true,
@@ -262,7 +239,7 @@ export const navigationDefinitions = [
     id: 'ab-traffic-cameras',
     active: true,
     opacity: 1,
-    icon: cameraIcon,
+    icon: '<img src="static/camera-icon.svg" />',
     label: 'Alberta Cameras',
     loadState: '',
     navigation: true,
@@ -273,7 +250,7 @@ export const navigationDefinitions = [
     isGroupControl: true,
     id: 'traffic-cameras',
     active: false,
-    icon: allCamerasIcon,
+    icon: '<img src="static/all-cameras-icon.svg" />',
     label: 'All Traffic Cameras',
     loadState: '',
     navigation: true,
@@ -286,7 +263,7 @@ export const navigationDefinitions = [
     groupControlId: 'traffic-cameras',
     active: false,
     opacity: 1,
-    icon: cameraIcon,
+    icon: '<img src="static/camera-icon.svg" />',
     label: 'Idaho Cameras',
     loadState: '',
     navigation: false,
@@ -299,7 +276,7 @@ export const navigationDefinitions = [
     groupControlId: 'traffic-cameras',
     active: false,
     opacity: 1,
-    icon: cameraIcon,
+    icon: '<img src="static/camera-icon.svg" />',
     label: 'Washington Cameras',
     loadState: '',
     navigation: false,
@@ -312,7 +289,7 @@ export const navigationDefinitions = [
   //   groupControlId: 'traffic-cameras',
   //   active: false,
   //   opacity: 1,
-  //   icon: cameraIcon,
+  //   icon: '<img src="static/camera-icon.svg" />',
   //   label: 'Oregon Cameras',
   //   loadState: '',
   //   navigation: false,
@@ -326,7 +303,7 @@ export const navigationDefinitions = [
     active: false,
     style: 'highwaycams',
     opacity: 1,
-    icon: cameraIcon,
+    icon: '<img src="static/camera-icon.svg" />',
     label: 'California Cameras',
     loadState: '',
     navigation: false,
@@ -339,7 +316,7 @@ export const navigationDefinitions = [
     serverType: 'geoserver',
     active: false,
     opacity: 0.25,
-    icon: fireDangerIcon,
+    icon: '<img src="static/fire-danger-icon.svg" />',
     label: 'CAN Fire Danger',
     loadState: '',
     navigation: true,
@@ -352,7 +329,7 @@ export const navigationDefinitions = [
     id: 'us-fire-danger',
     active: false,
     opacity: 0.25,
-    icon: fireDangerIcon,
+    icon: '<img src="static/fire-danger-icon.svg" />',
     label: 'US Fire Danger',
     loadState: '',
     navigation: true,
@@ -364,7 +341,7 @@ export const navigationDefinitions = [
     id: 'noaa-radar',
     active: false,
     opacity: 0.75,
-    icon: radarIcon,
+    icon: '<img src="static/radar-icon.svg" />',
     label: 'Weather Radar',
     loadState: '',
     navigation: true,
@@ -376,7 +353,7 @@ export const navigationDefinitions = [
     id: 'emulated-lightning-density',
     active: false,
     opacity: 1,
-    icon: lightningIcon,
+    icon: '<img src="static/lightning-icon.svg" />',
     label: 'Lightning',
     loadState: '',
     navigation: true,
@@ -388,7 +365,7 @@ export const navigationDefinitions = [
     id: 'wind-conditions',
     active: false,
     opacity: 0.75,
-    icon: windConditionsIcon,
+    icon: '<img src="static/wind-conditions-icon.svg" />',    
     label: 'Wind Speed & Direction',
     loadState: '',
     navigation: true,
@@ -400,7 +377,7 @@ export const navigationDefinitions = [
     id: 'here-live-traffic',
     active: true,
     opacity: 1,
-    icon: liveTrafficIcon,
+    icon: '<img src="static/live-traffic-icon.svg" />',
     label: 'Live Traffic',
     loadState: '',
     navigation: true,
