@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="56px" viewBox="0 0 204 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>noaa-radar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noaa-radar">
+            <rect id="Rectangle" fill="#49E953" x="1" y="11.3333333" width="13" height="1"></rect>
+            <rect id="Rectangle-Copy" fill="#00BF3A" x="14" y="10.6666667" width="13" height="1.33333333"></rect>
+            <rect id="Rectangle-Copy-4" fill="#189708" x="26" y="10" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-6" fill="#016704" x="39" y="9.33333333" width="13" height="2.66666667"></rect>
+            <rect id="Rectangle-Copy-3" fill="#004101" x="65" y="8" width="13" height="4"></rect>
+            <rect id="Rectangle-Copy-5" fill="#A863CD" x="179" y="2" width="13" height="10"></rect>
+            <rect id="Rectangle-Copy-2" fill="#005600" x="52" y="8.66666667" width="13" height="3.33333333"></rect>
+            <rect id="Rectangle-Copy-12" fill="#F1D600" x="77" y="7.33333333" width="13" height="4.66666667"></rect>
+            <rect id="Rectangle-Copy-11" fill="#F7A501" x="90" y="6.66666667" width="13" height="5.33333333"></rect>
+            <rect id="Rectangle-Copy-10" fill="#FF5F01" x="103" y="6" width="13" height="6"></rect>
+            <rect id="Rectangle-Copy-9" fill="#F01100" x="116" y="5.33333333" width="13" height="6.66666667"></rect>
+            <rect id="Rectangle-Copy-8" fill="#500200" x="141" y="4" width="13" height="8"></rect>
+            <rect id="Rectangle-Copy-13" fill="#FF0991" x="154" y="3.33333333" width="13" height="8.66666667"></rect>
+            <rect id="Rectangle-Copy-14" fill="#8C03CF" x="167" y="2.66666667" width="13" height="9.33333333"></rect>
+            <rect id="Rectangle-Copy-7" fill="#B70902" x="128" y="4.66666667" width="13" height="7.33333333"></rect>
+            <text id="Rain" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="9">Rain</tspan>
+            </text>
+            <rect id="Rectangle-Copy-24" fill="#0108B9" x="179" y="14" width="13" height="10"></rect>
+            <rect id="Rectangle-Copy-22" fill="#0182EA" x="77" y="19.3333333" width="13" height="4.66666667"></rect>
+            <rect id="Rectangle-Copy-21" fill="#0070E6" x="90" y="18.6666667" width="13" height="5.33333333"></rect>
+            <rect id="Rectangle-Copy-20" fill="#005DE0" x="103" y="18" width="13" height="6"></rect>
+            <rect id="Rectangle-Copy-19" fill="#0142E4" x="116" y="17.3333333" width="13" height="6.66666667"></rect>
+            <rect id="Rectangle-Copy-18" fill="#002DE0" x="141" y="16" width="13" height="8"></rect>
+            <rect id="Rectangle-Copy-17" fill="#0017D7" x="154" y="15.3333333" width="13" height="8.66666667"></rect>
+            <rect id="Rectangle-Copy-16" fill="#0003BC" x="167" y="14.6666667" width="13" height="9.33333333"></rect>
+            <rect id="Rectangle-Copy-15" fill="#002DE0" x="128" y="16.6666667" width="13" height="7.33333333"></rect>
+            <rect id="Rectangle-Copy-29" fill="#03FCFF" x="1" y="23.3333333" width="13" height="1"></rect>
+            <rect id="Rectangle-Copy-28" fill="#00E8FF" x="14" y="22.6666667" width="13" height="1.33333333"></rect>
+            <rect id="Rectangle-Copy-27" fill="#00D4F9" x="26" y="22" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-26" fill="#01BBF8" x="39" y="21.3333333" width="13" height="2.66666667"></rect>
+            <rect id="Rectangle-Copy-25" fill="#009AF0" x="65" y="20" width="13" height="4"></rect>
+            <rect id="Rectangle-Copy-23" fill="#01ACF1" x="52" y="20.6666667" width="13" height="3.33333333"></rect>
+            <text id="Snow" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="21">Snow</tspan>
+            </text>
+            <rect id="Rectangle-Copy-44" fill="#FECCFD" x="1" y="35.3333333" width="13" height="1"></rect>
+            <rect id="Rectangle-Copy-43" fill="#F1C8D6" x="14" y="34.6666667" width="13" height="1.33333333"></rect>
+            <rect id="Rectangle-Copy-42" fill="#FBACCB" x="26" y="34" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-41" fill="#FC9DC7" x="39" y="33.3333333" width="13" height="2.66666667"></rect>
+            <rect id="Rectangle-Copy-40" fill="#E46AB5" x="65" y="32" width="13" height="4"></rect>
+            <rect id="Rectangle-Copy-39" fill="#961071" x="179" y="26" width="13" height="10"></rect>
+            <rect id="Rectangle-Copy-38" fill="#EB7DBC" x="52" y="32.6666667" width="13" height="3.33333333"></rect>
+            <rect id="Rectangle-Copy-37" fill="#D958AA" x="77" y="31.3333333" width="13" height="4.66666667"></rect>
+            <rect id="Rectangle-Copy-36" fill="#D74BA2" x="90" y="30.6666667" width="13" height="5.33333333"></rect>
+            <rect id="Rectangle-Copy-35" fill="#C54099" x="103" y="30" width="13" height="6"></rect>
+            <rect id="Rectangle-Copy-34" fill="#C53491" x="116" y="29.3333333" width="13" height="6.66666667"></rect>
+            <rect id="Rectangle-Copy-33" fill="#B8338C" x="141" y="28" width="13" height="8"></rect>
+            <rect id="Rectangle-Copy-32" fill="#AA2C7E" x="154" y="27.3333333" width="13" height="8.66666667"></rect>
+            <rect id="Rectangle-Copy-31" fill="#A3207D" x="167" y="26.6666667" width="13" height="9.33333333"></rect>
+            <rect id="Rectangle-Copy-30" fill="#C53491" x="128" y="28.6666667" width="13" height="7.33333333"></rect>
+            <text id="Ice" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="33">Ice</tspan>
+            </text>
+            <rect id="Rectangle-Copy-44" fill="#9F83FD" x="1" y="47.3333333" width="13" height="1"></rect>
+            <rect id="Rectangle-Copy-43" fill="#9577F2" x="14" y="46.6666667" width="13" height="1.33333333"></rect>
+            <rect id="Rectangle-Copy-42" fill="#8E6FEA" x="26" y="46" width="13" height="2"></rect>
+            <rect id="Rectangle-Copy-41" fill="#8767E2" x="39" y="45.3333333" width="13" height="2.66666667"></rect>
+            <rect id="Rectangle-Copy-40" fill="#805EDA" x="65" y="44" width="13" height="4"></rect>
+            <rect id="Rectangle-Copy-39" fill="#2F0080" x="179" y="38" width="13" height="10"></rect>
+            <rect id="Rectangle-Copy-38" fill="#8767E2" x="52" y="44.6666667" width="13" height="3.33333333"></rect>
+            <rect id="Rectangle-Copy-37" fill="#7653CF" x="77" y="43.3333333" width="13" height="4.66666667"></rect>
+            <rect id="Rectangle-Copy-36" fill="#6F4BC7" x="90" y="42.6666667" width="13" height="5.33333333"></rect>
+            <rect id="Rectangle-Copy-35" fill="#6842BF" x="103" y="42" width="13" height="6"></rect>
+            <rect id="Rectangle-Copy-34" fill="#5F37B5" x="116" y="41.3333333" width="13" height="6.66666667"></rect>
+            <rect id="Rectangle-Copy-33" fill="#471B9A" x="141" y="40" width="13" height="8"></rect>
+            <rect id="Rectangle-Copy-32" fill="#401392" x="154" y="39.3333333" width="13" height="8.66666667"></rect>
+            <rect id="Rectangle-Copy-31" fill="#390B8A" x="167" y="38.6666667" width="13" height="9.33333333"></rect>
+            <rect id="Rectangle-Copy-30" fill="#5127A5" x="128" y="40.6666667" width="13" height="7.33333333"></rect>
+            <text id="Mixed" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="45">Mixed</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

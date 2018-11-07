@@ -48,7 +48,7 @@ export default new Vuex.Store({
     uiState: {
       mapViewState: {
         // TODO: Initialize Map Center from DB
-        center: process.env.MAP_CENTER.split(' ') || [-14173186.261234362, 7196206.431941464],
+        center: [-14173186.261234362, 7196206.431941464],
         zoom: process.env.MAP_ZOOM || 5,
       },
       navigation: navigationDefinitions,

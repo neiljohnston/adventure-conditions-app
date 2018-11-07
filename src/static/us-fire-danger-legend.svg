@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="56px" viewBox="0 0 204 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>us-fire-danger-legend</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="us-fire-danger-legend">
+            <rect id="Rectangle-Copy-5" fill="#9F080E" transform="translate(163.888889, 36.735474) scale(1, -1) translate(-163.888889, -36.735474) " x="154.888889" y="25.470947" width="18" height="22.529053"></rect>
+            <rect id="Rectangle-Copy-15" fill="#C5000A" transform="translate(183.000000, 35.370076) scale(1, -1) translate(-183.000000, -35.370076) " x="174" y="22.7401527" width="18" height="25.2598473"></rect>
+            <rect id="Rectangle-Copy-12" fill="#00440A" transform="translate(11.000000, 42.690094) scale(1, -1) translate(-11.000000, -42.690094) " x="2" y="37.3801888" width="18" height="10.6198112"></rect>
+            <rect id="Rectangle-Copy-11" fill="#006411" transform="translate(30.111111, 41.855713) scale(1, -1) translate(-30.111111, -41.855713) " x="21.1111111" y="35.7114256" width="18" height="12.2885744"></rect>
+            <rect id="Rectangle-Copy-10" fill="#087E1E" transform="translate(49.222222, 41.172979) scale(1, -1) translate(-49.222222, -41.172979) " x="40.2222222" y="34.3459571" width="18" height="13.6540429"></rect>
+            <rect id="Rectangle-Copy-9" fill="#40A332" transform="translate(68.333333, 40.490316) scale(1, -1) translate(-68.333333, -40.490316) " x="59.3333333" y="32.9806313" width="18" height="15.0193687"></rect>
+            <rect id="Rectangle-Copy-8" fill="#C5FD74" transform="translate(106.555556, 38.783569) scale(1, -1) translate(-106.555556, -38.783569) " x="97.5555556" y="29.5671385" width="18" height="18.4328615"></rect>
+            <rect id="Rectangle-Copy-13" fill="#FFFA47" transform="translate(125.666667, 38.100871) scale(1, -1) translate(-125.666667, -38.100871) " x="116.666667" y="28.2017413" width="18" height="19.7982587"></rect>
+            <rect id="Rectangle-Copy-14" fill="#D96C40" transform="translate(144.777778, 37.759521) scale(1, -1) translate(-144.777778, -37.759521) " x="135.777778" y="27.5190427" width="18" height="20.4809573"></rect>
+            <rect id="Rectangle-Copy-7" fill="#6FD456" transform="translate(87.444444, 39.807617) scale(1, -1) translate(-87.444444, -39.807617) " x="78.4444444" y="31.6152342" width="18" height="16.3847658"></rect>
+            <text id="Low" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="9">Low</tspan>
+            </text>
+            <text id="High" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="93.8730469" y="9">High</tspan>
+            </text>
+            <text id="Extreme" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="158.314657" y="9">Extreme</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -6,7 +6,7 @@ import {
   Circle as CircleStyle
 } from 'ol/style';
 
-import cameraPointURL from '../images/video-solid.png';
+import cameraPointURL from '../images/traffic-camera.svg';
 
 export const style = [];
 

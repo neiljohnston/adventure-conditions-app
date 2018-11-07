@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="56px" viewBox="0 0 204 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>lightning-strike-density-legend</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lightning-strike-density-legend">
+            <g id="Group" transform="translate(1.000000, 18.000000)">
+                <rect id="Rectangle" fill="#E5EFF7" x="0" y="27.9519225" width="10.1576501" height="2.04809573"></rect>
+                <rect id="Rectangle-Copy" fill="#FFFECE" x="10.1576501" y="26.5865254" width="10.1576501" height="3.41349288"></rect>
+                <rect id="Rectangle-Copy-4" fill="#FEEB7F" x="20.3153001" y="25.2211282" width="10.1576501" height="4.77889003"></rect>
+                <rect id="Rectangle-Copy-6" fill="#FFFD38" x="30.4729502" y="23.8557311" width="10.1576501" height="6.14428718"></rect>
+                <rect id="Rectangle-Copy-3" fill="#FDA328" x="50.7882503" y="21.1249368" width="10.1576501" height="8.87508148"></rect>
+                <rect id="Rectangle-Copy-5" fill="#4019BD" x="140.175571" y="7.47096526" width="10.1576501" height="22.529053"></rect>
+                <rect id="Rectangle-Copy-15" fill="#0B24FB" x="149.317456" y="4.74017096" width="10.1576501" height="25.2598473"></rect>
+                <rect id="Rectangle-Copy-16" fill="#22C8FC" x="159.475106" y="3.37477381" width="10.1576501" height="26.6252444"></rect>
+                <rect id="Rectangle-Copy-17" fill="#17A166" x="169.632756" y="2.00937666" width="10.1576501" height="27.9906416"></rect>
+                <rect id="Rectangle-Copy-18" fill="#29FD2F" x="179.790406" y="0.643979506" width="10.1576501" height="29.3560387"></rect>
+                <rect id="Rectangle-Copy-2" fill="#FED530" x="40.6306002" y="23.1730325" width="10.1576501" height="6.82698575"></rect>
+                <rect id="Rectangle-Copy-12" fill="#FD7722" x="59.9301353" y="19.076841" width="10.1576501" height="10.6198112"></rect>
+                <rect id="Rectangle-Copy-11" fill="#FC471E" x="70.0877854" y="17.7114439" width="10.1576501" height="12.2885744"></rect>
+                <rect id="Rectangle-Copy-10" fill="#FC0D1B" x="80.2454354" y="16.3460467" width="10.1576501" height="13.6540429"></rect>
+                <rect id="Rectangle-Copy-9" fill="#F01100" x="90.4030855" y="14.9806496" width="10.1576501" height="15.0193687"></rect>
+                <rect id="Rectangle-Copy-8" fill="#CA0F68" x="109.702621" y="11.5671567" width="10.1576501" height="18.4328615"></rect>
+                <rect id="Rectangle-Copy-13" fill="#FC28FC" x="119.860271" y="10.2017596" width="10.1576501" height="19.7982587"></rect>
+                <rect id="Rectangle-Copy-14" fill="#7F0F7E" x="130.017921" y="9.51906099" width="10.1576501" height="20.4809573"></rect>
+                <rect id="Rectangle-Copy-7" fill="#BA082B" x="99.5449705" y="13.6152524" width="10.1576501" height="16.3847658"></rect>
+            </g>
+            <text id="Low" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="1" y="9">Low</tspan>
+            </text>
+            <text id="High" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="93.8730469" y="9">High</tspan>
+            </text>
+            <text id="Extreme" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="158.314657" y="9">Extreme</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

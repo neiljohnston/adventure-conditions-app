@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="56px" viewBox="0 0 204 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>traffic-legend</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="traffic-legend">
+            <rect id="Rectangle-Copy-8" fill="#FBCB2F" x="64" y="22" width="64" height="10"></rect>
+            <text id="Flowing" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="2" y="9">Flowing</tspan>
+            </text>
+            <text id="Moderate" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="77.3795893" y="9">Moderate</tspan>
+            </text>
+            <text id="Congested" font-family="Verdana" font-size="8" font-weight="normal" fill="#000000">
+                <tspan x="149.675781" y="9">Congested</tspan>
+            </text>
+            <rect id="Rectangle-Copy-15" fill="#E82734" x="127.968896" y="22" width="64" height="10"></rect>
+            <rect id="Rectangle-Copy-11" fill="#64B875" x="2" y="22" width="63" height="10"></rect>
+        </g>
+    </g>
+</svg>

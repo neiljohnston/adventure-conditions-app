@@ -1,0 +1,304 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+        "geometry": {
+            "coordinates": [-121.3033994, 51.6370127],
+            "type": "Point"
+        },
+        "id": "100 Mile House",
+        "type": "Feature",
+        "properties": {
+            "Address": "Mezzanine Arena, Peter Skeen Ogden Complex, 200 7th Street",
+            "Phone": "250-644-0146",
+            "geo_latitude": -121.3033994,
+            "map": "https://www.google.ca/maps/place/200+7+St,+100+Mile+House,+BC+V0K+2E1/@51.6370127,-121.3033994,17z/data\u003d!4m5!3m4!1s0x53806c1918c69069:0xa44d7226bf529d34!8m2!3d51.637299!4d-121.3017042",
+            "Title": "100 Mile House",
+            "geo_longitude": 51.6370127
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-125.7667276, 54.2321621],
+            "type": "Point"
+        },
+        "id": "Burns Lake",
+        "type": "Feature",
+        "properties": {
+            "Address": "College of New Caledonia, 545 Highway 16 West",
+            "Phone": "",
+            "geo_latitude": -125.7667276,
+            "map": "https://www.google.ca/maps/place/College+of+New+Caledonia+(CNC)/@54.2321621,-125.7667276,17z/data\u003d!4m5!3m4!1s0x0:0xf4081b635f8ca11c!8m2!3d54.2323332!4d-125.7642203?shorturl\u003d1",
+            "Title": "Burns Lake",
+            "geo_longitude": 54.2321621
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-117.649729, 49.294347],
+            "type": "Point"
+        },
+        "id": "Castlegar",
+        "type": "Feature",
+        "properties": {
+            "Address": "Castlegar \u0026 District Community Complex, 2101 6th Avenue",
+            "Phone": "",
+            "geo_latitude": -117.649729,
+            "map": "https://www.google.ca/maps/place/Castlegar+%26+District+Recreation+%26+Aquatic+Centre/@49.294347,-117.649729,15z/data\u003d!4m5!3m4!1s0x0:0x7e5be8e99ba200d1!8m2!3d49.294347!4d-117.649729?shorturl\u003d1",
+            "Title": "Castlegar",
+            "geo_longitude": 49.294347
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-121.639446, 55.6971013],
+            "type": "Point"
+        },
+        "id": "Chetwynd",
+        "type": "Feature",
+        "properties": {
+            "Address": "4817 53rd Street",
+            "Phone": "250-788-6344",
+            "geo_latitude": -121.639446,
+            "map": "https://www.google.ca/maps/place/4817+53+St+NW,+Chetwynd,+BC/@55.6971013,-121.639446,16z/data\u003d!4m5!3m4!1s0x538dfd8d1a311729:0x12668912db0ea39!8m2!3d55.6972547!4d-121.6367402",
+            "Title": "Chetwynd",
+            "geo_longitude": 55.6971013
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-120.236307, 55.7602854],
+            "type": "Point"
+        },
+        "id": "Dawson Creek",
+        "type": "Feature",
+        "properties": {
+            "Address": "Firehall 1010 12A Street",
+            "Phone": "250-782-9898",
+            "geo_latitude": -120.236307,
+            "map": "https://www.google.ca/maps/place/12a+St,+Dawson+Creek,+BC/@55.7602854,-120.236307,478m/data\u003d!3m2!1e3!4b1!4m5!3m4!1s0x5391994707c9985b:0xb87ac7d9f19dde56!8m2!3d55.7602854!4d-120.2349611",
+            "Title": "Dawson Creek",
+            "geo_longitude": 55.7602854
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-130.0052268, 58.4359622],
+            "type": "Point"
+        },
+        "id": "Dease Lake",
+        "type": "Feature",
+        "properties": {
+            "Address": "1 Stikine Street",
+            "Phone": "",
+            "geo_latitude": -130.0052268,
+            "map": "https://www.google.ca/maps/place/Stikine+St,+Dease+Lake,+BC+V0C+1L0/@58.4359622,-130.0052268,724m/data\u003d!3m2!1e3!4b1!4m5!3m4!1s0x53f9be965d649f6d:0x71fd44d66a1edbdf!8m2!3d58.4359594!4d-130.0030328",
+            "Title": "Dease Lake",
+            "geo_longitude": 58.4359622
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-120.8439837, 56.2425503],
+            "type": "Point"
+        },
+        "id": "Fort St. John",
+        "type": "Feature",
+        "properties": {
+            "Address": "North Peace Arena, 9805 96th Avenue",
+            "Phone": "250-794-3310",
+            "geo_latitude": -120.8439837,
+            "map": "https://www.google.ca/maps/place/9805+96+Ave,+Fort+St+John,+BC+V1J+1K9/@56.2425503,-120.8439837,15z/data\u003d!4m5!3m4!1s0x5392369063f28221:0x39c5bdee582ae0a3!8m2!3d56.241946!4d-120.843971?shorturl\u003d1",
+            "Title": "Fort St. John",
+            "geo_longitude": 56.2425503
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-129.98493, 57.837285],
+            "type": "Point"
+        },
+        "id": "Iskut",
+        "type": "Feature",
+        "properties": {
+            "Address": "PO Box 30",
+            "Phone": "250-641-2443",
+            "geo_latitude": -129.98493,
+            "map": "https://www.google.ca/maps/place/57%C2%B050\u002714.2%22N+129%C2%B059\u002705.8%22W/@57.8372878,-129.9870885,17z/data\u003d!3m1!4b1!4m13!1m6!3m5!1s0x53f7865ebe047cef:0x49a5696a1723436!2sIskut+First+Nation!8m2!3d57.833333!4d-129.9833328!3m5!1s0x0:0x0!7e2!8m2!3d57.8372846!4d-129.9849305",
+            "Title": "Iskut",
+            "geo_longitude": 57.837285
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-115.9800389, 49.6893207],
+            "type": "Point"
+        },
+        "id": "Kimberley",
+        "type": "Feature",
+        "properties": {
+            "Address": "Kimberley Centennial Centre, 100-4th Avenue",
+            "Phone": "",
+            "geo_latitude": -115.9800389,
+            "map": "https://www.google.ca/maps/place/Centennial+Centre/@49.6893207,-115.9800389,15z/data\u003d!4m5!3m4!1s0x0:0x712db1fff386895f!8m2!3d49.6893207!4d-115.9800389?sa\u003dX\u0026ved\u003d2ahUKEwjS6tvcz_TcAhUKIjQIHfGbAfsQ_BIwCnoECAIQCw\u0026shorturl\u003d1",
+            "Title": "Kimberley",
+            "geo_longitude": 49.6893207
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-128.6557446, 54.0535302],
+            "type": "Point"
+        },
+        "id": "Kitimat",
+        "type": "Feature",
+        "properties": {
+            "Address": "254 City Centre",
+            "Phone": "250-279-9297 (after hours)",
+            "geo_latitude": -128.6557446,
+            "map": "https://www.google.ca/maps/place/Caprice+Trading+Post/@54.0535302,-128.6557446,17z/data\u003d!4m8!1m2!2m1!1s245+City+Center,+Kitimat,+BC+V8C+1T6!3m4!1s0x0:0xddf2d6ea86f0b165!8m2!3d54.053594!4d-128.6534402",
+            "Title": "Kitimat",
+            "geo_longitude": 54.0535302
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-125.7615944, 54.2374792],
+            "type": "Point"
+        },
+        "id": "Lake Babine First Nation",
+        "type": "Feature",
+        "properties": {
+            "Address": "Margaret Patrick Memorial Center, 819 Centre Street",
+            "Phone": "",
+            "geo_latitude": -125.7615944,
+            "map": "https://www.google.ca/maps/place/Sne+Cal+Yegh/@54.2374792,-125.7615944,17.91z/data\u003d!4m8!1m2!2m1!1soyenne+Indian+Reserve+%2327+Margaret+Patrick+Memorial+Centre+Catering+%26+Hall+Rental+Phone:+692-3499+819+Centre+Street+PO+Box+879+Burns+Lake,+BC+V0J+1E0!3m4!1s0x54760f99aee3146d:0x9c363254ed938c2d!8m2!3d54.2372651!4d-125.7607656",
+            "Title": "Lake Babine First Nation",
+            "geo_longitude": 54.2374792
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-127.588634, 55.2452034],
+            "type": "Point"
+        },
+        "id": "New Hazelton",
+        "type": "Feature",
+        "properties": {
+            "Address": "3026 Bowser Street",
+            "Phone": "250-641-2443 (after hours)",
+            "geo_latitude": -127.588634,
+            "map": "https://www.google.ca/maps/place/3026+Bowser+St,+New+Hazelton,+BC/@55.2452034,-127.588634,17z/data\u003d!3m1!4b1!4m5!3m4!1s0x5475491af44a5493:0x5c7a2edadd3003f4!8m2!3d55.2452034!4d-127.5864453?sa\u003dX\u0026ved\u003d2ahUKEwi2upmQtoHdAhXrITQIHbXNDLMQ8gEwAHoECAUQAQ\u0026shorturl\u003d1",
+            "Title": "New Hazelton",
+            "geo_longitude": 55.2452034
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-122.8019818, 53.9045118],
+            "type": "Point"
+        },
+        "id": "Prince George",
+        "type": "Feature",
+        "properties": {
+            "Address": "CN Centre, 100 \u2013 2187 Ospika Boulevard",
+            "Phone": "250-613-7065",
+            "geo_latitude": -122.8019818,
+            "map": "https://www.google.ca/maps/place/CN+Centre/@53.9045118,-122.8019818,15z/data\u003d!4m5!3m4!1s0x0:0xe86799350a529ad1!8m2!3d53.9045118!4d-122.8019818?shorturl\u003d1",
+            "Title": "Prince George",
+            "geo_longitude": 53.9045118
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-130.3124447, 54.3099606],
+            "type": "Point"
+        },
+        "id": "Prince Rupert",
+        "type": "Feature",
+        "properties": {
+            "Address": "Jim Ciccone Civic Centre, 1000 McBride Street",
+            "Phone": "250-600-2616",
+            "geo_latitude": -130.3124447,
+            "map": "https://www.google.ca/maps/place/Jim+Ciccone+Civic+Centre/@54.3099606,-130.3124447,15z/data\u003d!4m5!3m4!1s0x0:0x4f7b8758b5d8d114!8m2!3d54.3099606!4d-130.3124447?shorturl\u003d1",
+            "Title": "Prince Rupert",
+            "geo_longitude": 54.3099606
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-122.4674717, 52.9816577],
+            "type": "Point"
+        },
+        "id": "Quesnel",
+        "type": "Feature",
+        "properties": {
+            "Address": "500 North Star Road",
+            "Phone": "250-983-3638",
+            "geo_latitude": -122.4674717,
+            "map": "https://www.google.ca/maps/place/500+N+Star+Rd,+Quesnel,+BC+V2J+5P6/@52.9816577,-122.4674717,17z/data\u003d!3m1!4b1!4m5!3m4!1s0x538705f2125dea69:0xedf7f672fb943c24!8m2!3d52.9816577!4d-122.465283?shorturl\u003d1",
+            "Title": "Quesnel",
+            "geo_longitude": 52.9816577
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-127.1675742, 54.7861248],
+            "type": "Point"
+        },
+        "id": "Smithers",
+        "type": "Feature",
+        "properties": {
+            "Address": "Christian Reformed Church, 4035 Walnut Drive",
+            "Phone": "",
+            "geo_latitude": -127.1675742,
+            "map": "https://www.google.ca/maps/place/Smithers+Christian+Reformed+Church/@54.7861248,-127.1675742,19z/data\u003d!3m1!4b1!4m5!3m4!1s0x54750bd91435b5a9:0xf2540e28576da77c!8m2!3d54.786124!4d-127.167027?shorturl\u003d1",
+            "Title": "Smithers",
+            "geo_longitude": 54.7861248
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-128.587006, 54.5169767],
+            "type": "Point"
+        },
+        "id": "Terrace",
+        "type": "Feature",
+        "properties": {
+            "Address": "Regional District of Kitimat-Stikine Office, 4545 Lazelle Ave",
+            "Phone": "",
+            "geo_latitude": -128.587006,
+            "map": "https://www.google.ca/maps/place/4545+Lazelle+Ave,+Terrace,+BC+V8G+4E1/@54.5169767,-128.587006,17z/data\u003d!3m1!4b1!4m5!3m4!1s0x547499f1d62d93b1:0xd0c46e7a146d11c8!8m2!3d54.5169736!4d-128.5848173?shorturl\u003d1",
+            "Title": "Terrace",
+            "geo_longitude": 54.5169767
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-128.7141466, 60.0648083],
+            "type": "Point"
+        },
+        "id": "Watson Lake",
+        "type": "Feature",
+        "properties": {
+            "Address": "Watson Lake Recreation Centre, Lakeview Avenue",
+            "Phone": "867-332-4271",
+            "geo_latitude": -128.7141466,
+            "map": "https://www.google.ca/maps/place/Watson+Lake+Recreation+Centre/@60.0648083,-128.7141466,15z/data\u003d!4m5!3m4!1s0x0:0xea8beb4a35d9fd6f!8m2!3d60.0648083!4d-128.7141466?sa\u003dX\u0026ved\u003d2ahUKEwiI_8zFtoHdAhUULX0KHae6B2EQ_BIwCnoECAoQCw\u0026shorturl\u003d1",
+            "Title": "Watson Lake",
+            "geo_longitude": 60.0648083
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-135.0319116, 60.702328],
+            "type": "Point"
+        },
+        "id": "Whitehorse",
+        "type": "Feature",
+        "properties": {
+            "Address": "16 Duke Rd, Whitehorse",
+            "Phone": "",
+            "geo_latitude": -135.0319116,
+            "map": "https://www.google.ca/maps/place/16+Duke+Rd,+Whitehorse,+YT+Y1A+4M2/@60.702328,-135.0319116,17z/data\u003d!3m1!4b1!4m5!3m4!1s0x5154453ac3275015:0x2c58d8f03d88ff91!8m2!3d60.702328!4d-135.0297229?sa\u003dX\u0026ved\u003d2ahUKEwis-aPQtYHdAhW8GDQIHeImCG0Q8gEwAHoECAYQAQ\u0026shorturl\u003d1",
+            "Title": "Whitehorse",
+            "geo_longitude": 60.702328
+        }
+    }, {
+        "geometry": {
+            "coordinates": [-122.143067, 52.1367029],
+            "type": "Point"
+        },
+        "id": "Williams Lake",
+        "type": "Feature",
+        "properties": {
+            "Address": "Lake City Secondary Campus, 640 Carson Drive",
+            "Phone": "250-267-6405",
+            "geo_latitude": -122.143067,
+            "map": "https://www.google.ca/maps/place/Lake+City+Secondary+School+-+Williams+Lake+Campus/@52.1367029,-122.143067,17z/data\u003d!4m5!3m4!1s0x5380a37a33c51dc7:0x26eac9882b49c1dd!8m2!3d52.1367029!4d-122.1408783?shorturl\u003d1",
+            "Title": "Williams Lake",
+            "geo_longitude": 52.1367029
+        }
+    }]
+}
