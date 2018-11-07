@@ -8,6 +8,7 @@ import shelterPointURL from '../images/shelter-point.svg';
 
 // const essReceptionCentersURL = require('./../../static/eSSReceptionCenters.geojson');
 
+const plumeURL = 'https://plume-api-gonpdoggqg.now.sh/';
 
 const firePoint = `
 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
@@ -367,7 +368,7 @@ export const navigationDefinitions = [
     icon: trafficCamera,
     label: 'BC Cameras',
     loadState: '',
-    navigation: false,
+    navigation: true,
     legendText: '',
     legendContent: 'DriveBC Highway Cameras',
   },
@@ -379,7 +380,7 @@ export const navigationDefinitions = [
     icon: trafficCamera,
     label: 'AB Cameras',
     loadState: '',
-    navigation: false,
+    navigation: true,
     legendText: '',
     legendContent: 'DriveBC Highway Cameras',
   },
@@ -427,19 +428,19 @@ export const navigationDefinitions = [
     legendText: '',
     legendContent: 'Washington Highway Cameras',
   },
-  {
-    isGroupControl: false,
-    id: 'odot-cameras',
-    groupControlId: 'traffic-cameras',
-    active: false,
-    opacity: 1,
-    icon: trafficCamera,
-    label: 'Oregon Cameras',
-    loadState: '',
-    navigation: false,
-    legendText: 'Oregon Highway Cameras',
-    legendContent: '',
-  },
+  // {
+  //   isGroupControl: false,
+  //   id: 'odot-cameras',
+  //   groupControlId: 'traffic-cameras',
+  //   active: false,
+  //   opacity: 1,
+  //   icon: trafficCamera,
+  //   label: 'Oregon Cameras',
+  //   loadState: '',
+  //   navigation: false,
+  //   legendText: 'Oregon Highway Cameras',
+  //   legendContent: '',
+  // },
   {
     isGroupControl: false,
     id: 'caltrans-cameras',
@@ -687,7 +688,7 @@ export const layerDefinitions = [
     id: 'drive-bc-traffic-conditions',
     type: 'geojson',
     dataProjection: 'EPSG:4326',
-    endpoint: 'https://plume-api.now.sh/drive511proxy',
+    endpoint: `${plumeURL}drive511proxy`,
     visible: true,
     opacity: 1,
     labelPrefix: 'DriveBC: \n',
@@ -724,7 +725,7 @@ export const layerDefinitions = [
     siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
     id: 'bc-active-fire-perimeters',
     type: 'geojson',
-    endpoint: 'https://plume-api.now.sh/simplifygeojson/https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/query?where=FIRE_STATUS+%3C%3E+%27Not+Active%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=geojson&tolerance=250',
+    endpoint: `${plumeURL}simplifygeojson/https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/query?where=FIRE_STATUS+%3C%3E+%27Not+Active%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=geojson&tolerance=250`,
     oStroke: {
       color: [255, 0, 0, 1],
       width: 2,
@@ -754,7 +755,7 @@ export const layerDefinitions = [
     siteTags: ['adventureconditions', 'crisisconditions'],
     id: 'us-active-fire-perimeters',
     type: 'geojson',
-    endpoint: 'https://plume-api.now.sh/simplifygeojson/https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/query?where=active+%3D+%27Y%27&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson&tolerance=50',
+    endpoint: `${plumeURL}simplifygeojson/https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/query?where=active+%3D+%27Y%27&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson&tolerance=50`,
     oStroke: {
       color: [255, 0, 0, 1],
       width: 2,
@@ -880,7 +881,7 @@ export const layerDefinitions = [
     id: 'ospo-noaa-smoke',
     type: 'geojson',
     dataProjection: 'EPSG:4326',
-    endpoint: 'https://plume-api.now.sh/kmltogeojson/https://www.ospo.noaa.gov/data/land/fire/smoke.kml',
+    endpoint: `${plumeURL}kmltogeojson/https://www.ospo.noaa.gov/data/land/fire/smoke.kml`,
     visible: false,
     style: 'ospoNoaaSmoke',
     opacity: 1,
@@ -943,7 +944,7 @@ export const layerDefinitions = [
     id: 'ab-traffic-cameras',
     dataProjection: 'EPSG:4326',
     type: 'geojson',
-    endpoint: 'http://localhost:3000/ab511proxy/https://511.alberta.ca/api/v2/get/cameras?format=json',
+    endpoint: `${plumeURL}ab511proxy/https://511.alberta.ca/api/v2/get/cameras?format=json`,
     style: 'highwaycams',
     visible: true,
     opacity: 1,
@@ -994,36 +995,36 @@ export const layerDefinitions = [
       // html: 'description',
     },
   },
-  {
-    siteTags: ['adventureconditions'],
-    id: 'odot-cameras',
-    type: 'esrijson',
-    endpoint: 'https://plume-api.now.sh/proxy/https://tripcheck.com/Scripts/map/data/cctvinventory.js?dt=1535581365754',
-    visible: false,
-    style: 'highwaycams',
-    opacity: 1,
-    popup: {
-      title: 'ODOT Camera',
-      image: 'filename',
-      fields: {
-        'Title': 'title',
-        'Route': 'route',
-      },
-      // html: 'description',
-    },
-  },
+  // {
+  //   siteTags: ['adventureconditions'],
+  //   id: 'odot-cameras',
+  //   type: 'esrijson',
+  //   endpoint: `${plumeURL}proxy/https://tripcheck.com/Scripts/map/data/cctvinventory.js?dt=1535581365754`,
+  //   visible: false,
+  //   style: 'highwaycams',
+  //   opacity: 1,
+  //   popup: {
+  //     title: 'ODOT Camera',
+  //     image: 'filename',
+  //     fields: {
+  //       'Title': 'title',
+  //       'Route': 'route',
+  //     },
+  //     // html: 'description',
+  //   },
+  // },
   {
     siteTags: ['adventureconditions'],
     id: 'caltrans-cameras',
     type: 'geojson',
-    endpoint: 'https://plume-api.now.sh/kmltogeojson/http://quickmap.dot.ca.gov/data/cctv.kml',
+    endpoint: `${plumeURL}kmltogeojson/http://quickmap.dot.ca.gov/data/cctv.kml`,
     dataProjection: 'EPSG:4326',
     visible: false,
     style: 'highwaycams',
     opacity: 1,
     popup: {
       title: 'Caltrans Camera',
-      html: 'description',
+      html: 'description', // TODO: fix
     },
   },
   {
