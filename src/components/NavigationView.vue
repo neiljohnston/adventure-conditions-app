@@ -197,11 +197,13 @@ export default {
   white-space: normal;
   justify-content: center;
   align-items: center;
+  padding: 0;
+
 }
 .rg-overlay{
   position: absolute;
   z-index: 2;
-  top: 8px;
+  top: 0px;
 }
 .rg-loaded-icon{
   /* position: absolute; */
@@ -209,7 +211,6 @@ export default {
   flex: 0 0 40px;
   width: 40px;
   overflow: hidden;
-  padding: 0;
 }
 
 .rg-navigation-list {
