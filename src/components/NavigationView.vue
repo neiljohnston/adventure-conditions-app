@@ -54,8 +54,7 @@
           </span>
           <span
             class="rg-loaded-icon"
-            v-if="control.loadState !== 'error'"
-            v-html="control.icon"></span>
+            v-if="control.loadState !== 'error'"><img :src="control.icon"/></span>
           <span
             v-if="control.loadState === 'error'"
             v-html="loaderErrorIcon">
@@ -204,6 +203,8 @@ export default {
   position: absolute;
   z-index: 2;
   top: 0px;
+  height: 40px;
+  width: 40px;
 }
 .rg-loaded-icon{
   /* position: absolute; */
