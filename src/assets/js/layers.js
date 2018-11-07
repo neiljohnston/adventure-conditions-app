@@ -60,7 +60,7 @@ export const navigationDefinitions = [
     label: 'Evacuation All Clear',
     loadState: '',
     navigation: true,
-    legendText: 'Lifted BC Evacuation Orders',
+    legendText: 'Areas Safe to Repopulate',
     legendContent: '<img src="static/evacuation-all-clear-legend.svg" />',
   },
   // {
