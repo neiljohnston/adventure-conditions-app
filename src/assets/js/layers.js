@@ -8,7 +8,7 @@ import shelterPointURL from '../images/shelter-point.svg';
 
 // const essReceptionCentersURL = require('./../../static/eSSReceptionCenters.geojson');
 
-const plumeURL = 'https://plume-api-gonpdoggqg.now.sh/';
+const plumeURL = 'https://api.emergencymap.ca/';
 
 const firePoint = `
 <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
