@@ -16,6 +16,7 @@ const vuexLocalStorage = new VuexPersist({
   reducer: state => ({
     uiState: state.uiState,
     siteMeta: state.siteMeta,
+    versions: state.versions,
   }),
   // Function that passes a mutation and lets you decide if it should
   // update the state in localStorage.
@@ -45,11 +46,6 @@ export default new Vuex.Store({
       description: process.env.DESCRIPTION || 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires',
       keywords: process.env.KEYWORDS || 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health',
       readerListKey: '',
-      versions: {
-        app: 0.0,
-        navigation: 0.0,
-        layers: 0.0,
-      },
     },
     uiState: {
       mapViewState: {
@@ -58,6 +54,11 @@ export default new Vuex.Store({
         zoom: process.env.MAP_ZOOM || 5,
       },
       navigation: navigationDefinitions,
+    },
+    versions: {
+      app: 0.0,
+      navigation: 0.0,
+      layers: 0.0,
     },
 
     // bottom sheet data
@@ -79,6 +80,10 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    INITALIZE_STORE(state) {
+      // Check if the ID exists
+      console.log('INITIALIZE_STORE: versions', state.versions);
+    },
     SET_NAVIGATION_LOAD_STATE: ({ state }, { control, loadState }) => {
       control.loadState = loadState;
     },

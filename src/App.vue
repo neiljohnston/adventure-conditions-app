@@ -70,6 +70,10 @@ export default {
     ]),
   },
 
+  beforeCreate() {
+    this.$store.commit('INITALIZE_STORE');
+	},
+
   mounted() {
     this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
