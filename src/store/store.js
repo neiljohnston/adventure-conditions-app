@@ -45,7 +45,11 @@ export default new Vuex.Store({
       description: process.env.DESCRIPTION || 'Adventure conditions unifies evacuation orders and alerts, road closures, air quality data, smoke conditions and weather to help navigate BC Wildfires',
       keywords: process.env.KEYWORDS || 'California, fires, BC, British Columbia, Wildfires, Evacuations, Road Conditions, Smoke, Air Quality, Health',
       readerListKey: '',
-      storeageDate: moment().unix(),
+      versions: {
+        app: 0.0,
+        navigation: 0.0,
+        layers: 0.0,
+      },
     },
     uiState: {
       mapViewState: {
@@ -54,7 +58,6 @@ export default new Vuex.Store({
         zoom: process.env.MAP_ZOOM || 5,
       },
       navigation: navigationDefinitions,
-      storeageDate: moment().unix(),
     },
 
     // bottom sheet data
