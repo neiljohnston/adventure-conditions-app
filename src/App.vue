@@ -7,6 +7,7 @@
       :is-drawer-open="isDrawerOpen"
     ></navigation-view>
     <v-toolbar
+      id="rg-toolbar"
       color="#f3845a"
       app
       absolute
@@ -44,6 +45,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import * as PullToRefresh from 'pulltorefreshjs';
 
 import MapView from './components/MapView';
 import DetailsView from './components/DetailsView';
@@ -51,6 +53,7 @@ import ReaderView from './components/ReaderView';
 import NavigationView from './components/NavigationView';
 import AboutView from './components/AboutView';
 import PlaceSearchView from './components/PlaceSearchView';
+
 
 export default {
   components: {
@@ -73,6 +76,15 @@ export default {
   mounted() {
     this.isDrawerOpen = !this.$vuetify.breakpoint.smAndDown;
     this.onResize();
+
+    PullToRefresh.init({
+      mainElement: 'body',
+      onRefresh: () => {
+          // What do you want to do when the user does the pull-to-refresh gesture
+          // window.location.reload(); 
+          this.onPullToRefresh();
+      }
+    });
   },
 
   methods: {
@@ -88,6 +100,11 @@ export default {
     onResize() {
       this.$bus.$emit('map-resize');
     },
+
+    onPullToRefresh() {
+      console.log('onPullToRefresh');
+      this.$bus.$emit('update-map-layers');
+    }
   },
 };
 

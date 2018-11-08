@@ -88,14 +88,14 @@ export default {
     this.$bus.$on('map-resize', this.mapResizeHandler);
     this.$bus.$on('layer-visibility', this.layerVisibilityHandler);
     this.$bus.$on('fly-to', this.flyToHandler);
-    this.$bus.$on('update-layers-from-sources', this.updateLayersFromSourcesHandler);
+    this.$bus.$on('update-map-layers', this.updateLayersFromSourcesHandler);
   },
 
   beforeDestroy() {
     this.$bus.$off('map-resize');
     this.$bus.$off('layer-visibility');
     this.$bus.$off('fly-to');
-    this.$bus.$off('update-layers-from-sources');
+    this.$bus.$off('update-map-layers');
   },
 
   mounted() {
@@ -240,6 +240,7 @@ export default {
     },
 
     updateLayersFromSourcesHandler() {
+      console.log('updateLayersFromSourcesHandler');
       this.layers.forEach((layer, index) => {
         layer.source.refresh();
       });

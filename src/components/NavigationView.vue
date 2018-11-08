@@ -180,7 +180,7 @@ export default {
     },
 
     updateLayers() {
-      this.$bus.$emit('update-layers-from-sources');
+      this.$bus.$emit('update-map-layers');
     }
   },
 
