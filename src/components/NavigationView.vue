@@ -178,6 +178,10 @@ export default {
     openReaderView() {
       this.setReaderViewVisible(true);
     },
+
+    updateLayers() {
+      this.$bus.$emit('update-layers-from-sources');
+    }
   },
 
 };

@@ -88,12 +88,14 @@ export default {
     this.$bus.$on('map-resize', this.mapResizeHandler);
     this.$bus.$on('layer-visibility', this.layerVisibilityHandler);
     this.$bus.$on('fly-to', this.flyToHandler);
+    this.$bus.$on('update-layers-from-sources', this.updateLayersFromSourcesHandler);
   },
 
   beforeDestroy() {
     this.$bus.$off('map-resize');
     this.$bus.$off('layer-visibility');
     this.$bus.$off('fly-to');
+    this.$bus.$off('update-layers-from-sources');
   },
 
   mounted() {
@@ -237,6 +239,12 @@ export default {
       });
     },
 
+    updateLayersFromSourcesHandler() {
+      this.layers.forEach((layer, index) => {
+        layer.source.refresh();
+      });
+    },
+
     layerVisibilityHandler(id, active) {
       const layer = this.getLayerById(this.layers, id);
       if (layer) this.setLayerVisibility(layer, active);
@@ -370,7 +378,6 @@ export default {
     },
 
     getLayerOptions(layer) {
-      console.log(layer.id, layer.opacity);
       return {
         source: layer.source,
         visible: layer.visible,
