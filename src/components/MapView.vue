@@ -44,7 +44,7 @@ import {
 } from 'ol/control';
 
 import { mapGetters, mapState, mapActions } from 'vuex';
-
+import { evaluate, evaluateStringInterpolation } from 'bcx-expression-evaluator';
 
 import {
   layerDefinitions,
@@ -52,8 +52,10 @@ import {
 
 import { style } from '../assets/js/styles';
 
-
 const scaleLineControl = new ScaleLine();
+
+const plumeURL = 'https://api.emergencymap.ca/';
+
 
 let map;
 let mapView;
@@ -307,8 +309,8 @@ export default {
         if (layer.type === 'arcgisrestmapeserver') {
           const newSource = new ImageArcGISRest({
             ratio: layer.ratio,
-            params: layer.params,
-            url: layer.endpoint,
+            params: this.parseParams(layer.params),
+            url: this.parseEndpoint(layer.endpoint),
             crossOrigin: 'Anonymous',
           });
           this.$set(layer, 'source', newSource);
@@ -322,8 +324,8 @@ export default {
         if (layer.type === 'imagewms') {
           const newSource = new ImageWMS({
             ratio: layer.ratio,
-            params: layer.params,
-            url: layer.endpoint,
+            params: this.parseParams(layer.params),
+            url: this.parseEndpoint(layer.endpoint),
             // crossOrigin: 'anonymous'
           });
           this.$set(layer, 'source', newSource);
@@ -336,7 +338,7 @@ export default {
 
         if (layer.type === 'xyz') {
           const newSource = new XYZ({
-            url: layer.endpoint,
+            url: this.parseEndpoint(layer.endpoint),
           });
           this.$set(layer, 'source', newSource);
 
@@ -480,7 +482,7 @@ export default {
     },
 
     geoJsonLoader(layer) {
-      axios.get(layer.endpoint, { timeout: 45000 })
+      axios.get(this.parseEndpoint(layer.endpoint), { timeout: 45000 })
         .then((response) => {
           this.setNavigationLoadState({ id: layer.id, loadState: '' });
           const projectionsConversion = (layer.dataProjection) ? { dataProjection: layer.dataProjection, featureProjection: 'EPSG:3857' } : {};
@@ -508,6 +510,33 @@ export default {
         this.setNavigationLoadState({ id: layer.id, loadState: 'loading' });
         layer.source.setLoader(this.geoJsonLoader(layer));
       }
+    },
+
+    parseEndpoint(endpoint) {
+      if (endpoint.indexOf('${') !== -1) {
+        return evaluate(endpoint,
+          { plumeURL : plumeURL },
+          { moment: moment },
+          { stringInterpolationMode: true });
+      }
+      return endpoint;
+    },
+
+    parseParams(params) {
+      const parsedParams = {};
+      Object.keys(params).forEach((key) => {
+        const temp = params[key];
+        if (typeof temp === 'string' && temp.indexOf('${') !== -1) {
+          parsedParams[key] = evaluate(temp,
+            {},
+            { moment: moment },
+            { stringInterpolationMode: true });
+        } else {
+          parsedParams[key] = `${params[key]}`;
+        }
+      });
+      console.log(params, parsedParams);
+      return parsedParams;
     },
 
   },
