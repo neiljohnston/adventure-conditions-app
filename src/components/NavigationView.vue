@@ -54,7 +54,9 @@
           </span>
           <span
             class="rg-loaded-icon"
-            v-if="control.loadState !== 'error'" v-html="control.icon"></span>
+            v-if="control.loadState !== 'error'"
+            v-html="control.icon">
+          </span>
           <span
             v-if="control.loadState === 'error'"
             v-html="loaderErrorIcon">
