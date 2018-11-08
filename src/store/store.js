@@ -73,6 +73,11 @@ export default new Vuex.Store({
     INITALIZE_STORE(state) {
       // Check if the ID exists
       console.log('INITIALIZE_STORE: versions', state.versions);
+      // get versions from DB
+      // compare versions
+      // if and update is needed
+      // pull new layers from db
+      // pull new navigation from db
     },
     SET_NAVIGATION_LOAD_STATE: ({ state }, { control, loadState }) => {
       control.loadState = loadState;
