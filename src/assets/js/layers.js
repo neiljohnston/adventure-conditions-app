@@ -951,3 +951,6 @@ export const layerDefinitions = [
     opacity: 1,
   },
 ];
+
+// console.log('navigationDefinitions', JSON.stringify(navigationDefinitions));
+// console.log('layerDefinitions', JSON.stringify(layerDefinitions));

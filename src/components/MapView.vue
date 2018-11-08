@@ -535,7 +535,6 @@ export default {
           parsedParams[key] = `${params[key]}`;
         }
       });
-      console.log(params, parsedParams);
       return parsedParams;
     },
 
