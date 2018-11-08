@@ -370,6 +370,7 @@ export default {
     },
 
     getLayerOptions(layer) {
+      console.log(layer.id, layer.opacity);
       return {
         source: layer.source,
         visible: layer.visible,

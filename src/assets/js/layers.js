@@ -178,7 +178,7 @@ export const navigationDefinitions = [
     isGroupControl: false,
     id: 'nws-experimental-smoke',
     active: true,
-    opacity: 0.5,
+    opacity: 0.1,
     icon: '<img src="static/smoke-forecast-icon.svg" />',
     label: 'Smoke Forecast',
     loadState: '',
@@ -388,7 +388,7 @@ export const navigationDefinitions = [
 
 export const layerDefinitions = [
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap'],
     id: 'bc-evacuation-orders',
     type: 'geojson',
     endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27Order%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ORDER_DATE%20desc&outSR=102100&resultOffset=0',
@@ -419,7 +419,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap'],
     id: 'bc-evacuation-alerts',
     type: 'geojson',
     endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27Alert%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ALERT_DATE%20desc&outSR=102100&resultOffset=0&resultRecordCount=50',
@@ -450,7 +450,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap'],
     id: 'bc-evacuation-all-clear',
     type: 'geojson',
     endpoint: 'https://maps.gov.bc.ca/arcgis/rest/services/mpcm/bcgw/MapServer/dynamicLayer/query?layer=%7B%22drawingInfo%22%3A%20null%2C%20%22definitionExpression%22%3A%20null%2C%20%22maxScale%22%3A%200%2C%20%22source%22%3A%20%7B%22type%22%3A%20%22dataLayer%22%2C%20%22dataSource%22%3A%20%7B%22type%22%3A%20%22table%22%2C%20%22workspaceId%22%3A%20%22MPCM_ALL_PUB%22%2C%20%22dataSourceName%22%3A%20%22WHSE_HUMAN_CULTURAL_ECONOMIC.EMRG_ORDER_AND_ALERT_AREAS_SP%22%2C%20%22gdbVersion%22%3A%20%22%22%7D%7D%2C%20%22minScale%22%3A%2037500000%2C%20%22id%22%3A%20null%7D&f=geojson&where=(EVENT_TYPE%20%3D%20%27Fire%27)%20AND%20(ORDER_ALERT_STATUS%20%3D%20%27All%20Clear%27)&returnGeometry=true&spatialRel=esriSpatialRelIntersects&maxAllowableOffset=2445&outFields=*&orderByFields=START_ALERT_DATE%20desc&outSR=102100&resultOffset=0&resultRecordCount=50',
@@ -481,7 +481,7 @@ export const layerDefinitions = [
     },
   },
   // {
-  //   siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+  //   siteTags: ['bcfiremap'],
   //   id: 'bc-shelters',
   //   type: 'geojson',
   //   endpoint: essReceptionCentersURL,
@@ -509,7 +509,7 @@ export const layerDefinitions = [
   //   },
   // },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap'],
     id: 'drive-bc-traffic-conditions',
     type: 'geojson',
     dataProjection: 'EPSG:4326',
@@ -530,7 +530,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['bcfiremap', 'albertafiremap', 'adventureconditions'],
     id: 'cdn-current-weather',
     type: 'imagewms',
     endpoint: 'http://geo.weather.gc.ca/geomet?VERSION=1.3.0',
@@ -547,7 +547,7 @@ export const layerDefinitions = [
     opacity: 1,
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap', 'adventureconditions'],
     id: 'bc-active-fire-perimeters',
     type: 'geojson',
     endpoint: '${plumeURL}simplifygeojson/https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_FirePerimeters_PublicView/FeatureServer/0/query?where=FIRE_STATUS+%3C%3E+%27Not+Active%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=geojson&tolerance=250',
@@ -577,7 +577,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['adventureconditions', 'crisisconditions'],
+    siteTags: ['adventureconditions'],
     id: 'us-active-fire-perimeters',
     type: 'geojson',
     endpoint: '${plumeURL}simplifygeojson/https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/2/query?where=active+%3D+%27Y%27&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson&tolerance=50',
@@ -604,7 +604,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['bcfiremap', 'adventureconditions'],
     id: 'bc-active-fire-points',
     type: 'geojson',
     endpoint: 'https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BCWS_ActiveFires_PublicView/FeatureServer/0/query?where=FIRE_STATUS+%3C%3E+%27Not+Active%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelEnvelopeIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnDistinctValues=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pgeojson&token=',
@@ -632,7 +632,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['adventureconditions', 'crisisconditions'],
+    siteTags: ['albertafiremap', 'adventureconditions'],
     id: 'ab-active-fire-points',
     type: 'esrijson',
     endpoint: 'https://maps.alberta.ca/genesis/rest/services/Wildfire_Status_Web_Map/Latest/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=pjson',
@@ -659,7 +659,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['adventureconditions', 'crisisconditions'],
+    siteTags: ['adventureconditions'],
     id: 'us-large-fire-points',
     type: 'geojson',
     endpoint: 'https://rmgsc-haws2.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/1/query?where=&text=&objectIds=&time=&geometry=-18631848.101007503%252C725135.0462942608%252C-5345258.096368558%252C11888610.153284714&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelContains&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson',
@@ -685,7 +685,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'crisisconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'modis-satellite',
     type: 'geojson',
     endpoint: 'https://wildfire.cr.usgs.gov/arcgis/rest/services/geomac_fires/MapServer/3/query?where=load_stat%3D%27Active+Burning%27++OR+load_stat%3D%27Last+12-24+hrs%27+OR+load_stat%3D%27Last+24-48+hrs%27&text=&objectIds=&time=&geometry=-15464286.158429246%2C5897585.730705328%2C-12589206.644992914%2C8575781.652083585&geometryType=esriGeometryEnvelope&inSR=102100&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=102100&returnIdsOnly=false&returnCountOnly=false&orderByFields=load_stat&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentsOnly=false&datumTransformation=&parameterValues=&rangeValues=&f=geojson',
@@ -702,7 +702,7 @@ export const layerDefinitions = [
   },
   // source url: https://www.ospo.noaa.gov/Products/land/hms.html
   {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'ospo-noaa-smoke',
     type: 'geojson',
     dataProjection: 'EPSG:4326',
@@ -719,7 +719,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'nws-experimental-smoke',
     type: 'arcgisrestmapeserver',
     endpoint: 'https://utility.arcgis.com/usrsvcs/servers/668c6a41fd184984a49caee8f759654d/rest/services/LiveFeeds/NDGD_SmokeForecast/MapServer/',
@@ -736,7 +736,7 @@ export const layerDefinitions = [
     opacity: 0.5,
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'world-air-quality',
     type: 'xyz',
     endpoint: 'https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?' +
@@ -765,7 +765,7 @@ export const layerDefinitions = [
     },
   },
   {
-    siteTags: ['bcfiremap', 'abfiremap', 'adventureconditions'],
+    siteTags: ['bcfiremap', 'albertafiremap', 'adventureconditions'],
     id: 'ab-traffic-cameras',
     dataProjection: 'EPSG:4326',
     type: 'geojson',
@@ -838,22 +838,22 @@ export const layerDefinitions = [
   //     // html: 'description',
   //   },
   // },
+  // {
+  //   siteTags: ['adventureconditions'],
+  //   id: 'caltrans-cameras',
+  //   type: 'geojson',
+  //   endpoint: '${plumeURL}kmltogeojson/http://quickmap.dot.ca.gov/data/cctv.kml',
+  //   dataProjection: 'EPSG:4326',
+  //   visible: false,
+  //   style: 'highwaycams',
+  //   opacity: 1,
+  //   popup: {
+  //     title: 'Caltrans Camera',
+  //     html: 'description', // TODO: fix
+  //   },
+  // },
   {
-    siteTags: ['adventureconditions'],
-    id: 'caltrans-cameras',
-    type: 'geojson',
-    endpoint: '${plumeURL}kmltogeojson/http://quickmap.dot.ca.gov/data/cctv.kml',
-    dataProjection: 'EPSG:4326',
-    visible: false,
-    style: 'highwaycams',
-    opacity: 1,
-    popup: {
-      title: 'Caltrans Camera',
-      html: 'description', // TODO: fix
-    },
-  },
-  {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'berkley-earth-air-quality',
     type: 'xyz',
     endpoint: "http://berkeleyearth.lbl.gov/air-quality/maps/hour/${moment().format('YYYYMM')}/${moment().startOf('h').add('6', 'h').format('YYYYMMDDHH')}/tiles/health/{z}/{x}/{y}.png",
@@ -861,7 +861,7 @@ export const layerDefinitions = [
     opacity: 0.25,
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions'],
     id: 'canadian-fire-danger',
     type: 'imagewms',
     endpoint: 'http://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms?VERSION=1.3.0&SERVICE=WMS',
@@ -893,7 +893,7 @@ export const layerDefinitions = [
     opacity: 0.25,
   },
   {
-    siteTags: ['adventureconditions', 'hurricaneconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions', 'hurricaneconditions'],
     id: 'noaa-radar',
     type: 'arcgisrestmapeserver',
     endpoint: 'https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Observations/radar_base_reflectivity/MapServer/',
@@ -909,7 +909,7 @@ export const layerDefinitions = [
     opacity: 0.75,
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'hurricaneconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions', 'hurricaneconditions'],
     id: 'wind-conditions',
     type: 'imagewms',
     endpoint: 'http://geo.weather.gc.ca/geomet?VERSION=1.3.0',
@@ -923,13 +923,9 @@ export const layerDefinitions = [
     ratio: 1,
     visible: false,
     opacity: 0.75,
-    icon: '<span class="fa-stack fa-lg">' +
-          '<i class="fas fa-cloud fa-fw fa-stack-2x 2x"></i>' +
-          '<i class="fas fa-arrow-right fa-fw fa-stack-1x" style="color: #ffffff"></i>' +
-          '</span>',
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'hurricaneconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions', 'hurricaneconditions'],
     id: 'emulated-lightning-density',
     type: 'arcgisrestmapeserver',
     endpoint: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/sat_meteo_emulated_imagery_lightningstrikedensity_goes_time/MapServer',
@@ -941,7 +937,7 @@ export const layerDefinitions = [
     opacity: 1,
   },
   {
-    siteTags: ['bcfiremap', 'adventureconditions', 'hurricaneconditions'],
+    siteTags: ['albertafiremap', 'bcfiremap', 'adventureconditions', 'hurricaneconditions'],
     id: 'here-live-traffic',
     type: 'xyz',
     endpoint: 'https://{1-4}.traffic.maps.api.here.com' +
