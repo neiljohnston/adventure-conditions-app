@@ -26,7 +26,6 @@ import {
 import {
   ImageArcGISRest,
   ImageWMS,
-  OSM,
   XYZ,
 } from 'ol/source';
 
@@ -36,7 +35,7 @@ import {
   Fill,
   Stroke,
   Style,
-  Text
+  Text,
 } from 'ol/style';
 
 import {
@@ -51,7 +50,7 @@ import {
   layerDefinitions,
 } from '../assets/js/layers';
 
-import {style} from '../assets/js/styles';
+import { style } from '../assets/js/styles';
 
 
 const scaleLineControl = new ScaleLine();
@@ -142,7 +141,6 @@ export default {
         if (popup) {
           const displayeFields = [];
 
-          const featureValues = [];
           Object.keys(featureProperties).forEach((key) => {
             console.log(key, `${featureProperties[key]}`);
           });
@@ -446,9 +444,9 @@ export default {
       const stroke = layer.oStroke ? layer.oStroke : false ||
                     (typeof feature.getProperties().stroke !== 'undefined') ? { color: `${feature.getProperties().stroke}`, width: 3 } : false ||
                     (typeof feature.getProperties()['marker-color'] !== 'undefined') ? { color: `${feature.getProperties()['marker-color']}`, width: 3 } : false ||
-                    { color: [0, 0, 0, 1], width: 3};
+                    { color: [0, 0, 0, 1], width: 3 };
 
-      const fill =  layer.oFill ? layer.oFill : false ||
+      const fill = layer.oFill ? layer.oFill : false ||
                   (typeof feature.getProperties()['marker-color'] !== 'undefined') ? { color: `${feature.getProperties()['marker-color']}` } : { color: [255, 255, 255, 1] };
 
 
